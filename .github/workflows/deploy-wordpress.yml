@@ -43,16 +43,17 @@ jobs:
 
   deploy:
     needs: release
+    # After WordPress.org approval, add repository variable WORDPRESS_ORG_SLUG
+    # with the exact directory name assigned by WordPress.org.
+    if: vars.WORDPRESS_ORG_SLUG != ''
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # TODO: Replace "orthocal" with the exact WordPress.org plugin slug
-      # after the plugin has been approved by the WordPress.org review team.
       - name: Deploy to WordPress.org
         uses: 10up/action-wordpress-plugin-deploy@stable
         env:
           SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
           SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
-          SLUG: orthocal
+          SLUG: ${{ vars.WORDPRESS_ORG_SLUG }}
