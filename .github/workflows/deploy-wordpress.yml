@@ -5,8 +5,44 @@ on:
     tags:
       - '*'
 
+permissions:
+  contents: write
+
 jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Verify release version
+        env:
+          TAG: ${{ github.ref_name }}
+        run: |
+          version="$(sed -n 's/^ \* Version: \(.*\)$/\1/p' orthocal.php)"
+          test "$TAG" = "$version"
+
+      - name: Build installation ZIP
+        env:
+          TAG: ${{ github.ref_name }}
+        run: |
+          package="$RUNNER_TEMP/orthocal-package"
+          mkdir -p "$package/orthocal"
+          rsync -a --exclude-from=.distignore ./ "$package/orthocal/"
+          (cd "$package" && zip -qr "$GITHUB_WORKSPACE/orthocal-$TAG.zip" orthocal)
+          cp "orthocal-$TAG.zip" orthocal.zip
+
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.ref_name }}
+        run: |
+          gh release create "$TAG" "orthocal-$TAG.zip" orthocal.zip \
+            --title "Orthodox Calendar – Calendar Workshop $TAG" \
+            --generate-notes
+
   deploy:
+    needs: release
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
