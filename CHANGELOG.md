@@ -1,5 +1,8 @@
 # Historical changelog
 
+= 1.3.62 =
+* Corrected the Plugin URI for WordPress.org submission; it now differs from the author URL.
+
 = 1.3.61 =
 * The icon limit applies only to displayed cards; the gallery retains every icon and image for the day.
 * Icon clicks are captured before theme lightboxes so the single plugin gallery opens consistently.

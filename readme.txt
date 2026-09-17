@@ -3,7 +3,7 @@ Contributors: atapin
 Tags: calendar, orthodox, bible
 Requires at least: 6.3
 Requires PHP: 8.0
-Stable tag: 1.3.61
+Stable tag: 1.3.62
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,7 +14,7 @@ Orthodox calendar for WordPress: feasts, fasting, commemorations, readings, litu
 Adds 22 dynamic Gutenberg blocks and shortcodes. Calendar and Bible data come from the external services listed below; no calendar database is included in the plugin.
 
 == Installation ==
-1. WordPress → Plugins → Add New → Upload Plugin: orthocal-1.3.61.zip.
+1. WordPress → Plugins → Add New → Upload Plugin: orthocal-1.3.62.zip.
 2. Активируйте плагин.
 3. Календарь уже работает. При необходимости откройте «Православный календарь», добавьте дополнительный API-ключ и проверьте каталог BibleDesktop.
 4. Добавьте блоки категории «Виджеты» или шорткоды на страницу.
@@ -71,6 +71,9 @@ The plugin works without registration or an API key for normal public use. When 
 Карточка дня и читатель поддерживают русские и немецкие подписи; язык календарных данных и язык Библии выбираются отдельно. Переводы календаря могут быть неполными. Встроенные богослужебные тексты церковнославянские, немецкие издания доступны по ссылкам. Изображения икон и жития не подставляются вместо отсутствующих данных.
 
 == Changelog ==
+
+= 1.3.62 =
+* Corrected the Plugin URI for WordPress.org submission; it now differs from the author URL.
 
 = 1.3.61 =
 * The configured number of icons limits only cards in the block; every daily icon and every image remains available in its gallery.
