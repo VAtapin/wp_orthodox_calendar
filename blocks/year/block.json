@@ -1,0 +1,123 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "orthocal/year",
+  "version": "1.3.60",
+  "title": "Православный календарь: Календарь на год",
+  "category": "widgets",
+  "icon": "calendar-alt",
+  "textdomain": "orthocal",
+  "attributes": {
+    "date": {
+      "type": "string"
+    },
+    "year": {
+      "type": "string"
+    },
+    "month": {
+      "type": "string"
+    },
+    "limit": {
+      "type": "string"
+    },
+    "filter": {
+      "type": "string"
+    },
+    "lang": {
+      "type": "string"
+    },
+    "profile": {
+      "type": "string"
+    },
+    "theme": {
+      "type": "string"
+    },
+    "css_mode": {
+      "type": "string"
+    },
+    "compact": {
+      "type": "string"
+    },
+    "oldstyle": {
+      "type": "string"
+    },
+    "show_nav": {
+      "type": "string"
+    },
+    "show_picker": {
+      "type": "string"
+    },
+    "show_copy": {
+      "type": "string"
+    },
+    "show_search": {
+      "type": "string"
+    },
+    "show_section_titles": {
+      "type": "string"
+    },
+    "show_font_size": {
+      "type": "string"
+    },
+    "open": {
+      "type": "string"
+    },
+    "reading_open": {
+      "type": "string"
+    },
+    "images": {
+      "type": "string"
+    },
+    "image_size": {
+      "type": "string"
+    },
+    "image_pack": {
+      "type": "string"
+    },
+    "icons": {
+      "type": "string"
+    },
+    "icon_limit": {
+      "type": "string"
+    },
+    "office": {
+      "type": "string"
+    },
+    "heading": {
+      "type": "string"
+    },
+    "sections": {
+      "type": "string"
+    },
+    "event_levels": {
+      "type": "string"
+    },
+    "scope": {
+      "type": "string"
+    },
+    "tone": {
+      "type": "string"
+    },
+    "weekday": {
+      "type": "string"
+    },
+    "text_id": {
+      "type": "string"
+    },
+    "work": {
+      "type": "string"
+    },
+    "text_language": {
+      "type": "string"
+    },
+    "text_page": {
+      "type": "string"
+    }
+  },
+  "supports": {
+    "html": false
+  },
+  "editorScript": "orthocal-editor",
+  "style": "orthocal",
+  "viewScript": "orthocal"
+}
