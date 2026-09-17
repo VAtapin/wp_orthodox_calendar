@@ -1,5 +1,14 @@
 # Historical changelog
 
+= 1.3.61 =
+* The icon limit applies only to displayed cards; the gallery retains every icon and image for the day.
+* Icon clicks are captured before theme lightboxes so the single plugin gallery opens consistently.
+* Added Russian and German translations for the plugin name and description shown in WordPress.
+
+= 1.3.60 =
+* Prepared the first WordPress.org release, including deployment metadata and the GitHub Actions SVN workflow.
+* Added the complete icon gallery: one dialog keeps image previews for the selected icon at the top and all daily icons in a light bottom strip.
+
 = 1.3.52 =
 * Нажатие на икону дня открывает общую галерею всех образов и всех их изображений; карточки и изображения подгружаются по мере просмотра.
 

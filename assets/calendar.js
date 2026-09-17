@@ -178,6 +178,13 @@
       } catch (error) { if (current===generation) status.textContent=error.name==='AbortError'?t('Источник не ответил вовремя. Повторите запрос.'):error.message; }
       finally { if (current===generation) root.removeAttribute('aria-busy'); }
     }
+    // Themes such as Avada can attach a lightbox directly to image links. Catch
+    // icon clicks before that handler: the one Orthocal dialog owns the gallery.
+    root.addEventListener('click',event=>{
+      const icon=event.target instanceof Element?event.target.closest('[data-oc-icon]'):null;
+      if(!icon||!root.contains(icon))return;
+      event.preventDefault();event.stopImmediatePropagation();iconPopup(icon,t,cfg.endpoint);
+    },true);
     root.addEventListener('click',event=>{
       if (event.target.closest('.orthocal')!==root) return;
       const date=event.target.closest('[data-oc-date]');
@@ -186,8 +193,6 @@
         if (cfg.open==='new') { const url=new URL(date.href||window.location.href); url.searchParams.set('orthocal_date',d); window.open(url.href,'_blank','noopener'); return; }
         render({mode:'day',date:d,year:d.slice(0,4),month:Number(d.slice(5,7)),open:'inline'},cfg.open==='modal'?'modal':!!root.querySelector(':scope > .oc-detail'));
       }
-      const icon=event.target.closest('[data-oc-icon]');
-      if(icon){event.preventDefault();iconPopup(icon,t,cfg.endpoint);}
       const day=event.target.closest('[data-oc-day]');if(day)render({date:day.dataset.ocDay});
       const textPage=event.target.closest('[data-oc-text-page]');if(textPage)void render({text_page:textPage.dataset.ocTextPage});
       const library=event.target.closest('[data-oc-library]');if(library)void render({mode:library.dataset.ocLibrary,scope:'',tone:'',weekday:'',text_id:'',work:'',text_page:'1'},'modal');

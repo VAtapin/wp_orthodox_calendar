@@ -3,7 +3,7 @@ Contributors: atapin
 Tags: calendar, orthodox, bible
 Requires at least: 6.3
 Requires PHP: 8.0
-Stable tag: 1.3.60
+Stable tag: 1.3.61
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,9 +14,9 @@ Orthodox calendar for WordPress: feasts, fasting, commemorations, readings, litu
 Adds 22 dynamic Gutenberg blocks and shortcodes. Calendar and Bible data come from the external services listed below; no calendar database is included in the plugin.
 
 == Installation ==
-1. WordPress → Plugins → Add New → Upload Plugin: orthocal-1.3.60.zip.
+1. WordPress → Plugins → Add New → Upload Plugin: orthocal-1.3.61.zip.
 2. Активируйте плагин.
-3. В главном меню WordPress откройте «Православный календарь», сохраните ключ и проверьте каталог BibleDesktop.
+3. Календарь уже работает. При необходимости откройте «Православный календарь», добавьте дополнительный API-ключ и проверьте каталог BibleDesktop.
 4. Добавьте блоки категории «Виджеты» или шорткоды на страницу.
 
 Ключ также можно задать константой ORTHOCAL_API_KEY в wp-config.php. Константа имеет приоритет над настройками. Ключ не выводится в форму, браузер и REST-ответы.
@@ -51,11 +51,11 @@ image_size="120" задаёт высоту картинки поста в пик
 Фильтры ближайших событий: main (главные и поминальные), twelve (Пасха и двунадесятые), great (великие), memorial (поминальные), all. Поиск включает исходную дату и следующие 366 дней, максимум 10 событий.
 
 == External Services ==
-Этот плагин требует подключения к внешним сервисам. При размещении календаря сервер WordPress отправляет дату/период, язык и профиль в https://kalender.georg-kloster.ru/api/v1/calendar/. Для защищённых запросов передаётся сохранённый API-ключ.
+The plugin works without registration or an API key for normal public use. When it requests calendar data, the WordPress server sends date/period, language, profile and the public `X-Calendar-Client: orthocal-wordpress` identifier to https://kalender.georg-kloster.ru/api/v1/calendar/. This identifier is not a secret. The API enforces an endpoint and parameter allowlist, the 1900–2200 date range, server cache and per-server-IP limits. An optional API key may be configured for extended or authorized access.
 При открытии чтений сервер получает каталог переводов, книг и главы из https://bible-desktop.com/api/. Ключ календаря в BibleDesktop не отправляется. Тексты показываются по выбранному переводу. Плагин не удостоверяет соответствие нумерации стихов календарному источнику.
-При запросах данных сервисы видят IP сервера WordPress, а не посетителя. Знаки Типикона, значки поста и церковнославянский шрифт сохраняются сервером WordPress и выдаются посетителю локально. Богослужебный справочник загружается сервером через /api/v1/calendar-texts/ с тем же ключом календаря.
+При запросах данных сервисы видят IP сервера WordPress, а не посетителя. Знаки Типикона, значки поста и церковнославянский шрифт сохраняются сервером WordPress и выдаются посетителю локально.
 Полные тексты, иконы и жития в ZIP не входят. Политики и условия услуг уточняйте у владельцев https://kalender.georg-kloster.ru/ и https://bible-desktop.com/.
-Публичный /today работает без ключа в Europe/Berlin. Для прочих дат, месяца, года и праздников нужен доступ к API. Если публичная дата отличается от текущей даты сайта, плагин сообщает об этом.
+Без ключа официальный плагин получает день, месяц, год, Пасху и ближайшие праздники в публичном режиме. Персональный ключ остаётся необязательной возможностью для повышенных лимитов или авторизованного доступа.
 
 == Cache and access ==
 Требуется обновлённый календарный API: upcoming, view=summary и заголовок X-Calendar-Application-Cache-TTL.
@@ -72,6 +72,7 @@ image_size="120" задаёт высоту картинки поста в пик
 
 == Changelog ==
 
-= 1.3.60 =
-* Prepared the first WordPress.org release, including deployment metadata and the GitHub Actions SVN workflow.
-* Added the complete icon gallery: one dialog keeps image previews for the selected icon at the top and all daily icons in a light bottom strip.
+= 1.3.61 =
+* The configured number of icons limits only cards in the block; every daily icon and every image remains available in its gallery.
+* Prevented theme lightboxes from replacing the plugin's icon gallery.
+* Added Russian and German plugin-header translations.

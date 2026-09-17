@@ -5,7 +5,7 @@ require_once __DIR__.'/library.php';
 final class Orthocal_Plugin {
     const CALENDAR = 'https://kalender.georg-kloster.ru/api/v1/calendar/';
     const BIBLE = 'https://bible-desktop.com/api/';
-    const VERSION = '1.3.60';
+    const VERSION = '1.3.61';
     const LEGACY_IMAGE_HEIGHTS = ['small'=>28,'medium'=>44,'large'=>72];
     const TITLES = ['today'=>'Сегодня', 'upcoming'=>'Ближайшие праздники', 'month'=>'Календарь на месяц', 'year'=>'Календарь на год', 'day'=>'День календаря', 'readings'=>'Чтения дня', 'calendar'=>'Православный календарь','fasting'=>'Пост и трапеза','saints'=>'Памяти святых','feasts'=>'Праздники','memorial'=>'Поминальные дни','pascha'=>'Пасха','fasts'=>'Посты на год','date'=>'Дата по двум стилям','texts'=>'Богослужебные тексты','troparia'=>'Тропари','kontakia'=>'Кондаки','prayers'=>'Молитвы','magnifications'=>'Величания','horologion'=>'Часослов','akathists'=>'Акафисты','canons'=>'Каноны'];
     const TEXT_MODES=['texts','troparia','kontakia','prayers','magnifications','akathists','canons'];
@@ -134,7 +134,11 @@ final class Orthocal_Plugin {
         $cooldown = get_transient('oc_cooldown_'.$service);
         if ($cooldown) return new WP_Error('busy','Сервис временно недоступен. Повторите позже.');
         $headers = ['Accept'=>'application/json'];
-        if ($calendar && self::key()) $headers['X-API-Key'] = self::key();
+        if ($calendar) {
+            // Public identifier only: it is deliberately not a secret or credential.
+            $headers['X-Calendar-Client'] = 'orthocal-wordpress';
+            if (self::key()) $headers['X-API-Key'] = self::key();
+        }
         $response = wp_safe_remote_get($url, ['timeout'=>25,'redirection'=>0,'headers'=>$headers,'limit_response_size'=>12*1024*1024]);
         if (is_wp_error($response)) return new WP_Error('connection','Не удалось подключиться к '.($calendar ? 'календарю.' : 'BibleDesktop.'));
         $status = wp_remote_retrieve_response_code($response);
@@ -182,11 +186,6 @@ final class Orthocal_Plugin {
             return $data;
         }
         if (in_array($mode,['today','day','readings','fasting','saints','date'],true)) {
-            if (!self::key() && $mode === 'today') {
-                $value = self::request('calendar','today',$q);
-                if (!is_wp_error($value) && ($value['day']['date'] ?? '') !== $a['date']) return new WP_Error('timezone','Для даты в часовом поясе этого сайта нужен API-ключ. Публичный день определяется по Europe/Berlin.');
-                return $value;
-            }
             return self::request('calendar','day',$q+['date'=>$a['date']]);
         }
         if (in_array($mode,['upcoming','feasts','memorial'],true)) return self::request('calendar','upcoming',$q+['date'=>$a['date'],'limit'=>$a['limit'],'filter'=>$a['filter']]);
@@ -375,9 +374,11 @@ final class Orthocal_Plugin {
     static function day($day,$a) {
         $only=['fasting'=>'fasting','saints'=>'saints','readings'=>'readings','date'=>''];
         $sections=isset($only[$a['mode']])?[$only[$a['mode']]]:explode(',',$a['sections']);
-        $iconItems = in_array('icons',$sections,true) ? self::icon_items($day) : [];
-        $hero = $iconItems ? self::hero_icon($iconItems[0],0,$a['lang']) : '';
-        $gallery=$iconItems?'<div hidden data-oc-day-icon-gallery="'.self::icon_gallery_data($iconItems).'"></div>':'';
+        // The configured icon limit affects only cards rendered in the block.
+        // The hidden gallery data always contains every icon for the selected day.
+        $allIconItems = in_array('icons',$sections,true) ? self::icon_items($day) : [];
+        $hero = $allIconItems ? self::hero_icon($allIconItems[0],0,$a['lang']) : '';
+        $gallery=$allIconItems?'<div hidden data-oc-day-icon-gallery="'.self::icon_gallery_data($allIconItems).'"></div>':'';
         $html = $gallery.$hero.'<div class="oc-day"><div class="oc-date-row"><p class="oc-date">'.esc_html(self::date_label($day['date'],$a['lang'])).'</p>';
         if (in_array($a['mode'],['today','day'],true) && $a['show_picker']==='1') $html .= ('<label class="oc-date-picker"><span class="screen-reader-text">'.self::ui('Выбрать дату',$a['lang']).'</span><input type="date" aria-label="'.self::ui('Выбрать дату',$a['lang']).'" title="'.self::ui('Выбрать дату',$a['lang']).'" data-oc-picker min="1900-01-01" max="2200-12-31" value="').esc_attr($day['date']).'"></label>';
         $html .= '</div>';
@@ -413,7 +414,7 @@ final class Orthocal_Plugin {
             $profileLabel=$a['profile']==='parish'?(self::ui('Приходской',$a['lang'])):(self::ui('Монастырский',$a['lang']));
             $html .= '<section class="oc-fasting-section">'.($a['show_section_titles']==='1'?('<h3>'.self::ui('Пост и трапеза',$a['lang']).'</h3>'):'').'<p class="oc-fast">'.$foodImage.esc_html($day['foodLabel'] ?? '').'<sup class="oc-profile-mark" aria-label="'.$profileLabel.'">*</sup></p></section>';
         }
-        if(in_array('icons',$sections,true))$html.=self::icons_slot($iconItems,$a['icon_limit'],$a['lang']);
+        if(in_array('icons',$sections,true))$html.=self::icons_slot($allIconItems,$a['icon_limit'],$a['lang']);
         $psalter=array_values(array_filter($day['events'],static fn($e)=>(int)($e['typeCode']??0)===302));
         $readings=array_values(array_filter($day['events'],static fn($e)=>$e['category']==='scripture-reading'&&(int)($e['typeCode']??0)!==302));
         if (($readings || $psalter) && in_array('readings',$sections,true)) {
