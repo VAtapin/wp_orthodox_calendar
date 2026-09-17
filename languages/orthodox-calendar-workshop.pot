@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Orthodox Calendar – Calendar Workshop 1.3.62\\n"
+"Project-Id-Version: Orthodox Calendar – Calendar Workshop 1.3.63\\n"
 "Report-Msgid-Bugs-To: https://github.com/VAtapin/wp_orthodox_calendar/issues\\n"
 "POT-Creation-Date: 2026-09-17 00:00+0000\\n"
 "MIME-Version: 1.0\\n"

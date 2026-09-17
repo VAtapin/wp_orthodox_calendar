@@ -2,11 +2,11 @@
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
   "name": "orthocal/pascha",
-  "version": "1.3.62",
+  "version": "1.3.63",
   "title": "Православный календарь: Пасха",
   "category": "widgets",
   "icon": "calendar-alt",
-  "textdomain": "orthocal",
+  "textdomain": "orthodox-calendar-workshop",
   "attributes": {
     "date": {
       "type": "string"

@@ -1,5 +1,8 @@
 # Historical changelog
 
+= 1.3.63 =
+* Align the WordPress localization text domain with the approved plugin slug and add the tested WordPress version.
+
 = 1.3.62 =
 * Corrected the Plugin URI for WordPress.org submission; it now differs from the author URL.
 

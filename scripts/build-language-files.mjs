@@ -2,6 +2,7 @@ import {mkdir, readdir, readFile, writeFile} from 'node:fs/promises';
 import {dirname, join} from 'node:path';
 
 const languages=join(import.meta.dirname,'..','languages');
+const textDomain='orthodox-calendar-workshop';
 const value=line=>JSON.parse(line.slice(line.indexOf('"')));
 
 function entries(source) {
@@ -36,6 +37,6 @@ function moFile(source) {
 
 await mkdir(languages,{recursive:true});
 for(const file of await readdir(languages)) {
-  if(!/^orthocal-[a-z]{2}_[A-Z]{2}\.po$/.test(file)) continue;
+  if(!file.startsWith(textDomain+'-') || !/^[a-z]{2}_[A-Z]{2}\.po$/.test(file.slice(textDomain.length+1))) continue;
   await writeFile(join(languages,file.replace(/\.po$/,'.mo')),moFile(await readFile(join(languages,file),'utf8')));
 }
