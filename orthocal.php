@@ -1,9 +1,9 @@
 <?php
 /**
- * Plugin Name: Orthodox Calendar – Calendar Workshop
+ * Plugin Name: Orthodox Calendar – Workshop
  * Plugin URI: https://kalender.georg-kloster.ru/calendar-api
  * Description: Gutenberg blocks and shortcodes for an Orthodox calendar: calendar dates, fasting rules, commemorations, readings and liturgical texts.
- * Version: 1.3.63
+ * Version: 1.3.64
  * Requires at least: 6.3
  * Requires PHP: 8.0
  * Author: Vladimir Atapin

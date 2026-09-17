@@ -1,5 +1,10 @@
 # Historical changelog
 
+= 1.3.64 =
+* Increased the persistent local media cache limit from 64 MB to 200 MB.
+* Renamed the plugin to Orthodox Calendar – Workshop and aligned the text domain with its WordPress.org slug.
+* Updated the tested WordPress version to 7.1.
+
 = 1.3.63 =
 * Align the WordPress localization text domain with the approved plugin slug and add the tested WordPress version.
 

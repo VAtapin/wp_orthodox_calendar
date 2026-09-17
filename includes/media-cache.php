@@ -5,6 +5,7 @@ if (!defined('ABSPATH')) exit;
 final class Orthocal_Media_Cache {
     const ORIGIN = 'https://kalender.georg-kloster.ru';
     const BIBLE_DESKTOP_ORIGIN = 'https://bible-desktop.com';
+    const MAX_BYTES = 200 * 1024 * 1024;
     private static $started;
     static function boot() { add_action('orthocal_refresh_asset',[self::class,'refresh'],10,1); }
     static function source($path) {
@@ -146,8 +147,8 @@ final class Orthocal_Media_Cache {
             $name=hash('sha256',$body).'.'.$ext;
             if (!is_file($dir['path'].'/'.$name)) {
                 $stats=self::stats();
-                if ($stats['bytes']+strlen($body)>64*1024*1024) {
-                    update_option('orthocal_media_error','Кэш медиа достиг 64 МБ. Очистите его в разделе «Кэш и файлы».',false);return false;
+                if ($stats['bytes']+strlen($body)>self::MAX_BYTES) {
+                    update_option('orthocal_media_error','Кэш медиа достиг 200 МБ. Очистите его в разделе «Кэш и файлы».',false);return false;
                 }
                 $tmp=$dir['path'].'/'.hash('sha256',$path).'.tmp';
                 if (file_put_contents($tmp,$body,LOCK_EX)!==strlen($body) || !rename($tmp,$dir['path'].'/'.$name)) return false;
