@@ -27,9 +27,9 @@ jobs:
           TAG: ${{ github.ref_name }}
         run: |
           package="$RUNNER_TEMP/orthocal-package"
-          mkdir -p "$package/orthocal"
-          rsync -a --exclude-from=.distignore ./ "$package/orthocal/"
-          (cd "$package" && zip -qr "$GITHUB_WORKSPACE/orthocal-$TAG.zip" orthocal)
+          mkdir -p "$package/georg-kloster-calendar-workshop"
+          rsync -a --exclude-from=.distignore ./ "$package/georg-kloster-calendar-workshop/"
+          (cd "$package" && zip -qr "$GITHUB_WORKSPACE/orthocal-$TAG.zip" georg-kloster-calendar-workshop)
           cp "orthocal-$TAG.zip" orthocal.zip
 
       - name: Create GitHub Release
@@ -38,7 +38,7 @@ jobs:
           TAG: ${{ github.ref_name }}
         run: |
           gh release create "$TAG" "orthocal-$TAG.zip" orthocal.zip \
-            --title "Orthodox Calendar – Calendar Workshop $TAG" \
+            --title "Georg-Kloster Calendar Workshop $TAG" \
             --generate-notes
 
   deploy:

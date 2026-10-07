@@ -2,7 +2,7 @@ import {mkdir, readdir, readFile, writeFile} from 'node:fs/promises';
 import {dirname, join} from 'node:path';
 
 const languages=join(import.meta.dirname,'..','languages');
-const textDomain='orthodox-calendar-workshop';
+const textDomain='georg-kloster-calendar-workshop';
 const value=line=>JSON.parse(line.slice(line.indexOf('"')));
 
 function entries(source) {

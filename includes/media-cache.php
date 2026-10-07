@@ -3,19 +3,50 @@ if (!defined('ABSPATH')) exit;
 
 /** Public calendar media only. No arbitrary remote URLs, credentials or PHP uploads. */
 final class Orthocal_Media_Cache {
-    const ORIGIN = 'https://kalender.georg-kloster.ru';
-    const BIBLE_DESKTOP_ORIGIN = 'https://bible-desktop.com';
     const MAX_BYTES = 200 * 1024 * 1024;
+    const PHOTO_MAX_EDGE = 1200;
+    const PHOTO_TARGET_BYTES = 100 * 1024;
+    const STORAGE_FORMAT = 2;
     private static $started;
-    static function boot() { add_action('orthocal_refresh_asset',[self::class,'refresh'],10,1); }
+    static function boot() {
+        add_action('orthocal_refresh_asset',[self::class,'refresh'],10,1);
+        add_action('init',[self::class,'upgrade_storage'],1);
+    }
+    static function upgrade_storage() {
+        if((int)get_option('orthocal_media_storage_format',0)>=self::STORAGE_FORMAT)return;
+        // Existing releases cached full-size originals. Remove them once so the
+        // same URLs are downloaded again in the compact web format below.
+        if(self::clear())update_option('orthocal_media_storage_format',self::STORAGE_FORMAT,false);
+    }
     static function source($path) {
         if (!is_string($path)) return false;
-        if (str_starts_with($path,self::ORIGIN.'/')) $path=substr($path,strlen(self::ORIGIN));
-        if (preg_match('#^https://bible-desktop\.com/storage/calendar-icons/[a-f0-9]{64}\.(?:png|svg|webp|jpg|jpeg|gif)$#D',$path)) return $path;
-        if (preg_match('#^https://bible-desktop\.com/api/calendar/icons/[0-9]+/images/[0-9]+$#D',$path)) return $path;
+        $calendarOrigin=Orthocal_Config::calendar_origin();
+        if (str_starts_with($path,$calendarOrigin.'/')) {
+            $relative=substr($path,strlen($calendarOrigin));
+            if($relative==='/calendar-api-font.php'||str_starts_with($relative,'/assets/'))$path=$relative;
+        }
+        if (str_starts_with($path,'https://')) {
+            $parts=wp_parse_url($path);
+            if(!is_array($parts)||isset($parts['user'],$parts['pass'],$parts['query'],$parts['fragment']))return false;
+            if(empty($parts['host'])||isset($parts['port']))return false;
+            $remotePath=is_array($parts)?($parts['path']??''):'';
+            if(preg_match('#^/storage/calendar-icons/[a-f0-9]{64}\.(?:png|svg|webp|jpg|jpeg|gif)$#D',$remotePath))return $path;
+            if(preg_match('#^/api/calendar/icons/[0-9]+/images/[0-9]+$#D',$remotePath))return $path;
+            return false;
+        }
         if ($path==='/calendar-api-font.php') return $path;
         if (!preg_match('~^/assets/(?:markers|typikon|icons)/[a-zA-Z0-9_/-]+\.(?:png|svg|webp|jpg|jpeg|gif)$~D',$path) || str_contains($path,'//')) return false;
         return $path;
+    }
+    static function token($source): string {
+        $path=self::source($source);
+        // The calendar API may place media on another host. Sign the exact
+        // validated URL so the public REST route cannot become an open proxy.
+        return $path===false?'':hash_hmac('sha256',$path,wp_salt('auth'));
+    }
+    static function token_valid($source,$token): bool {
+        $expected=self::token($source);
+        return $expected!==''&&is_string($token)&&hash_equals($expected,$token);
     }
     static function directory() {
         $upload=wp_upload_dir();
@@ -38,7 +69,7 @@ final class Orthocal_Media_Cache {
     static function thumbnail_url($source) {
         $original=self::url($source);if(!$original)return '';
         $dir=self::directory();if(!$dir)return '';
-        $name=basename((string)parse_url($original,PHP_URL_PATH));
+        $name=basename((string)wp_parse_url($original,PHP_URL_PATH));
         if(!self::file_valid($name))return '';
         // SVG is already vector-small at the requested CSS size. Raster files
         // get a separate 96px WebP/JPEG derivative for gallery previews.
@@ -53,7 +84,8 @@ final class Orthocal_Media_Cache {
             $target=imagecreatetruecolor($targetWidth,$targetHeight);imagealphablending($target,false);imagesavealpha($target,true);imagefill($target,0,0,imagecolorallocatealpha($target,0,0,0,127));
             imagecopyresampled($target,$image,0,0,0,0,$targetWidth,$targetHeight,$width,$height);
             $tmp=$dir['path'].'/'.hash('sha256',$thumbName).'.tmp';$written=function_exists('imagewebp')?imagewebp($target,$tmp,72):imagejpeg($target,$tmp,76);imagedestroy($target);
-            if(!$written||!is_file($tmp)||!rename($tmp,$thumb)){@unlink($tmp);return $original;}
+            // phpcs:ignore WordPress.WP.AlternativeFunctions.rename_rename -- Atomic publication of a generated file within the same uploads directory; copy-based filesystem adapters cannot provide this guarantee.
+            if(!$written||!is_file($tmp)||!rename($tmp,$thumb)){wp_delete_file($tmp);return $original;}
             return $dir['url'].'/'.$thumbName;
         } finally {imagedestroy($image);}
     }
@@ -116,10 +148,38 @@ final class Orthocal_Media_Cache {
         }
         return $doc->saveXML($doc->documentElement);
     }
+    static function compress_photo($body,$ext) {
+        if(!is_string($body)||!in_array($ext,['png','jpg','jpeg','webp','gif'],true)||!function_exists('imagecreatefromstring'))return [$body,$ext];
+        $image=@imagecreatefromstring($body);if(!$image)return [$body,$ext];
+        try {
+            $width=imagesx($image);$height=imagesy($image);if($width<1||$height<1)return [$body,$ext];
+            if(strlen($body)<=self::PHOTO_TARGET_BYTES&&max($width,$height)<=self::PHOTO_MAX_EDGE)return [$body,$ext];
+            $outputExt=function_exists('imagewebp')?'webp':(in_array($ext,['jpg','jpeg'],true)?'jpg':'');
+            if($outputExt==='')return [$body,$ext];
+            $smallest=null;$edge=min(self::PHOTO_MAX_EDGE,max($width,$height));$quality=50;
+            for($attempt=0;$attempt<6;$attempt++) {
+                $scale=min(1,$edge/max($width,$height));$targetWidth=max(1,(int)round($width*$scale));$targetHeight=max(1,(int)round($height*$scale));
+                $target=imagecreatetruecolor($targetWidth,$targetHeight);if(!$target)continue;
+                try {
+                    imagealphablending($target,false);imagesavealpha($target,true);imagefill($target,0,0,imagecolorallocatealpha($target,0,0,0,127));
+                    if(!imagecopyresampled($target,$image,0,0,0,0,$targetWidth,$targetHeight,$width,$height))continue;
+                    ob_start();$written=$outputExt==='webp'?imagewebp($target,null,$quality):imagejpeg($target,null,$quality);$compressed=ob_get_clean();
+                    if(!$written||!is_string($compressed)||$compressed==='')continue;
+                    if($smallest===null||strlen($compressed)<strlen($smallest))$smallest=$compressed;
+                    if(strlen($compressed)<=self::PHOTO_TARGET_BYTES)return [$compressed,$outputExt];
+                    $ratio=sqrt(self::PHOTO_TARGET_BYTES/strlen($compressed))*0.9;
+                    $edge=max(240,(int)floor($edge*min(0.85,$ratio)));$quality=max(18,$quality-6);
+                } finally {imagedestroy($target);}
+            }
+            return $smallest!==null&&strlen($smallest)<strlen($body)?[$smallest,$outputExt]:[$body,$ext];
+        } finally {imagedestroy($image);}
+    }
     static function refresh($source) {
         $path=self::source($source);$dir=self::directory(); if (!$path || !$dir) return false;
         // A single global lock also prevents concurrent purge/write races and cache stampedes.
+        // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_fopen -- A local stream is required for flock; WP_Filesystem has no advisory-lock API.
         $lock=@fopen($dir['path'].'/cache.lock','c');
+        // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_fclose -- Release the local flock stream opened above.
         if (!$lock || !flock($lock,LOCK_EX|LOCK_NB)) { if($lock)fclose($lock);self::schedule($path);return false; }
         try {
             $meta=self::metadata($path);$headers=[];
@@ -127,7 +187,7 @@ final class Orthocal_Media_Cache {
                 if (!empty($meta['etag'])) $headers['If-None-Match']=$meta['etag'];
                 if (!empty($meta['modified'])) $headers['If-Modified-Since']=$meta['modified'];
             }
-            $remote=str_starts_with($path,'https://')?$path:self::ORIGIN.$path;
+            $remote=str_starts_with($path,'https://')?$path:Orthocal_Config::calendar_origin().$path;
             $response=wp_safe_remote_get($remote,['timeout'=>5,'redirection'=>0,'headers'=>$headers,'limit_response_size'=>10*1024*1024+1]);
             $code=is_wp_error($response)?0:wp_remote_retrieve_response_code($response);
             $key='orthocal_media_'.hash('sha256',$path);
@@ -144,6 +204,7 @@ final class Orthocal_Media_Cache {
                 $meta=array_merge($meta,['source'=>$path,'retry'=>time()+900,'error'=>'Не удалось обновить файл (HTTP '.$code.').']);
                 update_option($key,$meta,false);return false;
             }
+            if(str_starts_with($path,'https://'))[$body,$ext]=self::compress_photo($body,$ext);
             $name=hash('sha256',$body).'.'.$ext;
             if (!is_file($dir['path'].'/'.$name)) {
                 $stats=self::stats();
@@ -151,6 +212,7 @@ final class Orthocal_Media_Cache {
                     update_option('orthocal_media_error','Кэш медиа достиг 200 МБ. Очистите его в разделе «Кэш и файлы».',false);return false;
                 }
                 $tmp=$dir['path'].'/'.hash('sha256',$path).'.tmp';
+                // phpcs:ignore WordPress.WP.AlternativeFunctions.rename_rename -- Atomic publication of a generated file within the same uploads directory; copy-based filesystem adapters cannot provide this guarantee.
                 if (file_put_contents($tmp,$body,LOCK_EX)!==strlen($body) || !rename($tmp,$dir['path'].'/'.$name)) return false;
             }
             update_option($key,['source'=>$path,'file'=>$name,'checked'=>time(),'retry'=>0,
@@ -158,6 +220,7 @@ final class Orthocal_Media_Cache {
                 'modified'=>sanitize_text_field(wp_remote_retrieve_header($response,'last-modified'))],false);
             delete_option('orthocal_media_error');
             return true;
+        // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_fclose -- Release the local flock stream opened above.
         } finally {flock($lock,LOCK_UN);fclose($lock);}
     }
     static function entries() {
@@ -174,12 +237,15 @@ final class Orthocal_Media_Cache {
     static function recheck() { foreach(self::entries() as $meta) if(!empty($meta['source'])) self::schedule($meta['source']); }
     static function clear() {
         $dir=self::directory();if(!$dir)return false;
+        // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_fopen -- A local stream is required for flock; WP_Filesystem has no advisory-lock API.
         $lock=@fopen($dir['path'].'/cache.lock','c');if(!$lock)return false;
+        // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_fclose -- Release the local flock stream opened above.
         if(!flock($lock,LOCK_EX|LOCK_NB)){fclose($lock);return false;}
         try {
-            foreach(glob($dir['path'].'/*')?:[] as $file) if(self::file_valid(basename($file)) && !is_link($file)) unlink($file);
+            foreach(glob($dir['path'].'/*')?:[] as $file) if(self::file_valid(basename($file)) && !is_link($file)) wp_delete_file($file);
             foreach(self::entries() as $name=>$meta) {if(!empty($meta['source']))wp_clear_scheduled_hook('orthocal_refresh_asset',[$meta['source']]);delete_option($name);}
             delete_option('orthocal_media_error');return true;
+        // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_fclose -- Release the local flock stream opened above.
         } finally {flock($lock,LOCK_UN);fclose($lock);}
     }
 }

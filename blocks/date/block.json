@@ -2,11 +2,11 @@
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
   "name": "orthocal/date",
-  "version": "1.3.64",
+  "version": "1.3.70",
   "title": "Православный календарь: Дата по двум стилям",
   "category": "widgets",
   "icon": "calendar-alt",
-  "textdomain": "orthodox-calendar-workshop",
+  "textdomain": "georg-kloster-calendar-workshop",
   "attributes": {
     "date": {
       "type": "string"
