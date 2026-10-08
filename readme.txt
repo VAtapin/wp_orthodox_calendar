@@ -4,7 +4,7 @@ Tags: calendar, orthodox, bible
 Requires at least: 6.3
 Tested up to: 7.1
 Requires PHP: 8.0
-Stable tag: 1.3.70
+Stable tag: 1.3.71
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -15,13 +15,13 @@ Orthodox calendar for WordPress: feasts, fasting, commemorations, readings, litu
 Adds 22 dynamic Gutenberg blocks and shortcodes. Calendar and Bible data come from the external services listed below; no calendar database is included in the plugin.
 
 == Installation ==
-1. WordPress â†’ Plugins â†’ Add New â†’ Upload Plugin: orthocal-1.3.70.zip.
+1. WordPress â†’ Plugins â†’ Add New â†’ Upload Plugin: orthocal-1.3.71.zip.
 2. Activate the plugin.
-3. The calendar works immediately. Open Georg-Kloster Calendar Workshop â†’ Connection to change the public API address or add an optional API key.
+3. The calendar works immediately. Open Georg-Kloster Calendar Workshop â†’ Connection to change the Bible Desktop API address.
 4. Add blocks from the Widgets category or shortcodes to a page.
 
-The key can also be set with the ORTHOCAL_API_KEY constant in wp-config.php. The constant has priority over settings. The key is not exposed in forms, browsers, or REST responses.
-The public texts, translations, and icons API is configured in Georg-Kloster Calendar Workshop â†’ Connection. Its current default address is https://bible-desktop.com and no file access is required.
+The retired Kalendar key is not sent to Bible Desktop. Saved legacy settings are retained but do not authorize public calendar requests.
+The calendar, texts, translations, and icons API is configured in Georg-Kloster Calendar Workshop â†’ Connection. Its current default address is https://bible-desktop.com and no file access is required.
 
 == Shortcodes ==
 [orthocal_today]
@@ -53,18 +53,18 @@ General parameters: lang="ru|cu|de|uk|pl", profile="typikon-strict|parish", them
 Upcoming-event filters: main (major and memorial), twelve (Pascha and the Twelve Great Feasts), great, memorial, and all. The search covers the supplied date and the next 366 days, with a maximum of 10 events.
 
 == External Services ==
-Calendar API: https://kalender.georg-kloster.ru/api/v1/calendar/
-Used to calculate dates, feasts, fasting, commemorations and reading references. Loading a block, its admin preview or changing the date sends the date/period, language, calendar profile and display/filter parameters from the WordPress server. Public requests include X-Calendar-Client: orthocal-wordpress. An optional configured API key is sent only to the calendar service for extended access. Normal public use needs no registration or key.
-Terms of Service: https://kalender.georg-kloster.ru/agb
-Privacy Policy: https://kalender.georg-kloster.ru/datenschutz
+Calendar API: https://bible-desktop.com/api/v1/calendar/
+Used to calculate dates, feasts, fasting, commemorations and reading references. Loading a block, its admin preview or changing the date sends the date/period, language, calendar profile and display/filter parameters from the WordPress server. Public requests include X-Calendar-Client: orthocal-wordpress. Normal public use needs no registration or key.
+Terms of Service: https://bible-desktop.com/pages/api-terms
+Privacy Policy: https://bible-desktop.com/pages/api-privacy
 
 Bible Desktop API: https://bible-desktop.com/api/
-Used for Bible translations, books, chapters, liturgical libraries, hagiographies and icon catalogues/images. Opening readings or a library sends the selected translation, book/chapter, language, work identifier or pagination/filter parameters. Loading icons sends the calendar month/day or material/image identifier. On cache misses, WordPress downloads images and fonts; scheduled cache revalidation sends conditional HTTP headers. The calendar service may also request this source while composing a day. The calendar API key is never sent to Bible Desktop.
+Used for Bible translations, books, chapters, liturgical libraries, hagiographies and icon catalogues/images. Opening readings or a library sends the selected translation, book/chapter, language, work identifier or pagination/filter parameters. Loading icons sends the calendar month/day or material/image identifier. On cache misses, WordPress downloads images and fonts; scheduled cache revalidation sends conditional HTTP headers. Bible Desktop calculates the calendar locally. The retired Kalendar key is never sent to the replacement provider.
 Terms of Service: https://bible-desktop.com/pages/api-terms
 Privacy Policy: https://bible-desktop.com/pages/api-privacy
 
 Both services receive the requesting server IP address, request time, requested resource and technical HTTP headers. The plugin does not send visitor IP addresses, names, email addresses, WordPress passwords or post contents. Remote media are cached and served locally. Requests may be skipped while a valid cache entry is available. Full texts, icons and hagiographies are not bundled in the ZIP; their respective rights remain applicable.
-The public texts API origin can be changed in the Connection settings. These links describe the default providers; administrators choosing a different provider must review and disclose that provider's terms and privacy policy to their users.
+The single Bible Desktop API origin can be changed in the Connection settings. These links describe the default providers; administrators choosing a different provider must review and disclose that provider's terms and privacy policy to their users.
 
 == Cache and access ==
 The updated calendar API is required: upcoming, view=summary, and the X-Calendar-Application-Cache-TTL header.
@@ -80,6 +80,9 @@ Saving settings invalidates the plugin cache. Deactivation preserves settings.
 Day cards and the reader support Russian and German labels; the calendar-data language and Bible language are chosen separately. Calendar translations can be incomplete. Built-in liturgical texts are Church Slavonic, with German editions available through links. Icon images and hagiographies are never substituted for missing data.
 
 == Changelog ==
+
+= 1.3.71 =
+All calendar requests now use the configured Bible Desktop provider. Removed the separate Kalendar API origin and key forwarding. Decorative packs, Typikon signs and Monomakh are bundled locally; shortcodes and galleries are preserved.
 
 = 1.3.70 =
 * Rename the plugin to Georg-Kloster Calendar Workshop and use the matching text domain.

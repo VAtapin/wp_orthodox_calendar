@@ -2,7 +2,6 @@
 if (!defined('ABSPATH')) exit;
 
 final class Orthocal_Config {
-    const DEFAULT_CALENDAR_ORIGIN = 'https://kalender.georg-kloster.ru';
     const DEFAULT_PUBLIC_API_ORIGIN = 'https://bible-desktop.com';
 
     static function normalize_origin($origin) {
@@ -15,9 +14,7 @@ final class Orthocal_Config {
     }
 
     static function calendar_origin() {
-        $origin = defined('ORTHOCAL_API_ORIGIN') ? (string) ORTHOCAL_API_ORIGIN : self::DEFAULT_CALENDAR_ORIGIN;
-        $origin = (string) apply_filters('orthocal_api_origin', $origin);
-        return self::normalize_origin($origin) ?: self::DEFAULT_CALENDAR_ORIGIN;
+        return self::public_api_origin();
     }
 
     static function calendar_url($path = '') {

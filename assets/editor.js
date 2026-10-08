@@ -1,14 +1,13 @@
 (() => {
-  const el=wp.element.createElement,config=window.OrthocalEditor||{hasApiKey:true,settingsUrl:''};
+  const el=wp.element.createElement;
   const titles={today:'Сегодня',upcoming:'Ближайшие праздники',month:'Календарь на месяц',year:'Календарь на год',day:'День календаря',readings:'Чтения дня',calendar:'Православный календарь',fasting:'Пост и трапеза',saints:'Памяти святых',feasts:'Праздники',memorial:'Поминальные дни',pascha:'Пасха',fasts:'Посты на год',date:'Дата по двум стилям',texts:'Богослужебные тексты',troparia:'Тропари',kontakia:'Кондаки',prayers:'Молитвы',magnifications:'Величания',horologion:'Часослов',akathists:'Акафисты',canons:'Каноны'};
   const descriptions={today:'Карточка текущего дня: пост, праздники, памяти и чтения.',upcoming:'Список ближайших главных, великих или поминальных дней.',month:'Сетка выбранного месяца с событиями, постом и старым стилем.',year:'Годовой календарь с православными датами.',day:'Полная карточка указанной даты.',readings:'Библейские чтения выбранного дня.',calendar:'Календарь с выбором даты и переходом к подробному дню.',fasting:'Правило поста и трапезы выбранного дня.',saints:'Памяти святых выбранного дня.',feasts:'Ближайшие православные праздники.',memorial:'Ближайшие дни особого поминовения усопших.',pascha:'Дата Пасхи и связанные сведения для выбранного года.',fasts:'Многодневные посты выбранного года.',date:'Гражданская дата и соответствующая дата старого стиля.',texts:'Справочник тропарей, кондаков, молитв и величаний.',troparia:'Справочник тропарей с фильтрами по гласу и дню седмицы.',kontakia:'Справочник кондаков с фильтрами по гласу и дню седмицы.',prayers:'Справочник молитв.',magnifications:'Справочник величаний.',horologion:'Полные разделы Часослова с выбором языка текста.',akathists:'Полные акафисты из библиотеки Bible Desktop.',canons:'Каноны с выбором языка текста.'};
-  const missingKey=()=>el(wp.components.Notice,{status:'warning',isDismissible:false},'API-ключ календаря не задан. ',config.settingsUrl&&el('a',{href:config.settingsUrl},'Открыть подключение'));
   for(const [mode,title] of Object.entries(titles)) wp.blocks.registerBlockType('orthocal/'+mode,{
     title:'Православный календарь: '+title,description:descriptions[mode],icon:'calendar-alt',category:'widgets',keywords:['календарь','православный',title.toLowerCase()],
     edit({attributes,setAttributes}) {
       const control=(label,name,options)=>el(wp.components.SelectControl,{label,value:attributes[name]||'',options:[{label:'Настройка сайта',value:''},...options.map(([value,label])=>({value,label}))],onChange:value=>setAttributes({[name]:value})});
       const attrs=Object.fromEntries(Object.entries(attributes).filter(([,value])=>value!==''));
-      const preview=config.hasApiKey?el(wp.serverSideRender,{block:'orthocal/'+mode,attributes:attrs}):missingKey();
+      const preview=el(wp.serverSideRender,{block:'orthocal/'+mode,attributes:attrs});
       return el('div',wp.blockEditor.useBlockProps(),
         el(wp.blockEditor.InspectorControls,null,el(wp.components.PanelBody,{title:'Календарь'},
           el(wp.components.TextControl,{label:'Дата (ГГГГ-ММ-ДД), пусто — сегодня',value:attributes.date||'',onChange:date=>setAttributes({date})}),

@@ -23,7 +23,7 @@ final class Orthocal_Media_Cache {
         $calendarOrigin=Orthocal_Config::calendar_origin();
         if (str_starts_with($path,$calendarOrigin.'/')) {
             $relative=substr($path,strlen($calendarOrigin));
-            if($relative==='/calendar-api-font.php'||str_starts_with($relative,'/assets/'))$path=$relative;
+            if($relative==='/fonts/MonomakhUnicode.ttf'||str_starts_with($relative,'/assets/'))$path=$relative;
         }
         if (str_starts_with($path,'https://')) {
             $parts=wp_parse_url($path);
@@ -34,7 +34,7 @@ final class Orthocal_Media_Cache {
             if(preg_match('#^/api/calendar/icons/[0-9]+/images/[0-9]+$#D',$remotePath))return $path;
             return false;
         }
-        if ($path==='/calendar-api-font.php') return $path;
+        if ($path==='/fonts/MonomakhUnicode.ttf') return $path;
         if (!preg_match('~^/assets/(?:markers|typikon|icons)/[a-zA-Z0-9_/-]+\.(?:png|svg|webp|jpg|jpeg|gif)$~D',$path) || str_contains($path,'//')) return false;
         return $path;
     }
@@ -94,6 +94,12 @@ final class Orthocal_Media_Cache {
     }
     static function url($source) {
         $path=self::source($source); if (!$path) return '';
+        // Decorative packs and the font ship with the plugin. They do not
+        // depend on a calendar server or on writable uploads.
+        $bundled = $path === '/fonts/MonomakhUnicode.ttf' ? '/assets'.$path : $path;
+        if (str_starts_with($bundled, '/assets/') && is_file(dirname(__DIR__).$bundled)) {
+            return plugin_dir_url(dirname(__DIR__).'/orthocal.php').ltrim($bundled, '/');
+        }
         $dir=self::directory(); if (!$dir) { update_option('orthocal_media_error','Каталог uploads недоступен для записи.',false); return ''; }
         $meta=self::metadata($path); $url=self::local($meta,$dir);
         $hours=(int)Orthocal_Plugin::options()['media_hours'];
@@ -194,7 +200,7 @@ final class Orthocal_Media_Cache {
             if ($code===304 && self::local($meta,$dir)) {
                 $meta['checked']=time();$meta['retry']=0;unset($meta['error']);update_option($key,$meta,false);return true;
             }
-            $ext=$path==='/calendar-api-font.php'?'ttf':strtolower(pathinfo($path,PATHINFO_EXTENSION));
+            $ext=$path==='/fonts/MonomakhUnicode.ttf'?'ttf':strtolower(pathinfo($path,PATHINFO_EXTENSION));
             if ($ext==='') {
                 $mime=strtolower(trim(explode(';',(string)wp_remote_retrieve_header($response,'content-type'),2)[0]));
                 $ext=['image/png'=>'png','image/svg+xml'=>'svg','image/webp'=>'webp','image/jpeg'=>'jpg','image/gif'=>'gif'][$mime]??'';
