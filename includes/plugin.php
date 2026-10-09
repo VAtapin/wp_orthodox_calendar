@@ -3,7 +3,7 @@ if (!defined('ABSPATH')) exit;
 require_once __DIR__.'/library.php';
 
 final class Orthocal_Plugin {
-    const VERSION = '1.3.70';
+    const VERSION = '1.3.72';
     const LEGACY_IMAGE_HEIGHTS = ['small'=>28,'medium'=>44,'large'=>72];
     const TITLES = ['today'=>'Сегодня', 'upcoming'=>'Ближайшие праздники', 'month'=>'Календарь на месяц', 'year'=>'Календарь на год', 'day'=>'День календаря', 'readings'=>'Чтения дня', 'calendar'=>'Православный календарь','fasting'=>'Пост и трапеза','saints'=>'Памяти святых','feasts'=>'Праздники','memorial'=>'Поминальные дни','pascha'=>'Пасха','fasts'=>'Посты на год','date'=>'Дата по двум стилям','texts'=>'Богослужебные тексты','troparia'=>'Тропари','kontakia'=>'Кондаки','prayers'=>'Молитвы','magnifications'=>'Величания','horologion'=>'Часослов','akathists'=>'Акафисты','canons'=>'Каноны'];
     const TEXT_MODES=['texts','troparia','kontakia','prayers','magnifications','akathists','canons'];
@@ -39,7 +39,7 @@ final class Orthocal_Plugin {
         });
         add_action('admin_init', function () { register_setting('orthocal', 'orthocal_options', ['sanitize_callback'=>[self::class,'sanitize_options']]); });
         add_action('rest_api_init', function () {
-            register_rest_route('orthocal/v1', '/font', ['methods'=>'GET','permission_callback'=>'__return_true','callback'=>function(){ $rate=self::throttle();if(is_wp_error($rate))return $rate;return new WP_REST_Response(['url'=>Orthocal_Media_Cache::url('/calendar-api-font.php')]); }]);
+            register_rest_route('orthocal/v1', '/font', ['methods'=>'GET','permission_callback'=>'__return_true','callback'=>function(){ $rate=self::throttle();if(is_wp_error($rate))return $rate;return new WP_REST_Response(['url'=>Orthocal_Media_Cache::url('/fonts/MonomakhUnicode.ttf')]); }]);
             register_rest_route('orthocal/v1', '/render', ['methods'=>'GET', 'permission_callback'=>'__return_true', 'callback'=>[self::class,'rest_render']]);
             register_rest_route('orthocal/v1', '/bible', ['methods'=>'GET', 'permission_callback'=>'__return_true', 'callback'=>[self::class,'rest_bible']]);
             register_rest_route('orthocal/v1', '/media', ['methods'=>'GET', 'permission_callback'=>'__return_true', 'callback'=>[self::class,'rest_media']]);
@@ -91,7 +91,7 @@ final class Orthocal_Plugin {
         wp_register_style('orthocal', $url.'assets/calendar.css', [], self::VERSION);
         wp_register_script('orthocal', $url.'assets/calendar.js', [], self::VERSION, true);
         wp_register_script('orthocal-editor', $url.'assets/editor.js', ['wp-blocks','wp-element','wp-block-editor','wp-components','wp-server-side-render'], self::VERSION, true);
-        wp_add_inline_script('orthocal-editor', 'window.OrthocalEditor='.wp_json_encode(['hasApiKey'=>self::key() !== '', 'settingsUrl'=>admin_url('admin.php?page=orthocal&tab=connection')]).';', 'before');
+        wp_add_inline_script('orthocal-editor', 'window.OrthocalEditor='.wp_json_encode(['settingsUrl'=>admin_url('admin.php?page=orthocal&tab=connection')]).';', 'before');
         wp_register_style('orthocal-admin',$url.'assets/admin.css',[],self::VERSION);
         wp_register_script('orthocal-admin',$url.'assets/admin.js',[],self::VERSION,true);
         foreach (self::TITLES as $mode=>$title) {
@@ -134,23 +134,22 @@ final class Orthocal_Plugin {
         $calendar=in_array($service,['calendar','service'],true);
         $url = ($service === 'calendar' ? Orthocal_Config::calendar_url('/api/v1/calendar/') : ($service==='texts'?Orthocal_Config::public_api_url('/api/liturgical/calendar-texts'):($service==='service'?Orthocal_Config::calendar_url('/api/v1/calendar/service'):Orthocal_Config::public_api_url('/api/')))).$path;
         if ($query) $url = add_query_arg($query,$url);
-        $cache = 'oc_'.md5(self::VERSION.'|'.$url.'|'.self::key().'|'.get_option('orthocal_cache_generation','0'));
+        $cache = 'orthocal_response_'.md5(self::VERSION.'|'.$url.'|'.self::key().'|'.get_option('orthocal_cache_generation','0'));
         if (isset(self::$memo[$cache])) return self::$memo[$cache];
         $cached = get_transient($cache);
         if (is_array($cached)) return self::$memo[$cache] = $cached;
-        $cooldown = get_transient('oc_cooldown_'.$service);
+        $cooldown = get_transient('orthocal_cooldown_'.$service);
         if ($cooldown) return new WP_Error('busy','Сервис временно недоступен. Повторите позже.');
         $headers = ['Accept'=>'application/json'];
         if ($calendar) {
             // Public identifier only: it is deliberately not a secret or credential.
             $headers['X-Calendar-Client'] = 'orthocal-wordpress';
-            if (self::key()) $headers['X-API-Key'] = self::key();
         }
         $response = wp_safe_remote_get($url, ['timeout'=>25,'redirection'=>0,'headers'=>$headers,'limit_response_size'=>12*1024*1024]);
         if (is_wp_error($response)) return new WP_Error('connection','Не удалось подключиться к '.($calendar ? 'календарю.' : 'BibleDesktop.'));
         $status = wp_remote_retrieve_response_code($response);
         if ($status !== 200) {
-            if (in_array($status,[429,503],true)) set_transient('oc_cooldown_'.$service,1,min(3600,max(2,(int)wp_remote_retrieve_header($response,'retry-after'))));
+            if (in_array($status,[429,503],true)) set_transient('orthocal_cooldown_'.$service,1,min(3600,max(2,(int)wp_remote_retrieve_header($response,'retry-after'))));
             $messages = [401=>'API-ключ отсутствует или недействителен.',403=>'Доступ к API отключён или истёк.',429=>'Достигнут лимит запросов. Повторите позже.',503=>'API занят или обновляется. Повторите позже.'];
             return new WP_Error('upstream',$messages[$status] ?? 'Источник данных недоступен (HTTP '.$status.').');
         }
@@ -220,7 +219,7 @@ final class Orthocal_Plugin {
         if(is_array($data)&&in_array($a['mode'],self::TEXT_MODES,true)&&isset($data['language']))$a['text_language']=$data['language'];
         $page=(int)$a['day_page'];$pageUrl=$page && get_post_status($page)==='publish'?get_permalink($page):'';
         $has_liturgical_font=$a['lang']==='cu'||in_array($a['mode'],array_merge(self::TEXT_MODES,self::SERVICE_MODES),true);
-        $config = $a + ['endpoint'=>rest_url('orthocal/v1/'), 'liveDate'=>empty($attrs['date']) && empty($_GET['orthocal_date']), 'pageUrl'=>$pageUrl,'ui'=>self::ui_catalog($a['lang']),'fontUrl'=>$has_liturgical_font?Orthocal_Media_Cache::url('/calendar-api-font.php'):''];
+        $config = $a + ['endpoint'=>rest_url('orthocal/v1/'), 'liveDate'=>empty($attrs['date']) && empty($_GET['orthocal_date']), 'pageUrl'=>$pageUrl,'ui'=>self::ui_catalog($a['lang']),'fontUrl'=>$has_liturgical_font?Orthocal_Media_Cache::url('/fonts/MonomakhUnicode.ttf'):''];
         $html = '<section class="orthocal oc-theme-'.esc_attr($a['theme']).($a['css_mode']==='site'?' oc-site-css':'').($a['compact']==='1'?' oc-compact':'').'" style="--oc-accent:'.esc_attr($a['accent']).';--oc-image-height:'.(int)$a['image_size'].'px" data-oc-language="'.esc_attr($a['lang']).'" data-orthocal="'.esc_attr(wp_json_encode($config)).'" aria-label="'.esc_attr(self::ui(self::TITLES[$a['mode']],$a['lang'])).'">';
         if($a['heading']==='1')$html .= '<div class="oc-heading">'.($a['branding']!==''?'<span class="oc-eyebrow">'.esc_html(self::ui($a['branding'],$a['lang'])).'</span>':'').(in_array($a['mode'],['today','day'],true)?'':'<h2>'.esc_html(self::ui(self::TITLES[$a['mode']],$a['lang'])).'</h2>').'</div>';
         if (is_wp_error($data)) $html .= self::error_html($data->get_error_message()).('<button type="button" data-oc-retry>'.self::ui('Повторить',$a['lang']).'</button>');
@@ -297,11 +296,23 @@ final class Orthocal_Plugin {
         return $html.'</div></div>';
     }
     static function periods($periods) {
+        if (!is_array($periods)) return '';
         $html='';
+        $format = static function($date) {
+            if (!is_array($date)) return null;
+            foreach (['year','month','day'] as $part) {
+                $value=$date[$part] ?? null;
+                if (!is_int($value) && !(is_string($value) && preg_match('/^[0-9]{1,4}$/D',$value))) return null;
+            }
+            $formatted=sprintf('%04d-%02d-%02d',$date['year'],$date['month'],$date['day']);
+            return self::date_valid($formatted) ? $formatted : null;
+        };
         foreach ($periods as $period) {
-            if (!isset($period['label'],$period['start']['year'],$period['finish']['year'])) continue;
-            $format = static fn($d) => sprintf('%04d-%02d-%02d',$d['year'],$d['month'],$d['day']);
-            $html.='<li>'.esc_html($period['label'].' · '.self::date_label($format($period['start'])).' — '.self::date_label($format($period['finish']))).'</li>';
+            if (!is_array($period) || !is_string($period['label'] ?? null)) continue;
+            $start=$format($period['start'] ?? null);
+            $finish=$format($period['finish'] ?? null);
+            if ($start===null || $finish===null || $start>$finish) continue;
+            $html.='<li>'.esc_html($period['label'].' · '.self::date_label($start).' — '.self::date_label($finish)).'</li>';
         }
         return $html;
     }
@@ -515,7 +526,7 @@ final class Orthocal_Plugin {
     static function throttle() {
         // Bound public proxy traffic. No forwarded headers or arbitrary upstream URL accepted.
         foreach (['global'=>300, hash('sha256',($_SERVER['REMOTE_ADDR'] ?? '').wp_salt())=>40] as $id=>$max) {
-            $key='oc_rate_'.md5($id.gmdate('YmdHi')); $count=(int)get_transient($key);
+            $key='orthocal_rate_'.md5($id.gmdate('YmdHi')); $count=(int)get_transient($key);
             if ($count >= $max) return new WP_Error('rate_limit','Слишком много запросов. Повторите через минуту.',['status'=>429]);
             set_transient($key,$count+1,70);
         }
@@ -526,7 +537,7 @@ final class Orthocal_Plugin {
         // contain a complete day with many images, so its allowance must not
         // be confused with the small public API proxy allowance above.
         foreach (['global'=>600, hash('sha256',($_SERVER['REMOTE_ADDR'] ?? '').wp_salt())=>180] as $id=>$max) {
-            $key='oc_media_rate_'.md5($id.gmdate('YmdHi')); $count=(int)get_transient($key);
+            $key='orthocal_media_rate_'.md5($id.gmdate('YmdHi')); $count=(int)get_transient($key);
             if ($count >= $max) return new WP_Error('rate_limit','Слишком много запросов. Повторите через минуту.',['status'=>429]);
             set_transient($key,$count+1,70);
         }
