@@ -231,6 +231,7 @@ final class Orthocal_Media_Cache {
     }
     static function entries() {
         global $wpdb;
+        // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching -- Options API cannot enumerate names by prefix; fresh metadata is required when revalidating or clearing files to avoid stale deletion lists. Values are read through get_option below.
         $names=$wpdb->get_col($wpdb->prepare("SELECT option_name FROM {$wpdb->options} WHERE option_name LIKE %s",$wpdb->esc_like('orthocal_media_').'%'));
         $entries=[];foreach($names as $name) if(preg_match('/^orthocal_media_[a-f0-9]{64}$/D',$name)) $entries[$name]=get_option($name,[]);
         return $entries;

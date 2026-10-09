@@ -29,7 +29,8 @@ final class Orthocal_Admin {
     static function page() {
         if(!current_user_can('manage_options'))return;
         $o=Orthocal_Plugin::options();$stats=Orthocal_Media_Cache::stats();$tabs=['connection'=>'Подключение','shortcodes'=>'Конструктор','help'=>'Помощь'];
-        $tab=sanitize_key($_GET['tab']??'connection');if(!isset($tabs[$tab]))$tab='connection';
+        // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Read-only admin tab selection; capability is checked above and mutations use separate nonce-protected forms.
+        $tab=isset($_GET['tab']) && is_string($_GET['tab']) ? sanitize_key(wp_unslash($_GET['tab'])) : 'connection';if(!isset($tabs[$tab]))$tab='connection';
         echo '<div class="wrap oc-admin" data-oc-admin data-active-tab="'.esc_attr($tab).'" data-endpoint="'.esc_url(rest_url('orthocal/v1/')).'">';
         $calendarOrigin=Orthocal_Config::calendar_origin();
         echo '<header class="oc-admin-hero"><div><span>КАЛЕНДАРНАЯ МАСТЕРСКАЯ · '.esc_html(Orthocal_Plugin::VERSION).'</span><h1>Georg-Kloster Calendar Workshop</h1><p>Календарь работает сразу после активации через API Bible Desktop.</p><p><a href="'.esc_url($calendarOrigin.'/').'" target="_blank" rel="noopener noreferrer">Открыть Bible Desktop</a> · <a href="'.esc_url('https://kalender.georg-kloster.ru/calendar-api#wordpress').'" target="_blank" rel="noopener noreferrer">Расширенная документация плагина</a></p></div><div class="oc-admin-badge">'.'Публичный API Bible Desktop'.'<small>'.esc_html((string)$stats['count']).' локальных файлов · '.esc_html(size_format($stats['bytes'])).'</small></div></header>';

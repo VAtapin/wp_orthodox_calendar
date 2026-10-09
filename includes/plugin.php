@@ -3,7 +3,7 @@ if (!defined('ABSPATH')) exit;
 require_once __DIR__.'/library.php';
 
 final class Orthocal_Plugin {
-    const VERSION = '1.3.72';
+    const VERSION = '1.3.73';
     const LEGACY_IMAGE_HEIGHTS = ['small'=>28,'medium'=>44,'large'=>72];
     const TITLES = ['today'=>'Сегодня', 'upcoming'=>'Ближайшие праздники', 'month'=>'Календарь на месяц', 'year'=>'Календарь на год', 'day'=>'День календаря', 'readings'=>'Чтения дня', 'calendar'=>'Православный календарь','fasting'=>'Пост и трапеза','saints'=>'Памяти святых','feasts'=>'Праздники','memorial'=>'Поминальные дни','pascha'=>'Пасха','fasts'=>'Посты на год','date'=>'Дата по двум стилям','texts'=>'Богослужебные тексты','troparia'=>'Тропари','kontakia'=>'Кондаки','prayers'=>'Молитвы','magnifications'=>'Величания','horologion'=>'Часослов','akathists'=>'Акафисты','canons'=>'Каноны'];
     const TEXT_MODES=['texts','troparia','kontakia','prayers','magnifications','akathists','canons'];
@@ -25,6 +25,7 @@ final class Orthocal_Plugin {
         add_action('template_redirect', function () {
             $post=get_post();
             if ($post && (str_contains($post->post_content,'[orthocal_') || str_contains($post->post_content,'wp:orthocal/'))) {
+                // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedConstantFound -- Established page-cache integration constant; changing its name would disable cache protection.
                 if (!defined('DONOTCACHEPAGE')) define('DONOTCACHEPAGE',true);
                 nocache_headers();
             }
@@ -102,6 +103,15 @@ final class Orthocal_Plugin {
     static function key() { return defined('ORTHOCAL_API_KEY') ? ORTHOCAL_API_KEY : self::options()['key']; }
     static function date_valid($date) {
         return is_string($date) && preg_match('/^(19\d{2}|20\d{2}|21\d{2}|2200)-(\d{2})-(\d{2})$/D', $date, $m) && checkdate((int)$m[2], (int)$m[3], (int)$m[1]);
+    }
+    static function requested_date() {
+        // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Public read-only date navigation; no settings or user data are changed.
+        $date = isset($_GET['orthocal_date']) && is_string($_GET['orthocal_date']) ? sanitize_text_field(wp_unslash($_GET['orthocal_date'])) : '';
+        return self::date_valid($date) ? $date : '';
+    }
+    static function client_ip() {
+        $ip = isset($_SERVER['REMOTE_ADDR']) && is_string($_SERVER['REMOTE_ADDR']) ? sanitize_text_field(wp_unslash($_SERVER['REMOTE_ADDR'])) : '';
+        return filter_var($ip, FILTER_VALIDATE_IP) !== false ? $ip : '';
     }
     static function config($attrs) {
         $o = self::options();
@@ -209,9 +219,10 @@ final class Orthocal_Plugin {
         $a = self::config($attrs);
         if (is_wp_error($a)) return self::error_html($a->get_error_message());
         $selected = false;
-        if (!$ajax && !empty($_GET['orthocal_date']) && is_string($_GET['orthocal_date']) && self::date_valid($_GET['orthocal_date'])) {
+        $requested_date = $ajax ? '' : self::requested_date();
+        if ($requested_date !== '') {
             $selected = true;
-            $a['date'] = $_GET['orthocal_date']; $a['year'] = (int)substr($a['date'],0,4); $a['month'] = (int)substr($a['date'],5,2);
+            $a['date'] = $requested_date; $a['year'] = (int)substr($a['date'],0,4); $a['month'] = (int)substr($a['date'],5,2);
             if (in_array($a['mode'],['today','day'],true)) $a['mode'] = 'day';
         }
         wp_enqueue_style('orthocal'); wp_enqueue_script('orthocal');
@@ -219,7 +230,7 @@ final class Orthocal_Plugin {
         if(is_array($data)&&in_array($a['mode'],self::TEXT_MODES,true)&&isset($data['language']))$a['text_language']=$data['language'];
         $page=(int)$a['day_page'];$pageUrl=$page && get_post_status($page)==='publish'?get_permalink($page):'';
         $has_liturgical_font=$a['lang']==='cu'||in_array($a['mode'],array_merge(self::TEXT_MODES,self::SERVICE_MODES),true);
-        $config = $a + ['endpoint'=>rest_url('orthocal/v1/'), 'liveDate'=>empty($attrs['date']) && empty($_GET['orthocal_date']), 'pageUrl'=>$pageUrl,'ui'=>self::ui_catalog($a['lang']),'fontUrl'=>$has_liturgical_font?Orthocal_Media_Cache::url('/fonts/MonomakhUnicode.ttf'):''];
+        $config = $a + ['endpoint'=>rest_url('orthocal/v1/'), 'liveDate'=>empty($attrs['date']) && $requested_date === '', 'pageUrl'=>$pageUrl,'ui'=>self::ui_catalog($a['lang']),'fontUrl'=>$has_liturgical_font?Orthocal_Media_Cache::url('/fonts/MonomakhUnicode.ttf'):''];
         $html = '<section class="orthocal oc-theme-'.esc_attr($a['theme']).($a['css_mode']==='site'?' oc-site-css':'').($a['compact']==='1'?' oc-compact':'').'" style="--oc-accent:'.esc_attr($a['accent']).';--oc-image-height:'.(int)$a['image_size'].'px" data-oc-language="'.esc_attr($a['lang']).'" data-orthocal="'.esc_attr(wp_json_encode($config)).'" aria-label="'.esc_attr(self::ui(self::TITLES[$a['mode']],$a['lang'])).'">';
         if($a['heading']==='1')$html .= '<div class="oc-heading">'.($a['branding']!==''?'<span class="oc-eyebrow">'.esc_html(self::ui($a['branding'],$a['lang'])).'</span>':'').(in_array($a['mode'],['today','day'],true)?'':'<h2>'.esc_html(self::ui(self::TITLES[$a['mode']],$a['lang'])).'</h2>').'</div>';
         if (is_wp_error($data)) $html .= self::error_html($data->get_error_message()).('<button type="button" data-oc-retry>'.self::ui('Повторить',$a['lang']).'</button>');
@@ -525,7 +536,7 @@ final class Orthocal_Plugin {
     }
     static function throttle() {
         // Bound public proxy traffic. No forwarded headers or arbitrary upstream URL accepted.
-        foreach (['global'=>300, hash('sha256',($_SERVER['REMOTE_ADDR'] ?? '').wp_salt())=>40] as $id=>$max) {
+        foreach (['global'=>300, hash('sha256',self::client_ip().wp_salt())=>40] as $id=>$max) {
             $key='orthocal_rate_'.md5($id.gmdate('YmdHi')); $count=(int)get_transient($key);
             if ($count >= $max) return new WP_Error('rate_limit','Слишком много запросов. Повторите через минуту.',['status'=>429]);
             set_transient($key,$count+1,70);
@@ -536,7 +547,7 @@ final class Orthocal_Plugin {
         // Cache hits do not call this method. A cold cache can legitimately
         // contain a complete day with many images, so its allowance must not
         // be confused with the small public API proxy allowance above.
-        foreach (['global'=>600, hash('sha256',($_SERVER['REMOTE_ADDR'] ?? '').wp_salt())=>180] as $id=>$max) {
+        foreach (['global'=>600, hash('sha256',self::client_ip().wp_salt())=>180] as $id=>$max) {
             $key='orthocal_media_rate_'.md5($id.gmdate('YmdHi')); $count=(int)get_transient($key);
             if ($count >= $max) return new WP_Error('rate_limit','Слишком много запросов. Повторите через минуту.',['status'=>429]);
             set_transient($key,$count+1,70);

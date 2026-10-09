@@ -1,6 +1,6 @@
 # Georg-Kloster Calendar Workshop
 
-Public source for the WordPress plugin. Version 1.3.72, GPL-2.0-or-later.
+Public source for the WordPress plugin. Version 1.3.73, GPL-2.0-or-later.
 
 ## Original sources
 
