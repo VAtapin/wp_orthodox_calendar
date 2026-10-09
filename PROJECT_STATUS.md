@@ -8,3 +8,6 @@
 - Last related commit: Address WordPress.org source and validation review (current commit containing this status).
 
 - Дополнительная проверка: полный WordPress/SQLite + Edge сценарий прошёл на новой пустой базе с WP_DEBUG; прежние тестовые базы сохранены.
+
+- Published provider migration 74d5e18 was integrated without force-push. Its runtime baseline matches Kalendar 1.3.71; the tested 1.3.72 runtime and installation ZIP are unchanged. Provider dependencies retained: f3903f00 Expose local calendar API, followed by 42b03949 Add reviewed Sergius calendar link. Legacy Kalendar keys are stored but never forwarded.
+- Last integration commit: Integrate published provider migration into review release.

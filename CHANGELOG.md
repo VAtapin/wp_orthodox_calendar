@@ -1,3 +1,11 @@
+# Changelog
+
+## 1.3.71
+
+- Use Bible Desktop for every calendar request, including month/year and admin previews.
+- Preserve existing blocks, shortcodes, galleries and decorative styles without the retired Kalendar API.
+- Bundle compact marker assets and the licensed font; stop forwarding retired Kalendar keys.
+
 # Historical changelog
 
 = 1.3.64 =
