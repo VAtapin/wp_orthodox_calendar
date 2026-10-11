@@ -39,7 +39,7 @@
     const close = document.createElement("button");
     close.type = "button";
     close.className = "oc-dialog-close";
-    close.textContent = t("Закрыть ×");
+    close.textContent = t("Close ×");
     close.addEventListener("click", () => dialog.close());
     dialog.append(close, content);
     document.body.append(dialog);
@@ -80,7 +80,7 @@
     if (!Array.isArray(icons) || !icons.length)
       icons = [
         {
-          title: icon.dataset.ocIconTitle || t("Икона"),
+          title: icon.dataset.ocIconTitle || t("Icon"),
           description: icon.dataset.ocIconDescription || "",
           images: [{ url: icon.href, token: icon.dataset.ocMediaToken || "" }],
         },
@@ -88,13 +88,13 @@
     const shortDate = (date) =>
       date
         .replace(/\s+[-—]\s+.*/u, "")
-        .replace(/\s*\(переходящая\)/iu, wp.i18n.__( " (пер.)", 'georg-kloster-calendar-workshop' ));
+        .replace(/\s*\(переходящая\)/iu, wp.i18n.__( " (transferred)", 'georg-kloster-calendar-workshop' ));
     icons = icons
       .map((item) => ({
         title:
           typeof item?.title === "string" && item.title
             ? item.title
-            : t("Икона"),
+            : t("Icon"),
         description:
           typeof item?.description === "string" ? item.description : "",
         dates: [
@@ -130,7 +130,7 @@
     const thumbnailStrip = (entry, activeIndex, onSelect) => {
       const strip = document.createElement("div");
       strip.className = "oc-icon-thumbnails";
-      strip.setAttribute("aria-label", t("Изображения образа"));
+      strip.setAttribute("aria-label", t("Icon images"));
       const records = [];
       entry.images.forEach((media, imageIndex) => {
         const button = document.createElement("button");
@@ -201,7 +201,7 @@
     counter.className = "oc-icon-counter";
     const choices = document.createElement("div");
     choices.className = "oc-day-icon-choices";
-    choices.setAttribute("aria-label", t("Все образы дня"));
+    choices.setAttribute("aria-label", t("All icons for the day"));
     let iconIndex = start,
       itemIndex = 0,
       loadGeneration = 0,
@@ -258,12 +258,12 @@
       dates.textContent = entry.dates.join("; ");
       dates.hidden = !dates.textContent;
       description.textContent =
-        entry.description || t("Описание иконы отсутствует.");
+        entry.description || t("The icon has no description.");
       description.hidden = !isDescription;
       image.hidden = true;
       image.removeAttribute("src");
       loading.hidden = true;
-      counter.textContent = `${itemIndex + 1} ${t("из")} ${entry.images.length + 1}`;
+      counter.textContent = `${itemIndex + 1} ${t("of")} ${entry.images.length + 1}`;
       previous.hidden = next.hidden = entry.images.length < 1;
       choiceRecords.forEach((record, index) => {
         record.button.classList.toggle("active", index === iconIndex);
@@ -284,7 +284,7 @@
       body.insertBefore(strip, description);
       if (isDescription) return;
       loading.hidden = false;
-      loading.textContent = t("Загрузка…");
+      loading.textContent = t("Loading…");
       const media = entry.images[imageIndex];
       void mediaUrl(endpoint, media.url, media.token, t, true)
         .then((local) => {
@@ -294,7 +294,7 @@
           };
           image.onerror = () => {
             if (generation === loadGeneration)
-              loading.textContent = t("Не удалось загрузить изображение.");
+              loading.textContent = t("Failed to load the image.");
           };
           image.src = local;
           image.alt = entry.title;
@@ -303,7 +303,7 @@
         .catch((error) => {
           if (generation === loadGeneration)
             loading.textContent =
-              error?.message || t("Не удалось загрузить изображение.");
+              error?.message || t("Failed to load the image.");
         });
     };
     const shift = (step) => {
@@ -348,10 +348,10 @@
   async function copy(text, status, t = (s) => s) {
     try {
       await navigator.clipboard.writeText(text);
-      status.textContent = t("Скопировано.");
+      status.textContent = t("Copied.");
     } catch {
       status.textContent = t(
-        "Копирование недоступно. Выделите текст и скопируйте вручную.",
+        "Copying is unavailable. Select the text and copy it manually.",
       );
     }
   }
@@ -377,7 +377,7 @@
       });
       const value = await response.json();
       if (!response.ok)
-        throw new Error(value.message || wp.i18n.__( "Не удалось получить данные.", 'georg-kloster-calendar-workshop' ));
+        throw new Error(value.message || wp.i18n.__( "Failed to retrieve data.", 'georg-kloster-calendar-workshop' ));
       return value;
     } finally {
       clearTimeout(timeout);
@@ -432,10 +432,10 @@
     const task = enqueueMedia(async () => {
       const value = await json(url);
       if (typeof value?.url !== "string" || !value.url)
-        throw new Error(t("Не удалось загрузить изображение."));
+        throw new Error(t("Failed to load the image."));
       const local = new URL(value.url, endpointUrl);
       if (local.origin !== endpointUrl.origin)
-        throw new Error(t("Не удалось загрузить изображение."));
+        throw new Error(t("Failed to load the image."));
       mediaReady.set(sourceKey, local.href);
       return local.href;
     }, priority);
@@ -504,7 +504,7 @@
       value?.translation?.code !== translation.code ||
       value.translation.language?.code !== translation.language.code
     )
-      throw new Error(wp.i18n.__( "Источник вернул другой перевод или язык.", 'georg-kloster-calendar-workshop' ));
+      throw new Error(wp.i18n.__( "The source returned a different translation or language.", 'georg-kloster-calendar-workshop' ));
   }
   async function readingText(reading, translation, endpoint) {
     if (
@@ -513,14 +513,14 @@
       !reading.passages?.length
     )
       throw new Error(
-        wp.i18n.__( "Ссылка разобрана не полностью. Исходное обозначение чтения сохранено.", 'georg-kloster-calendar-workshop' ),
+        wp.i18n.__( "The reference could not be fully parsed. The original reading notation is preserved.", 'georg-kloster-calendar-workshop' ),
       );
     const prefix =
       "translations/" + encodeURIComponent(translation.code) + "/books";
     const library = await bible(endpoint, prefix);
     verifyTranslation(library, translation);
     if (!Array.isArray(library.books))
-      throw new Error(wp.i18n.__( "Каталог книг недоступен.", 'georg-kloster-calendar-workshop' ));
+      throw new Error(wp.i18n.__( "The book catalogue is unavailable.", 'georg-kloster-calendar-workshop' ));
     const result = [];
     for (const passage of reading.passages) {
       const a = passage.start,
@@ -534,19 +534,19 @@
         b.chapter < a.chapter ||
         b.chapter - a.chapter > 150
       )
-        throw new Error(wp.i18n.__( "Неверные границы чтения.", 'georg-kloster-calendar-workshop' ));
+        throw new Error(wp.i18n.__( "Invalid reading boundaries.", 'georg-kloster-calendar-workshop' ));
       if (
         !(a.verse === null && b.verse === null) &&
         (![a.verse, b.verse].every((n) => Number.isSafeInteger(n) && n > 0) ||
           (a.chapter === b.chapter && a.verse > b.verse))
       )
-        throw new Error(wp.i18n.__( "Неверные границы стихов.", 'georg-kloster-calendar-workshop' ));
+        throw new Error(wp.i18n.__( "Invalid verse boundaries.", 'georg-kloster-calendar-workshop' ));
       const matches = library.books.filter(
         (book) => book.canonical_book?.osis_code === passage.book,
       );
       if (matches.length !== 1)
         throw new Error(
-          wp.i18n.__( "Не найдено однозначное соответствие книги ", 'georg-kloster-calendar-workshop' ) + passage.book + ".",
+          wp.i18n.__( "No unambiguous match was found for the book ", 'georg-kloster-calendar-workshop' ) + passage.book + ".",
         );
       const book = matches[0];
       if (
@@ -554,7 +554,7 @@
         b.chapter > book.chapters_count ||
         typeof book.slug !== "string"
       )
-        throw new Error(wp.i18n.__( "Глава отсутствует в переводе.", 'georg-kloster-calendar-workshop' ));
+        throw new Error(wp.i18n.__( "The chapter is missing from the translation.", 'georg-kloster-calendar-workshop' ));
       for (let chapter = a.chapter; chapter <= b.chapter; chapter++) {
         const data = await bible(
           endpoint,
@@ -567,7 +567,7 @@
           !Array.isArray(data.verses) ||
           !data.verses.length
         )
-          throw new Error(wp.i18n.__( "Не получена полная глава.", 'georg-kloster-calendar-workshop' ));
+          throw new Error(wp.i18n.__( "The full chapter was not received.", 'georg-kloster-calendar-workshop' ));
         if (
           data.verses.some(
             (v, i) =>
@@ -576,7 +576,7 @@
               (i && v.number <= data.verses[i - 1].number),
           )
         )
-          throw new Error(wp.i18n.__( "Неверный порядок стихов.", 'georg-kloster-calendar-workshop' ));
+          throw new Error(wp.i18n.__( "Invalid verse order.", 'georg-kloster-calendar-workshop' ));
         const first = chapter === a.chapter && a.verse !== null ? a.verse : 1;
         const last =
           chapter === b.chapter && b.verse !== null
@@ -597,7 +597,7 @@
           )
         )
           throw new Error(
-            wp.i18n.__( "В переводе отсутствуют запрошенные стихи. Неполный текст не показан.", 'georg-kloster-calendar-workshop' ),
+            wp.i18n.__( "The translation is missing requested verses. The incomplete text is not displayed.", 'georg-kloster-calendar-workshop' ),
           );
         result.push(
           ...verses.map((v) => ({
@@ -614,7 +614,11 @@
     if (root.dataset.ocReady) return;
     root.dataset.ocReady = "1";
     const cfg = JSON.parse(root.dataset.orthocal);
-    const t = (text) => cfg.ui?.[text] || wp.i18n.__(text, 'georg-kloster-calendar-workshop');
+    const t = (text) => {
+      if (cfg.ui?.[text]) return cfg.ui[text];
+      const separator = text.indexOf('|');
+      return separator < 0 ? wp.i18n.__(text, 'georg-kloster-calendar-workshop') : wp.i18n._x(text.slice(separator + 1), text.slice(0, separator), 'georg-kloster-calendar-workshop');
+    };
     loadIconCovers(root, cfg.endpoint, t);
     if (cfg.fontUrl) void font(cfg.fontUrl).catch(() => {});
     // AJAX HTML is rendered at a REST URL; public date links must retain the page URL.
@@ -628,7 +632,7 @@
     let generation = 0;
     async function render(changes, detail = false, readingIndex = -1) {
       const current = ++generation;
-      status.textContent = t("Загрузка…");
+      status.textContent = t("Loading…");
       root.setAttribute("aria-busy", "true");
       try {
         const url = route(cfg.endpoint, "render");
@@ -653,11 +657,11 @@
           "text/html",
         );
         const next = document.querySelector(".orthocal");
-        if (!next) throw new Error(t("Не удалось отобразить календарь."));
+        if (!next) throw new Error(t("Failed to display the calendar."));
         if (detail === "modal") {
           popup(
             next,
-            t(readingIndex >= 0 ? wp.i18n.__( "Библейские чтения", 'georg-kloster-calendar-workshop' ) : wp.i18n.__( "День календаря", 'georg-kloster-calendar-workshop' )),
+            t(readingIndex >= 0 ? wp.i18n.__( "Bible readings", 'georg-kloster-calendar-workshop' ) : wp.i18n.__( "Calendar day", 'georg-kloster-calendar-workshop' )),
             t,
           );
           init(next);
@@ -680,7 +684,7 @@
           if (dialog) {
             const nextConfig = JSON.parse(next.dataset.orthocal);
             dialog.querySelector(".oc-dialog-close").textContent =
-              nextConfig.ui?.[wp.i18n.__( "Закрыть ×", 'georg-kloster-calendar-workshop' )] || wp.i18n.__( "Закрыть ×", 'georg-kloster-calendar-workshop' );
+              nextConfig.ui?.[wp.i18n.__( "Close ×", 'georg-kloster-calendar-workshop' )] || wp.i18n.__( "Close ×", 'georg-kloster-calendar-workshop' );
           }
         }
         status.textContent = "";
@@ -688,7 +692,7 @@
         if (current === generation)
           status.textContent =
             error.name === "AbortError"
-              ? t("Источник не ответил вовремя. Повторите запрос.")
+              ? t("The source did not respond in time. Please retry the request.")
               : error.message;
       } finally {
         if (current === generation) root.removeAttribute("aria-busy");
@@ -882,9 +886,9 @@
             !Array.isArray(value) ||
             value.some((t) => typeof t.code !== "string" || !t.language?.code)
           )
-            throw new Error(t("Каталог переводов требует обновления."));
+            throw new Error(t("The translation catalogue needs updating."));
           translations = value;
-          select.replaceChildren(new Option(t("Выберите язык и перевод"), ""));
+          select.replaceChildren(new Option(t("Choose a language and translation"), ""));
           for (const t of value)
             select.add(new Option(t.language.code + " · " + t.name, t.code));
           if (value.some((t) => t.code === cfg.translation))
@@ -904,11 +908,11 @@
     async function loadReading(details) {
       const revision = readingGeneration;
       const output = details.querySelector(".oc-verses");
-      output.textContent = t("Загрузка текста…");
+      output.textContent = t("Loading text…");
       try {
         const all = await loadCatalogue();
         const translation = all.find((t) => t.code === select.value);
-        if (!translation) throw new Error(t("Выберите язык и перевод."));
+        if (!translation) throw new Error(t("Choose a language and translation."));
         if (translation.language.code === "cu") {
           const value = await json(route(cfg.endpoint, "font"));
           await font(value.url);
@@ -926,7 +930,7 @@
           if (previousChapter !== null && verse.chapter !== previousChapter) {
             const heading = document.createElement("h4");
             heading.className = "oc-reading-chapter";
-            heading.textContent = t("Глава") + " " + verse.chapter;
+            heading.textContent = t("Chapter") + " " + verse.chapter;
             output.append(heading);
           }
           const p = document.createElement("p"),
@@ -941,7 +945,7 @@
         output.textContent = t(error.message) + " ";
         const retry = document.createElement("button");
         retry.type = "button";
-        retry.textContent = t("Повторить");
+        retry.textContent = t("Retry");
         retry.addEventListener("click", () => loadReading(details));
         output.append(retry);
       }

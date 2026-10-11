@@ -2,14 +2,14 @@
 # This file is distributed under the GPL-2.0-or-later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Georg-Kloster Calendar Workshop 1.3.77\n"
+"Project-Id-Version: Georg-Kloster Calendar Workshop 1.3.78\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/orthocal\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-10-11T16:06:35+00:00\n"
+"POT-Creation-Date: 2026-10-11T17:37:00+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: georg-kloster-calendar-workshop\n"
@@ -39,1321 +39,1348 @@ msgstr ""
 msgid "https://atapin.de/"
 msgstr ""
 
-#: includes/i18n.php:39
-msgid "Недостаточно прав."
-msgstr ""
-
-#: includes/i18n.php:40
-msgid "Кэш календарных данных сброшен."
-msgstr ""
-
-#: includes/i18n.php:41
-msgid "Проверка локальных файлов поставлена в очередь."
-msgstr ""
-
-#: includes/i18n.php:42
-msgid "Локальные копии очищены."
-msgstr ""
-
-#: includes/i18n.php:43
-msgid "Идёт обновление файлов. Повторите позже."
-msgstr ""
-
-#: includes/i18n.php:44
-msgid "Орнаментальные с надписью"
-msgstr ""
-
-#: includes/i18n.php:45
-msgid "Фотографические тёмные"
-msgstr ""
-
-#: includes/i18n.php:46
-msgid "Бронзовые медальоны"
-msgstr ""
-
 #: includes/i18n.php:47
-msgid "Самоцветные медальоны"
+msgid "Insufficient permissions."
 msgstr ""
 
 #: includes/i18n.php:48
-msgid "Фотографические виньетки"
+msgid "Calendar data cache cleared."
 msgstr ""
 
 #: includes/i18n.php:49
-msgid "Золотые овальные медальоны"
+msgid "Local file checks have been queued."
 msgstr ""
 
 #: includes/i18n.php:50
-msgid "Минималистичные пиктограммы"
+msgid "Local copies cleared."
 msgstr ""
 
 #: includes/i18n.php:51
-msgid "Винтажная акварель"
+msgid "Files are being updated. Please try again later."
 msgstr ""
 
 #: includes/i18n.php:52
-msgid "Светлая акварель"
+msgid "Ornamental with labels"
 msgstr ""
 
 #: includes/i18n.php:53
-msgid "Контурные наклейки"
+msgid "Dark photographic"
 msgstr ""
 
 #: includes/i18n.php:54
-msgid "Мягкая иллюстрация"
+msgid "Bronze medallions"
 msgstr ""
 
 #: includes/i18n.php:55
-msgid "Чистая иллюстрация"
+msgid "Gemstone medallions"
 msgstr ""
 
 #: includes/i18n.php:56
-msgid "Фотореалистика — синяя"
+msgid "Photographic vignettes"
 msgstr ""
 
 #: includes/i18n.php:57
-msgid "Фотореалистика — деревенская"
+msgid "Golden oval medallions"
 msgstr ""
 
 #: includes/i18n.php:58
-msgid "Фотореалистика — медная"
+msgid "Minimalist pictograms"
 msgstr ""
 
 #: includes/i18n.php:59
-msgid "Фотореалистика — золотая"
+msgid "Vintage watercolor"
 msgstr ""
 
 #: includes/i18n.php:60
-msgid "Подключение"
+msgid "Light watercolor"
 msgstr ""
 
 #: includes/i18n.php:61
-msgid "Конструктор"
+msgid "Outline stickers"
 msgstr ""
 
 #: includes/i18n.php:62
-msgid "Помощь"
+msgid "Soft illustration"
 msgstr ""
 
 #: includes/i18n.php:63
-msgid "КАЛЕНДАРНАЯ МАСТЕРСКАЯ · "
+msgid "Clean illustration"
 msgstr ""
 
 #: includes/i18n.php:64
-msgid "Календарь работает сразу после активации через API Bible Desktop."
+msgid "Photorealistic — blue"
 msgstr ""
 
 #: includes/i18n.php:65
-msgid "Открыть Bible Desktop"
+msgid "Photorealistic — rustic"
 msgstr ""
 
 #: includes/i18n.php:66
-msgid "Расширенная документация плагина"
+msgid "Photorealistic — copper"
 msgstr ""
 
 #: includes/i18n.php:67
-msgid "Публичный API Bible Desktop"
+msgid "Photorealistic — golden"
 msgstr ""
 
 #: includes/i18n.php:68
-msgid " локальных файлов · "
+msgid "Connection"
 msgstr ""
 
 #: includes/i18n.php:69
-#: assets/editor.js:13
-msgid "Православный календарь"
+msgid "Generator"
 msgstr ""
 
 #: includes/i18n.php:70
-msgid "Подключение к данным"
+msgid "Help"
 msgstr ""
 
 #: includes/i18n.php:71
-msgid "Календарные события и праздники приходят из "
+msgid "CALENDAR WORKSHOP · "
 msgstr ""
 
 #: includes/i18n.php:72
-msgid " через API. Полные библейские тексты — из BibleDesktop."
+msgid "The calendar works immediately after activation using the Bible Desktop API."
 msgstr ""
 
 #: includes/i18n.php:73
-msgid "Адрес API"
+msgid "Open Bible Desktop"
 msgstr ""
 
 #: includes/i18n.php:74
-msgid "Полный HTTPS-адрес без /api. Стандартное значение: https://bible-desktop.com"
+msgid "Extended plugin documentation"
 msgstr ""
 
 #: includes/i18n.php:75
-msgid "Язык календаря по умолчанию"
+msgid "Bible Desktop public API"
 msgstr ""
 
 #: includes/i18n.php:76
-#: assets/editor.js:135
-#: assets/editor.js:153
-msgid "Русский"
+msgid " local files · "
 msgstr ""
 
 #: includes/i18n.php:77
-#: assets/editor.js:136
-#: assets/editor.js:154
-msgid "Церковнославянский"
+#: assets/editor.js:13
+msgid "Orthodox calendar"
 msgstr ""
 
 #: includes/i18n.php:78
-#: assets/editor.js:137
-msgid "Немецкий"
+msgid "Data connection"
 msgstr ""
 
 #: includes/i18n.php:79
-#: assets/editor.js:138
-msgid "Украинский"
+msgid "Calendar events and feasts come from "
 msgstr ""
 
 #: includes/i18n.php:80
-#: assets/editor.js:139
-msgid "Польский"
+msgid " through the API. Full Bible texts come from BibleDesktop."
 msgstr ""
 
 #: includes/i18n.php:81
-msgid "Перевод Библии по умолчанию"
+msgid "API address"
 msgstr ""
 
 #: includes/i18n.php:82
-msgid "Код можно выбрать ниже. В конструкторе его можно переопределить для отдельного блока."
+msgid "Full HTTPS address without /api. Default: https://bible-desktop.com"
 msgstr ""
 
 #: includes/i18n.php:83
-msgid "Каталог BibleDesktop"
+msgid "Default calendar language"
 msgstr ""
 
 #: includes/i18n.php:84
-msgid "Загрузить переводы"
+#: assets/editor.js:135
+#: assets/editor.js:153
+msgid "Russian"
 msgstr ""
 
 #: includes/i18n.php:85
-msgid "Доступные переводы"
+#: assets/editor.js:136
+#: assets/editor.js:154
+msgid "Church Slavonic"
 msgstr ""
 
 #: includes/i18n.php:86
-msgid "Часовой пояс сайта: "
+#: assets/editor.js:137
+#: assets/editor.js:156
+msgid "German"
 msgstr ""
 
 #: includes/i18n.php:87
-msgid ". Он меняется в общих настройках WordPress."
+#: assets/editor.js:138
+msgid "Ukrainian"
 msgstr ""
 
 #: includes/i18n.php:88
-msgid "Открыть общие настройки"
+#: assets/editor.js:139
+#: assets/editor.js:157
+msgid "Polish"
 msgstr ""
 
 #: includes/i18n.php:89
-msgid "Локальные файлы и кэш"
+msgid "Default Bible translation"
 msgstr ""
 
 #: includes/i18n.php:90
-msgid " файлов · "
+msgid "Choose a code below. You can override it for individual blocks in the generator."
 msgstr ""
 
 #: includes/i18n.php:91
-msgid " из 200 МБ. Фотографии сохраняются локально размером до 100 КБ."
+msgid "BibleDesktop catalogue"
 msgstr ""
 
 #: includes/i18n.php:92
-msgid "Проверять картинки и шрифт"
+msgid "Load translations"
 msgstr ""
 
 #: includes/i18n.php:93
-msgid "Раз в 6 часов"
+msgid "Available translations"
 msgstr ""
 
 #: includes/i18n.php:94
-msgid "Раз в 12 часов"
+msgid "Site time zone: "
 msgstr ""
 
 #: includes/i18n.php:95
-msgid "Раз в сутки"
+msgid ". Change it in the general WordPress settings."
 msgstr ""
 
 #: includes/i18n.php:96
-msgid "Раз в неделю"
+msgid "Open general settings"
 msgstr ""
 
 #: includes/i18n.php:97
-msgid "Хранить библейские ответы"
+msgid "Local files and cache"
 msgstr ""
 
 #: includes/i18n.php:98
-msgid "Не хранить"
+msgid " files · "
 msgstr ""
 
 #: includes/i18n.php:99
-msgid "1 час"
+msgid " of 200 MB. Photos are stored locally with a maximum size of 100 KB."
 msgstr ""
 
 #: includes/i18n.php:100
-msgid "6 часов"
+msgid "Check images and fonts"
 msgstr ""
 
 #: includes/i18n.php:101
-msgid "1 сутки"
+msgid "Every 6 hours"
 msgstr ""
 
 #: includes/i18n.php:102
-msgid "Сохранить подключение"
+msgid "Every 12 hours"
 msgstr ""
 
 #: includes/i18n.php:103
-msgid "Обслуживание"
+msgid "Daily"
 msgstr ""
 
 #: includes/i18n.php:104
-msgid "Проверить обновления картинок"
+msgid "Weekly"
 msgstr ""
 
 #: includes/i18n.php:105
-msgid "Сбросить кэш данных"
+msgid "Store Bible responses"
 msgstr ""
 
 #: includes/i18n.php:106
-msgid "Очистить локальные картинки"
+msgid "Do not store"
 msgstr ""
 
 #: includes/i18n.php:107
-msgid "Текущая страница"
+msgid "1 hour"
 msgstr ""
 
 #: includes/i18n.php:108
-msgid "Конструктор шорткодов"
+msgid "6 hours"
 msgstr ""
 
 #: includes/i18n.php:109
-msgid "Все параметры относятся только к создаваемому блоку. Меняйте их слева — справа сразу увидите результат. Для боковой колонки выберите «Компактный»."
+msgid "1 day"
 msgstr ""
 
 #: includes/i18n.php:110
-msgid "Что разместить"
+msgid "Save connection"
 msgstr ""
 
 #: includes/i18n.php:111
-msgid "Час Часослова"
+msgid "Maintenance"
 msgstr ""
 
 #: includes/i18n.php:112
-msgid "Весь Часослов"
+msgid "Check image updates"
 msgstr ""
 
 #: includes/i18n.php:113
-msgid "Первый час"
+msgid "Clear data cache"
 msgstr ""
 
 #: includes/i18n.php:114
-msgid "Третий час"
+msgid "Clear local images"
 msgstr ""
 
 #: includes/i18n.php:115
-msgid "Шестой час"
+msgid "Current page"
 msgstr ""
 
 #: includes/i18n.php:116
-msgid "Девятый час"
+msgid "Shortcode generator"
 msgstr ""
 
 #: includes/i18n.php:117
-msgid "Утреня"
+msgid "All settings apply only to the block being created. Change them on the left and see the result on the right. Choose Compact for a sidebar."
 msgstr ""
 
 #: includes/i18n.php:118
-msgid "Вечерня"
+msgid "What to display"
 msgstr ""
 
 #: includes/i18n.php:119
-msgid "Дата"
+msgid "Horologion hour"
 msgstr ""
 
 #: includes/i18n.php:120
-#: assets/editor.js:98
-msgid "Год"
+msgid "Full Horologion"
 msgstr ""
 
 #: includes/i18n.php:121
-msgid "Месяц"
+msgid "First Hour"
 msgstr ""
 
 #: includes/i18n.php:122
-#: assets/editor.js:118
-msgid "Количество"
+msgid "Third Hour"
 msgstr ""
 
 #: includes/i18n.php:123
-msgid "Тема"
+msgid "Sixth Hour"
 msgstr ""
 
 #: includes/i18n.php:124
-msgid "Книжная — тёплая"
+msgid "Ninth Hour"
 msgstr ""
 
 #: includes/i18n.php:125
-msgid "Современная — светлая"
+msgid "Matins"
 msgstr ""
 
 #: includes/i18n.php:126
-msgid "Шрифты сайта"
+msgid "Vespers"
 msgstr ""
 
 #: includes/i18n.php:127
-#: assets/editor.js:171
-msgid "CSS карточки"
+msgid "Date"
 msgstr ""
 
 #: includes/i18n.php:128
-#: assets/editor.js:172
-msgid "Оформление плагина"
+#: assets/editor.js:98
+msgid "Year"
 msgstr ""
 
 #: includes/i18n.php:129
-#: assets/editor.js:173
-msgid "Полностью CSS сайта WordPress"
+msgid "Month"
 msgstr ""
 
 #: includes/i18n.php:130
-msgid "Акцентный цвет"
+#: assets/editor.js:118
+msgid "Count"
 msgstr ""
 
 #: includes/i18n.php:131
-msgid "Подпись над блоком"
+msgid "Theme"
 msgstr ""
 
 #: includes/i18n.php:132
-msgid "Размер блока"
+msgid "Book — warm"
 msgstr ""
 
 #: includes/i18n.php:133
-#: assets/editor.js:265
-msgid "Подробный"
+msgid "Modern — light"
 msgstr ""
 
 #: includes/i18n.php:134
-msgid "Компактный — для боковой колонки"
+msgid "Site fonts"
 msgstr ""
 
 #: includes/i18n.php:135
-#: assets/editor.js:175
-msgid "Открытие дня"
+#: assets/editor.js:171
+msgid "Card CSS"
 msgstr ""
 
 #: includes/i18n.php:136
-#: assets/editor.js:176
-msgid "Под блоком"
+#: assets/editor.js:172
+msgid "Plugin styling"
 msgstr ""
 
 #: includes/i18n.php:137
-msgid "Во всплывающем окне"
+#: assets/editor.js:173
+msgid "Use only the WordPress site CSS"
 msgstr ""
 
 #: includes/i18n.php:138
-msgid "В новом окне"
+msgid "Accent color"
 msgstr ""
 
 #: includes/i18n.php:139
-msgid "На отдельной странице"
+msgid "Label above the block"
 msgstr ""
 
 #: includes/i18n.php:140
-msgid "Библейский текст"
+msgid "Block size"
 msgstr ""
 
 #: includes/i18n.php:141
-msgid "Раскрывать под ссылкой"
+#: assets/editor.js:265
+msgid "Detailed"
 msgstr ""
 
 #: includes/i18n.php:142
-msgid "Открывать во всплывающем окне"
+msgid "Compact — for a sidebar"
 msgstr ""
 
 #: includes/i18n.php:143
-#: assets/editor.js:189
-msgid "Высота картинки поста, px"
+#: assets/editor.js:175
+msgid "Opening a day"
 msgstr ""
 
 #: includes/i18n.php:144
-#: assets/editor.js:190
-msgid "Ширина определяется автоматически по пропорциям изображения."
+#: assets/editor.js:176
+msgid "Below the block"
 msgstr ""
 
 #: includes/i18n.php:145
-msgid "Страница подробностей дня"
+msgid "In a popup"
 msgstr ""
 
 #: includes/i18n.php:146
-#: assets/editor.js:134
-msgid "Язык календаря"
+msgid "In a new window"
 msgstr ""
 
 #: includes/i18n.php:147
-#: assets/editor.js:162
-msgid "Профиль поста"
+msgid "On a separate page"
 msgstr ""
 
 #: includes/i18n.php:148
-#: assets/editor.js:163
-msgid "Типикон"
+msgid "Bible text"
 msgstr ""
 
 #: includes/i18n.php:149
-#: assets/editor.js:164
-msgid "Приходской"
+msgid "Expand below the link"
 msgstr ""
 
 #: includes/i18n.php:150
-msgid "Какие события"
+msgid "Open in a popup"
 msgstr ""
 
 #: includes/i18n.php:151
-#: assets/editor.js:126
-msgid "Главные"
+#: assets/editor.js:189
+msgid "Fasting image height, px"
 msgstr ""
 
 #: includes/i18n.php:152
-#: assets/editor.js:127
-msgid "Пасха и двунадесятые"
+#: assets/editor.js:190
+msgid "The width is calculated automatically from the image proportions."
 msgstr ""
 
 #: includes/i18n.php:153
-#: assets/editor.js:128
-msgid "Великие"
+msgid "Day details page"
 msgstr ""
 
 #: includes/i18n.php:154
-#: assets/editor.js:129
-msgid "Поминальные"
+#: assets/editor.js:134
+msgid "Calendar language"
 msgstr ""
 
 #: includes/i18n.php:155
-#: assets/editor.js:130
-msgid "Все"
+#: assets/editor.js:162
+msgid "Fasting profile"
 msgstr ""
 
 #: includes/i18n.php:156
-msgid "Набор картинок поста"
+#: assets/editor.js:163
+msgid "Typikon"
 msgstr ""
 
 #: includes/i18n.php:157
-msgid "Содержание карточки дня"
+#: assets/editor.js:164
+msgid "Parish"
 msgstr ""
 
 #: includes/i18n.php:158
-#: assets/editor.js:14
-msgid "Пост и трапеза"
+msgid "Which events"
 msgstr ""
 
 #: includes/i18n.php:159
-msgid "Праздники и памяти"
+#: assets/editor.js:126
+msgid "Main"
 msgstr ""
 
 #: includes/i18n.php:160
-#: assets/calendar.js:660
-msgid "Библейские чтения"
+#: assets/editor.js:127
+msgid "Pascha and the Twelve Great Feasts"
 msgstr ""
 
 #: includes/i18n.php:161
-#: assets/editor.js:21
-msgid "Богослужебные тексты"
+#: assets/editor.js:128
+msgid "Great"
 msgstr ""
 
 #: includes/i18n.php:162
-msgid "Иконы"
+#: assets/editor.js:129
+msgid "Memorial"
 msgstr ""
 
 #: includes/i18n.php:163
-msgid "Уровни памятей"
+#: assets/editor.js:130
+msgid "All"
 msgstr ""
 
 #: includes/i18n.php:164
-msgid "Двунадесятые"
+msgid "Fasting image set"
 msgstr ""
 
 #: includes/i18n.php:165
-msgid "Средние"
+msgid "Day card content"
 msgstr ""
 
 #: includes/i18n.php:166
-msgid "Малые"
+#: assets/editor.js:14
+msgid "Fasting and meals"
 msgstr ""
 
 #: includes/i18n.php:167
-msgid "Остальные"
+msgid "Feasts and commemorations"
 msgstr ""
 
 #: includes/i18n.php:168
-msgid " Показывать картинки поста и знаки Типикона"
+#: assets/calendar.js:664
+msgid "Bible readings"
 msgstr ""
 
 #: includes/i18n.php:169
-msgid " Показывать размер текста чтений"
+#: assets/editor.js:21
+msgid "Liturgical texts"
 msgstr ""
 
 #: includes/i18n.php:170
-msgid "Количество иконок"
+msgid "Icons"
 msgstr ""
 
 #: includes/i18n.php:171
-msgid "Все иконы"
+msgid "Commemoration ranks"
 msgstr ""
 
 #: includes/i18n.php:172
-msgid " Показывать общий заголовок блока"
+msgid "Twelve Great Feasts"
 msgstr ""
 
 #: includes/i18n.php:173
-msgid " Показывать заголовки секций"
+msgid "Middle rank"
 msgstr ""
 
 #: includes/i18n.php:174
-msgid " Показывать старый стиль"
+msgid "Minor rank"
 msgstr ""
 
 #: includes/i18n.php:175
-msgid " Показывать «вчера/завтра»"
+msgid "Other"
 msgstr ""
 
 #: includes/i18n.php:176
-msgid " Показывать календарь выбора даты"
+msgid " Show fasting images and Typikon symbols"
 msgstr ""
 
 #: includes/i18n.php:177
-msgid " Показывать копирование ссылки"
+msgid " Show reading text size"
 msgstr ""
 
 #: includes/i18n.php:178
-msgid " Показывать поиск по памятям"
+msgid "Number of icons"
 msgstr ""
 
 #: includes/i18n.php:179
-#: assets/editor.js:152
-msgid "Язык текста"
+msgid "All icons"
 msgstr ""
 
 #: includes/i18n.php:180
-msgid "По языку календаря"
+msgid " Show the main block heading"
 msgstr ""
 
 #: includes/i18n.php:181
-msgid "Перевод Библии"
+msgid " Show section headings"
 msgstr ""
 
 #: includes/i18n.php:182
-msgid "Код, например synodal"
+msgid " Show old style dates"
 msgstr ""
 
 #: includes/i18n.php:183
-#: assets/editor.js:239
-msgid "Раздел справочника"
+msgid " Show yesterday/tomorrow"
 msgstr ""
 
 #: includes/i18n.php:184
-#: assets/editor.js:240
-msgid "Воскресные"
+msgid " Show the date picker"
 msgstr ""
 
 #: includes/i18n.php:185
-#: assets/editor.js:241
-msgid "Дни седмицы"
+msgid " Show link copying"
 msgstr ""
 
 #: includes/i18n.php:186
-#: assets/editor.js:242
-msgid "Общие"
+msgid " Show commemoration search"
 msgstr ""
 
 #: includes/i18n.php:187
-msgid "Праздники и святые"
+#: assets/editor.js:152
+msgid "Text language"
 msgstr ""
 
 #: includes/i18n.php:188
-msgid "Глас"
+msgid "Use the calendar language"
 msgstr ""
 
 #: includes/i18n.php:189
-msgid "День седмицы"
+msgid "Bible translation"
 msgstr ""
 
 #: includes/i18n.php:190
-msgid "ID текста"
+msgid "Code, for example synodal"
 msgstr ""
 
 #: includes/i18n.php:191
-msgid "Предпросмотр"
+#: assets/editor.js:239
+msgid "Reference section"
 msgstr ""
 
 #: includes/i18n.php:192
-msgid "Настройте блок — результат появится здесь."
+#: assets/editor.js:240
+msgid "Resurrection"
 msgstr ""
 
 #: includes/i18n.php:193
-msgid "Готовый шорткод"
+#: assets/editor.js:241
+msgid "Days of the week"
 msgstr ""
 
 #: includes/i18n.php:194
-msgid "Скопировать шорткод"
+#: assets/editor.js:242
+msgid "General"
 msgstr ""
 
 #: includes/i18n.php:195
-msgid "Обновить сейчас"
+msgid "Feasts and saints"
 msgstr ""
 
 #: includes/i18n.php:196
-msgid "Подключение хранит доступ к источникам и локальный кэш. Обычные блоки календаря работают без регистрации и API-ключа; ключ нужен только для расширенного доступа. Внешний вид, размер, картинки, содержание дня и поведение относятся к конкретному блоку и задаются в конструкторе."
+msgid "Tone"
 msgstr ""
 
 #: includes/i18n.php:197
-msgid "Как работать"
+msgid "Day of the week"
 msgstr ""
 
 #: includes/i18n.php:198
-msgid "При необходимости введите дополнительный ключ календаря во вкладке «Подключение»."
+msgid "Text ID"
 msgstr ""
 
 #: includes/i18n.php:199
-msgid "Откройте «Конструктор», выберите вид блока и настройте его слева."
+msgid "Preview"
 msgstr ""
 
 #: includes/i18n.php:200
-msgid "Проверьте живой результат справа и скопируйте строку в блок WordPress «Шорткод»."
+msgid "Configure the block to see the result here."
 msgstr ""
 
 #: includes/i18n.php:201
-msgid "Стандартные шорткоды"
+msgid "Ready shortcode"
 msgstr ""
 
 #: includes/i18n.php:202
-msgid "Их можно вставить напрямую в блок «Шорткод», без конструктора:"
+msgid "Copy shortcode"
 msgstr ""
 
-#: includes/i18n.php:222
+#: includes/i18n.php:203
+msgid "Refresh now"
+msgstr ""
+
+#: includes/i18n.php:204
+msgid "Connection settings store source access and the local cache. Ordinary calendar blocks work without registration or an API key; a key is needed only for extended access. Appearance, size, images, day content and behavior are specific to each block and are configured in the generator."
+msgstr ""
+
+#: includes/i18n.php:205
+msgid "How to use"
+msgstr ""
+
+#: includes/i18n.php:206
+msgid "If necessary, enter an optional calendar key in the Connection tab."
+msgstr ""
+
+#: includes/i18n.php:207
+msgid "Open Generator, choose a block type and configure it on the left."
+msgstr ""
+
+#: includes/i18n.php:208
+msgid "Check the live result on the right and copy the line into a WordPress Shortcode block."
+msgstr ""
+
+#: includes/i18n.php:209
+msgid "Standard shortcodes"
+msgstr ""
+
+#: includes/i18n.php:210
+msgid "Insert them directly into a Shortcode block without using the generator:"
+msgstr ""
+
+#: includes/i18n.php:230
 msgid ""
-"[orthocal_today] — карточка сегодняшнего дня\n"
-"[orthocal_upcoming limit=\"5\" filter=\"main\"] — ближайшие праздники\n"
-"[orthocal_month year=\"2027\" month=\"5\"] — календарь на месяц\n"
-"[orthocal_year year=\"2027\"] — календарь на год\n"
-"[orthocal_day date=\"2027-05-02\"] — карточка выбранной даты\n"
-"[orthocal_readings date=\"2027-05-02\"] — библейские чтения дня\n"
-"[orthocal_calendar] — общий календарь\n"
-"[orthocal_fasting] — пост и трапеза\n"
-"[orthocal_saints] — памяти святых\n"
-"[orthocal_feasts limit=\"5\"] — список праздников\n"
-"[orthocal_memorial] — поминальные дни\n"
-"[orthocal_pascha year=\"2027\"] — дата Пасхи и сведения о ней\n"
-"[orthocal_fasts year=\"2027\"] — посты года\n"
-"[orthocal_date] — дата по новому и старому стилю\n"
-"[orthocal_texts] — библиотека богослужебных текстов\n"
-"[orthocal_troparia] — тропари\n"
-"[orthocal_kontakia] — кондаки\n"
-"[orthocal_prayers] — молитвы\n"
-"[orthocal_magnifications] — величания\n"
-"[orthocal_horologion] — полный справочник Часослова"
-msgstr ""
-
-#: includes/i18n.php:242
-msgid "Почему компактный блок выглядит иначе?"
-msgstr ""
-
-#: includes/i18n.php:243
-msgid "Он предназначен для боковой колонки: уменьшает ячейки и скрывает длинные подписи сетки."
-msgstr ""
-
-#: includes/i18n.php:244
-msgid "Почему не загружается перевод Библии?"
-msgstr ""
-
-#: includes/i18n.php:245
-msgid "Каталог приходит из BibleDesktop. Плагин покажет точную ошибку подключения; календарные данные от этого не останавливаются."
-msgstr ""
-
-#: includes/i18n.php:246
-msgid "Что означают иконы?"
-msgstr ""
-
-#: includes/i18n.php:247
-msgid "Показываются все иконы, которые календарный API передаёт для выбранной даты."
-msgstr ""
-
-#: includes/i18n.php:248
-msgid "Зачало"
-msgstr ""
-
-#: includes/i18n.php:249
-msgid "Источник зачала"
+"[orthocal_today] — today’s day card\n"
+"[orthocal_upcoming limit=\"5\" filter=\"main\"] — upcoming feasts\n"
+"[orthocal_month year=\"2027\" month=\"5\"] — monthly calendar\n"
+"[orthocal_year year=\"2027\"] — yearly calendar\n"
+"[orthocal_day date=\"2027-05-02\"] — card for the selected date\n"
+"[orthocal_readings date=\"2027-05-02\"] — daily Bible readings\n"
+"[orthocal_calendar] — general calendar\n"
+"[orthocal_fasting] — fasting and meals\n"
+"[orthocal_saints] — saints commemorations\n"
+"[orthocal_feasts limit=\"5\"] — feast list\n"
+"[orthocal_memorial] — memorial days\n"
+"[orthocal_pascha year=\"2027\"] — Pascha date and related information\n"
+"[orthocal_fasts year=\"2027\"] — yearly fasts\n"
+"[orthocal_date] — new and old style date\n"
+"[orthocal_texts] — liturgical texts library\n"
+"[orthocal_troparia] — troparia\n"
+"[orthocal_kontakia] — kontakia\n"
+"[orthocal_prayers] — prayers\n"
+"[orthocal_magnifications] — magnifications\n"
+"[orthocal_horologion] — full Horologion reference"
 msgstr ""
 
 #: includes/i18n.php:250
-msgid "Возможные соответствия зачал"
+msgid "Why does the compact block look different?"
 msgstr ""
 
 #: includes/i18n.php:251
-msgid "Соответствие относится к координатам источника; нумерация стихов других переводов отдельно не проверена."
+msgid "It is designed for a sidebar: it reduces cells and hides long grid labels."
 msgstr ""
 
 #: includes/i18n.php:252
-msgid "Короткие молитвы"
+msgid "Why is the Bible translation not loading?"
 msgstr ""
 
 #: includes/i18n.php:253
-msgid "Молитвенные правила"
+msgid "The catalogue comes from BibleDesktop. The plugin shows the exact connection error; calendar data continues to work."
 msgstr ""
 
 #: includes/i18n.php:254
-msgid "На разные случаи"
+msgid "What do the icons mean?"
 msgstr ""
 
 #: includes/i18n.php:255
-msgid "Начальные молитвы"
+msgid "All icons returned by the calendar API for the selected date are displayed."
 msgstr ""
 
 #: includes/i18n.php:256
-#: assets/editor.js:155
-msgid "Церковнославянский — гражданский шрифт"
+msgid "Lection number"
 msgstr ""
 
 #: includes/i18n.php:257
-#: assets/editor.js:158
-msgid "Українська"
+msgid "Lection source"
 msgstr ""
 
 #: includes/i18n.php:258
-msgid "Источник вернул другую языковую версию."
+msgid "Possible lection matches"
 msgstr ""
 
 #: includes/i18n.php:259
-msgid "Раздел"
+msgid "The match applies to source coordinates; verse numbering in other translations has not been checked separately."
 msgstr ""
 
 #: includes/i18n.php:260
-msgid "Размер текста"
+msgid "Short prayers"
 msgstr ""
 
 #: includes/i18n.php:261
-msgid "На выбранном языке текст пока не добавлен."
+msgid "Prayer rules"
 msgstr ""
 
 #: includes/i18n.php:262
-msgid "Скопировать текст"
+msgid "For various occasions"
 msgstr ""
 
 #: includes/i18n.php:263
-msgid "Историческая редакция"
+msgid "Opening prayers"
 msgstr ""
 
 #: includes/i18n.php:264
-msgid "Источник"
+#: assets/editor.js:155
+msgid "Church Slavonic — civil font"
 msgstr ""
 
 #: includes/i18n.php:265
-msgid "Каталог uploads недоступен для записи."
+#: assets/editor.js:158
+msgctxt "native language name"
+msgid "Ukrainian"
 msgstr ""
 
 #: includes/i18n.php:266
-msgid "Не удалось обновить файл (HTTP "
+msgid "The source returned a different language version."
 msgstr ""
 
 #: includes/i18n.php:267
-msgid "Кэш медиа достиг 200 МБ. Очистите его в разделе «Кэш и файлы»."
+msgid "Section"
 msgstr ""
 
 #: includes/i18n.php:268
-#: assets/editor.js:7
-msgid "Сегодня"
+msgid "Text size"
 msgstr ""
 
 #: includes/i18n.php:269
-#: assets/editor.js:8
-msgid "Ближайшие праздники"
+msgid "The text has not yet been added in the selected language."
 msgstr ""
 
 #: includes/i18n.php:270
-#: assets/editor.js:9
-msgid "Календарь на месяц"
+msgid "Copy text"
 msgstr ""
 
 #: includes/i18n.php:271
-#: assets/editor.js:10
-msgid "Календарь на год"
+msgid "Historical edition"
 msgstr ""
 
 #: includes/i18n.php:272
-#: assets/calendar.js:660
-#: assets/editor.js:11
-msgid "День календаря"
+msgid "Source"
 msgstr ""
 
 #: includes/i18n.php:273
-#: assets/editor.js:12
-msgid "Чтения дня"
+msgid "The uploads directory is not writable."
 msgstr ""
 
 #: includes/i18n.php:274
-#: assets/editor.js:15
-msgid "Памяти святых"
+msgid "Failed to update the file (HTTP "
 msgstr ""
 
 #: includes/i18n.php:275
-#: assets/editor.js:16
-msgid "Праздники"
+msgid "The media cache has reached 200 MB. Clear it under Cache and files."
 msgstr ""
 
 #: includes/i18n.php:276
-#: assets/editor.js:17
-msgid "Поминальные дни"
+#: assets/editor.js:7
+msgid "Today"
 msgstr ""
 
 #: includes/i18n.php:277
-#: assets/editor.js:18
-msgid "Пасха"
+#: assets/editor.js:8
+msgid "Upcoming feasts"
 msgstr ""
 
 #: includes/i18n.php:278
-#: assets/editor.js:19
-msgid "Посты на год"
+#: assets/editor.js:9
+msgid "Monthly calendar"
 msgstr ""
 
 #: includes/i18n.php:279
-#: assets/editor.js:20
-msgid "Дата по двум стилям"
+#: assets/editor.js:10
+msgid "Yearly calendar"
 msgstr ""
 
 #: includes/i18n.php:280
-#: assets/editor.js:22
-msgid "Тропари"
+#: assets/calendar.js:664
+#: assets/editor.js:11
+msgid "Calendar day"
 msgstr ""
 
 #: includes/i18n.php:281
-#: assets/editor.js:23
-msgid "Кондаки"
+#: assets/editor.js:12
+msgid "Daily readings"
 msgstr ""
 
 #: includes/i18n.php:282
-#: assets/editor.js:24
-msgid "Молитвы"
+#: assets/editor.js:15
+msgid "Saints commemorations"
 msgstr ""
 
 #: includes/i18n.php:283
-#: assets/editor.js:25
-msgid "Величания"
+#: assets/editor.js:16
+msgid "Feasts"
 msgstr ""
 
 #: includes/i18n.php:284
-#: assets/editor.js:26
-msgid "Часослов"
+#: assets/editor.js:17
+msgid "Memorial days"
 msgstr ""
 
 #: includes/i18n.php:285
-#: assets/editor.js:27
-msgid "Акафисты"
+#: assets/editor.js:18
+msgid "Pascha"
 msgstr ""
 
 #: includes/i18n.php:286
-#: assets/editor.js:28
-msgid "Каноны"
+#: assets/editor.js:19
+msgid "Yearly fasts"
 msgstr ""
 
 #: includes/i18n.php:287
-msgid "Календарная мастерская"
+#: assets/editor.js:20
+msgid "New and old style date"
 msgstr ""
 
 #: includes/i18n.php:288
-msgid "Адрес API должен быть полным HTTPS-адресом без /api."
+#: assets/editor.js:22
+msgid "Troparia"
 msgstr ""
 
 #: includes/i18n.php:289
-msgid "Неизвестный блок."
+#: assets/editor.js:23
+msgid "Kontakia"
 msgstr ""
 
 #: includes/i18n.php:290
-msgid "Неверные параметры библиотеки текстов."
+#: assets/editor.js:24
+msgid "Prayers"
 msgstr ""
 
 #: includes/i18n.php:291
-msgid "Дата должна быть в диапазоне 1900–2200, в формате ГГГГ-ММ-ДД."
+#: assets/editor.js:25
+msgid "Magnifications"
 msgstr ""
 
 #: includes/i18n.php:292
-msgid "Неверный год, месяц или количество праздников."
+#: assets/editor.js:26
+msgid "Horologion"
 msgstr ""
 
 #: includes/i18n.php:293
-msgid "Неверный параметр календаря."
+#: assets/editor.js:27
+msgid "Akathists"
 msgstr ""
 
 #: includes/i18n.php:294
-msgid "Неверный параметр библиотеки."
+#: assets/editor.js:28
+msgid "Canons"
 msgstr ""
 
 #: includes/i18n.php:295
-msgid "Неизвестный раздел дня."
+msgid "Calendar workshop"
 msgstr ""
 
 #: includes/i18n.php:296
-msgid "Сервис временно недоступен. Повторите позже."
+msgid "The API address must be a full HTTPS address without /api."
 msgstr ""
 
 #: includes/i18n.php:297
-msgid "Не удалось подключиться к "
+msgid "Unknown block."
 msgstr ""
 
 #: includes/i18n.php:298
-msgid "календарю."
+msgid "Invalid text library parameters."
 msgstr ""
 
 #: includes/i18n.php:299
-msgid "API-ключ отсутствует или недействителен."
+msgid "The date must be between 1900 and 2200 in YYYY-MM-DD format."
 msgstr ""
 
 #: includes/i18n.php:300
-msgid "Доступ к API отключён или истёк."
+msgid "Invalid year, month or feast count."
 msgstr ""
 
 #: includes/i18n.php:301
-msgid "Достигнут лимит запросов. Повторите позже."
+msgid "Invalid calendar parameter."
 msgstr ""
 
 #: includes/i18n.php:302
-msgid "API занят или обновляется. Повторите позже."
+msgid "Invalid library parameter."
 msgstr ""
 
 #: includes/i18n.php:303
-msgid "Источник данных недоступен (HTTP "
+msgid "Unknown day section."
 msgstr ""
 
 #: includes/i18n.php:304
-msgid "Источник вернул неверный формат данных."
+msgid "The service is temporarily unavailable. Please try again later."
 msgstr ""
 
 #: includes/i18n.php:305
-msgid "Перевод"
+msgid "Failed to connect to the "
 msgstr ""
 
 #: includes/i18n.php:306
-msgid "Загрузить переводы…"
+msgid "calendar."
 msgstr ""
 
 #: includes/i18n.php:307
-msgid "Текст Апостола и Евангелия открывается по выбранному переводу. Псалтирь приведена по богослужебному распределению дня."
+msgid "The API key is missing or invalid."
 msgstr ""
 
 #: includes/i18n.php:308
-msgid "Повторить"
+msgid "API access is disabled or has expired."
 msgstr ""
 
 #: includes/i18n.php:309
-msgid "через "
+msgid "The request limit has been reached. Please try again later."
 msgstr ""
 
 #: includes/i18n.php:310
-msgid " дн."
+msgid "The API is busy or being updated. Please try again later."
 msgstr ""
 
 #: includes/i18n.php:311
-msgid "сегодня"
+msgid "The data source is unavailable (HTTP "
 msgstr ""
 
 #: includes/i18n.php:312
-msgid "В указанном диапазоне событий нет."
+msgid "The source returned an invalid data format."
 msgstr ""
 
 #: includes/i18n.php:313
-msgid "Постные периоды"
+msgid "Translation"
 msgstr ""
 
 #: includes/i18n.php:314
-msgid "Как читать календарь"
+msgid "Load translations…"
 msgstr ""
 
 #: includes/i18n.php:315
-msgid "✦ — великий праздник. Красным выделены воскресенья и великие праздники. Маленькое число — дата "
+msgid "The Epistle and Gospel texts open in the selected translation. The Psalter follows the liturgical allocation for the day."
 msgstr ""
 
 #: includes/i18n.php:316
-msgid "по старому стилю"
+msgid "Retry"
 msgstr ""
 
 #: includes/i18n.php:317
-msgid ". Выберите день, чтобы увидеть все памяти, знаки Типикона и правило поста."
+msgid "in "
 msgstr ""
 
 #: includes/i18n.php:318
-msgid "API требует обновления: ожидаемые поля отсутствуют."
+msgid " days"
 msgstr ""
 
 #: includes/i18n.php:319
-msgid "января"
+msgid "today"
 msgstr ""
 
 #: includes/i18n.php:320
-msgid "февраля"
+msgid "There are no events in the specified range."
 msgstr ""
 
 #: includes/i18n.php:321
-msgid "марта"
+msgid "Fasting periods"
 msgstr ""
 
 #: includes/i18n.php:322
-msgid "апреля"
+msgid "How to read the calendar"
 msgstr ""
 
 #: includes/i18n.php:323
-msgid "мая"
+msgid "✦ indicates a great feast. Sundays and great feasts are highlighted in red. The small number is the "
 msgstr ""
 
 #: includes/i18n.php:324
-msgid "июня"
+msgid "old style date"
 msgstr ""
 
 #: includes/i18n.php:325
-msgid "июля"
+msgid ". Select a day to see all commemorations, Typikon symbols and the fasting rule."
 msgstr ""
 
 #: includes/i18n.php:326
-msgid "августа"
+msgid "The API needs updating: expected fields are missing."
 msgstr ""
 
 #: includes/i18n.php:327
-msgid "сентября"
+msgctxt "date month"
+msgid "January"
 msgstr ""
 
 #: includes/i18n.php:328
-msgid "октября"
+msgctxt "date month"
+msgid "February"
 msgstr ""
 
 #: includes/i18n.php:329
-msgid "ноября"
+msgctxt "date month"
+msgid "March"
 msgstr ""
 
 #: includes/i18n.php:330
-msgid "декабря"
+msgctxt "date month"
+msgid "April"
 msgstr ""
 
 #: includes/i18n.php:331
-msgid "Выбор периода"
+msgctxt "date month"
+msgid "May"
 msgstr ""
 
 #: includes/i18n.php:332
-msgid "← Назад"
+msgctxt "date month"
+msgid "June"
 msgstr ""
 
 #: includes/i18n.php:333
-msgid "Вперёд →"
+msgctxt "date month"
+msgid "July"
 msgstr ""
 
 #: includes/i18n.php:334
-msgid "Январь"
+msgctxt "date month"
+msgid "August"
 msgstr ""
 
 #: includes/i18n.php:335
-msgid "Февраль"
+msgctxt "date month"
+msgid "September"
 msgstr ""
 
 #: includes/i18n.php:336
-msgid "Март"
+msgctxt "date month"
+msgid "October"
 msgstr ""
 
 #: includes/i18n.php:337
-msgid "Апрель"
+msgctxt "date month"
+msgid "November"
 msgstr ""
 
 #: includes/i18n.php:338
-msgid "Май"
+msgctxt "date month"
+msgid "December"
 msgstr ""
 
 #: includes/i18n.php:339
-msgid "Июнь"
+msgid "Period selection"
 msgstr ""
 
 #: includes/i18n.php:340
-msgid "Июль"
+msgid "← Back"
 msgstr ""
 
 #: includes/i18n.php:341
-msgid "Август"
+msgid "Forward →"
 msgstr ""
 
 #: includes/i18n.php:342
-msgid "Сентябрь"
+msgctxt "month name"
+msgid "January"
 msgstr ""
 
 #: includes/i18n.php:343
-msgid "Октябрь"
+msgctxt "month name"
+msgid "February"
 msgstr ""
 
 #: includes/i18n.php:344
-msgid "Ноябрь"
+msgctxt "month name"
+msgid "March"
 msgstr ""
 
 #: includes/i18n.php:345
-msgid "Декабрь"
+msgctxt "month name"
+msgid "April"
 msgstr ""
 
 #: includes/i18n.php:346
-msgid "Пн"
+msgctxt "month name"
+msgid "May"
 msgstr ""
 
 #: includes/i18n.php:347
-msgid "Вт"
+msgctxt "month name"
+msgid "June"
 msgstr ""
 
 #: includes/i18n.php:348
-msgid "Ср"
+msgctxt "month name"
+msgid "July"
 msgstr ""
 
 #: includes/i18n.php:349
-msgid "Чт"
+msgctxt "month name"
+msgid "August"
 msgstr ""
 
 #: includes/i18n.php:350
-msgid "Пт"
+msgctxt "month name"
+msgid "September"
 msgstr ""
 
 #: includes/i18n.php:351
-msgid "Сб"
+msgctxt "month name"
+msgid "October"
 msgstr ""
 
 #: includes/i18n.php:352
-msgid "Вс"
+msgctxt "month name"
+msgid "November"
 msgstr ""
 
 #: includes/i18n.php:353
-#: assets/calendar.js:91
-msgid " (пер.)"
+msgctxt "month name"
+msgid "December"
 msgstr ""
 
 #: includes/i18n.php:354
-msgid "Икона"
+msgid "Mon"
 msgstr ""
 
 #: includes/i18n.php:355
-msgid "Выбрать дату"
+msgid "Tue"
 msgstr ""
 
 #: includes/i18n.php:356
-msgid "-я седмица по Пятидесятнице"
+msgid "Wed"
 msgstr ""
 
 #: includes/i18n.php:357
-msgid "глас "
+msgid "Thu"
 msgstr ""
 
 #: includes/i18n.php:358
-msgid "Выбор дня"
+msgid "Fri"
 msgstr ""
 
 #: includes/i18n.php:359
-msgid "← Вчера"
+msgid "Sat"
 msgstr ""
 
 #: includes/i18n.php:360
-msgid "Завтра →"
+msgid "Sun"
 msgstr ""
 
 #: includes/i18n.php:361
-msgid "← Предыдущий день"
+#: assets/calendar.js:91
+msgid " (transferred)"
 msgstr ""
 
 #: includes/i18n.php:362
-msgid "Следующий день →"
+msgid "Icon"
 msgstr ""
 
 #: includes/i18n.php:363
-msgid "Найти в памятях дня"
+msgid "Choose a date"
 msgstr ""
 
 #: includes/i18n.php:364
-msgid "Имя или название"
+msgid "week after Pentecost"
 msgstr ""
 
 #: includes/i18n.php:365
-msgid "Знак Типикона"
+msgid "tone "
 msgstr ""
 
 #: includes/i18n.php:366
-msgid "Совпадений нет."
+msgid "Day selection"
 msgstr ""
 
 #: includes/i18n.php:367
-msgid "Монастырский"
+msgid "← Yesterday"
 msgstr ""
 
 #: includes/i18n.php:368
-msgid "Псалтирь"
+msgid "Tomorrow →"
 msgstr ""
 
 #: includes/i18n.php:369
-msgid "На утрене:"
+msgid "← Previous day"
 msgstr ""
 
 #: includes/i18n.php:370
-msgid "На вечерне:"
+msgid "Next day →"
 msgstr ""
 
 #: includes/i18n.php:371
-msgid "В источнике нет чтений для этой даты."
+msgid "Search daily commemorations"
 msgstr ""
 
 #: includes/i18n.php:372
-msgid "Откройте справочник и выберите нужный текст."
+msgid "Name or title"
 msgstr ""
 
 #: includes/i18n.php:373
-msgid "Ссылка на этот день"
+msgid "Typikon symbol"
 msgstr ""
 
 #: includes/i18n.php:374
-msgid "Скопировать ссылку"
+msgid "No matches."
 msgstr ""
 
 #: includes/i18n.php:375
-msgid " профиль"
+msgid "Monastic"
 msgstr ""
 
 #: includes/i18n.php:376
-msgid "Открыть икону: "
+msgid "Psalter"
 msgstr ""
 
 #: includes/i18n.php:377
-msgid "Все разделы"
+msgid "At Matins:"
 msgstr ""
 
 #: includes/i18n.php:378
-msgid "Общие и справочные"
+msgid "At Vespers:"
 msgstr ""
 
 #: includes/i18n.php:379
-msgid "Все гласы"
+msgid "The source has no readings for this date."
 msgstr ""
 
 #: includes/i18n.php:380
-msgid "В этой части библиотеки пока нет текстов с выбранными параметрами."
+msgid "Open the reference library and choose a text."
 msgstr ""
 
 #: includes/i18n.php:381
-msgid "Слишком много запросов. Повторите через минуту."
+msgid "Link to this day"
 msgstr ""
 
 #: includes/i18n.php:382
-msgid "Неверные параметры."
+msgid "Copy link"
 msgstr ""
 
 #: includes/i18n.php:383
-msgid "Неверный путь."
+msgid " profile"
 msgstr ""
 
 #: includes/i18n.php:384
-msgid "Неверный адрес изображения."
+msgid "Open icon: "
 msgstr ""
 
 #: includes/i18n.php:385
-msgid "Изображение пока недоступно. Повторите позже."
+msgid "All sections"
 msgstr ""
 
 #: includes/i18n.php:386
+msgid "General and reference"
+msgstr ""
+
+#: includes/i18n.php:387
+msgid "All tones"
+msgstr ""
+
+#: includes/i18n.php:388
+msgid "This part of the library has no texts matching the selected settings."
+msgstr ""
+
+#: includes/i18n.php:389
+msgid "Too many requests. Try again in a minute."
+msgstr ""
+
+#: includes/i18n.php:390
+msgid "Invalid parameters."
+msgstr ""
+
+#: includes/i18n.php:391
+msgid "Invalid path."
+msgstr ""
+
+#: includes/i18n.php:392
+msgid "Invalid image address."
+msgstr ""
+
+#: includes/i18n.php:393
+msgid "The image is temporarily unavailable. Please try again later."
+msgstr ""
+
+#: includes/i18n.php:394
 #: assets/editor.js:186
 #: assets/editor.js:199
 #: assets/editor.js:203
@@ -1362,10 +1389,10 @@ msgstr ""
 #: assets/editor.js:215
 #: assets/editor.js:224
 #: assets/editor.js:269
-msgid "Скрыть"
+msgid "Hide"
 msgstr ""
 
-#: includes/i18n.php:387
+#: includes/i18n.php:395
 #: assets/editor.js:185
 #: assets/editor.js:198
 #: assets/editor.js:202
@@ -1374,606 +1401,606 @@ msgstr ""
 #: assets/editor.js:214
 #: assets/editor.js:223
 #: assets/editor.js:268
-msgid "Показывать"
-msgstr ""
-
-#: includes/i18n.php:388
-#: assets/editor.js:267
-msgid "Старый стиль"
-msgstr ""
-
-#: includes/i18n.php:389
-#: assets/editor.js:264
-msgid "Компактный"
-msgstr ""
-
-#: includes/i18n.php:390
-#: assets/editor.js:263
-msgid "Размер"
-msgstr ""
-
-#: includes/i18n.php:391
-#: assets/editor.js:257
-msgid "ID конкретного текста, необязательно"
-msgstr ""
-
-#: includes/i18n.php:392
-#: assets/editor.js:251
-msgid "День седмицы (0–6), необязательно"
-msgstr ""
-
-#: includes/i18n.php:393
-#: assets/editor.js:245
-msgid "Глас (1–8), необязательно"
-msgstr ""
-
-#: includes/i18n.php:394
-#: assets/editor.js:227
-msgid "Разделы: fasting,saints,readings,texts,icons"
-msgstr ""
-
-#: includes/i18n.php:395
-#: assets/editor.js:222
-msgid "Заголовок"
+msgid "Show"
 msgstr ""
 
 #: includes/i18n.php:396
-#: assets/editor.js:218
-msgid "Уровни памятей (0,1,2,3,4)"
+#: assets/editor.js:267
+msgid "Old style"
 msgstr ""
 
 #: includes/i18n.php:397
-#: assets/editor.js:213
-msgid "Заголовки секций"
+#: assets/editor.js:264
+msgid "Compact"
 msgstr ""
 
 #: includes/i18n.php:398
-#: assets/editor.js:209
-msgid "Поиск по памятям"
+#: assets/editor.js:263
+msgid "Size"
 msgstr ""
 
 #: includes/i18n.php:399
-#: assets/editor.js:205
-msgid "Ссылка на день"
+#: assets/editor.js:257
+msgid "Specific text ID, optional"
 msgstr ""
 
 #: includes/i18n.php:400
-#: assets/editor.js:201
-msgid "Переход к дате"
+#: assets/editor.js:251
+msgid "Day of the week (0–6), optional"
 msgstr ""
 
 #: includes/i18n.php:401
-#: assets/editor.js:197
-msgid "Навигация по дням"
+#: assets/editor.js:245
+msgid "Tone (1–8), optional"
 msgstr ""
 
 #: includes/i18n.php:402
-#: assets/editor.js:184
-msgid "Картинки"
+#: assets/editor.js:227
+msgid "Sections: fasting,saints,readings,texts,icons"
 msgstr ""
 
 #: includes/i18n.php:403
-#: assets/editor.js:177
-#: assets/editor.js:182
-msgid "В окне"
+#: assets/editor.js:222
+msgid "Heading"
 msgstr ""
 
 #: includes/i18n.php:404
-#: assets/editor.js:181
-msgid "Под ссылкой"
+#: assets/editor.js:218
+msgid "Commemoration ranks (0,1,2,3,4)"
 msgstr ""
 
 #: includes/i18n.php:405
-#: assets/editor.js:180
-msgid "Открытие чтений"
+#: assets/editor.js:213
+msgid "Section headings"
 msgstr ""
 
 #: includes/i18n.php:406
-#: assets/editor.js:178
-msgid "На странице"
+#: assets/editor.js:209
+msgid "Commemoration search"
 msgstr ""
 
 #: includes/i18n.php:407
-#: assets/editor.js:169
-msgid "В стиле сайта"
+#: assets/editor.js:205
+msgid "Day link"
 msgstr ""
 
 #: includes/i18n.php:408
-#: assets/editor.js:168
-msgid "Современное"
+#: assets/editor.js:201
+msgid "Go to date"
 msgstr ""
 
 #: includes/i18n.php:409
-#: assets/editor.js:167
-msgid "Книжное"
+#: assets/editor.js:197
+msgid "Day navigation"
 msgstr ""
 
 #: includes/i18n.php:410
-#: assets/editor.js:166
-msgid "Оформление"
+#: assets/editor.js:184
+msgid "Images"
 msgstr ""
 
 #: includes/i18n.php:411
-#: assets/editor.js:125
-msgid "События"
+#: assets/editor.js:177
+#: assets/editor.js:182
+msgid "In a popup window"
 msgstr ""
 
 #: includes/i18n.php:412
-#: assets/editor.js:108
-msgid "Месяц (1–12)"
+#: assets/editor.js:181
+msgid "Below the link"
 msgstr ""
 
 #: includes/i18n.php:413
-#: assets/editor.js:89
-msgid "Дата (ГГГГ-ММ-ДД), пусто — сегодня"
+#: assets/editor.js:180
+msgid "Opening readings"
 msgstr ""
 
 #: includes/i18n.php:414
-#: assets/editor.js:87
-msgid "Календарь"
+#: assets/editor.js:178
+msgid "On a page"
 msgstr ""
 
 #: includes/i18n.php:415
-#: assets/editor.js:67
-msgid "Настройка сайта"
+#: assets/editor.js:169
+msgid "Site style"
 msgstr ""
 
 #: includes/i18n.php:416
-#: assets/editor.js:60
-msgid "православный"
+#: assets/editor.js:168
+msgid "Modern"
 msgstr ""
 
 #: includes/i18n.php:417
-#: assets/editor.js:60
-msgid "календарь"
+#: assets/editor.js:167
+msgid "Book"
 msgstr ""
 
 #: includes/i18n.php:418
-#: assets/editor.js:56
-msgid "Православный календарь: "
+#: assets/editor.js:166
+msgid "Appearance"
 msgstr ""
 
 #: includes/i18n.php:419
-#: assets/editor.js:52
-msgid "Каноны с выбором языка текста."
+#: assets/editor.js:125
+msgid "Events"
 msgstr ""
 
 #: includes/i18n.php:420
-#: assets/editor.js:51
-msgid "Полные акафисты из библиотеки Bible Desktop."
+#: assets/editor.js:108
+msgid "Month (1–12)"
 msgstr ""
 
 #: includes/i18n.php:421
-#: assets/editor.js:50
-msgid "Полные разделы Часослова с выбором языка текста."
+#: assets/editor.js:89
+msgid "Date (YYYY-MM-DD), empty for today"
 msgstr ""
 
 #: includes/i18n.php:422
-#: assets/editor.js:49
-msgid "Справочник величаний."
+#: assets/editor.js:87
+msgid "Calendar"
 msgstr ""
 
 #: includes/i18n.php:423
-#: assets/editor.js:48
-msgid "Справочник молитв."
+#: assets/editor.js:67
+msgid "Site setting"
 msgstr ""
 
 #: includes/i18n.php:424
-#: assets/editor.js:47
-msgid "Справочник кондаков с фильтрами по гласу и дню седмицы."
+#: assets/editor.js:60
+msgid "orthodox"
 msgstr ""
 
 #: includes/i18n.php:425
-#: assets/editor.js:46
-msgid "Справочник тропарей с фильтрами по гласу и дню седмицы."
+#: assets/editor.js:60
+msgid "calendar"
 msgstr ""
 
 #: includes/i18n.php:426
-#: assets/editor.js:45
-msgid "Справочник тропарей, кондаков, молитв и величаний."
+#: assets/editor.js:56
+msgid "Orthodox calendar: "
 msgstr ""
 
 #: includes/i18n.php:427
-#: assets/editor.js:44
-msgid "Гражданская дата и соответствующая дата старого стиля."
+#: assets/editor.js:52
+msgid "Canons with text language selection."
 msgstr ""
 
 #: includes/i18n.php:428
-#: assets/editor.js:43
-msgid "Многодневные посты выбранного года."
+#: assets/editor.js:51
+msgid "Full akathists from the Bible Desktop library."
 msgstr ""
 
 #: includes/i18n.php:429
-#: assets/editor.js:42
-msgid "Дата Пасхи и связанные сведения для выбранного года."
+#: assets/editor.js:50
+msgid "Full Horologion sections with text language selection."
 msgstr ""
 
 #: includes/i18n.php:430
-#: assets/editor.js:41
-msgid "Ближайшие дни особого поминовения усопших."
+#: assets/editor.js:49
+msgid "Magnifications reference library."
 msgstr ""
 
 #: includes/i18n.php:431
-#: assets/editor.js:40
-msgid "Ближайшие православные праздники."
+#: assets/editor.js:48
+msgid "Prayers reference library."
 msgstr ""
 
 #: includes/i18n.php:432
-#: assets/editor.js:39
-msgid "Памяти святых выбранного дня."
+#: assets/editor.js:47
+msgid "Kontakia reference library with tone and weekday filters."
 msgstr ""
 
 #: includes/i18n.php:433
-#: assets/editor.js:38
-msgid "Правило поста и трапезы выбранного дня."
+#: assets/editor.js:46
+msgid "Troparia reference library with tone and weekday filters."
 msgstr ""
 
 #: includes/i18n.php:434
-#: assets/editor.js:37
-msgid "Календарь с выбором даты и переходом к подробному дню."
+#: assets/editor.js:45
+msgid "Reference library of troparia, kontakia, prayers and magnifications."
 msgstr ""
 
 #: includes/i18n.php:435
-#: assets/editor.js:36
-msgid "Библейские чтения выбранного дня."
+#: assets/editor.js:44
+msgid "Civil date and corresponding old style date."
 msgstr ""
 
 #: includes/i18n.php:436
-#: assets/editor.js:35
-msgid "Полная карточка указанной даты."
+#: assets/editor.js:43
+msgid "Multi-day fasts for the selected year."
 msgstr ""
 
 #: includes/i18n.php:437
-#: assets/editor.js:34
-msgid "Годовой календарь с православными датами."
+#: assets/editor.js:42
+msgid "Pascha date and related information for the selected year."
 msgstr ""
 
 #: includes/i18n.php:438
-#: assets/editor.js:33
-msgid "Сетка выбранного месяца с событиями, постом и старым стилем."
+#: assets/editor.js:41
+msgid "Upcoming days of special commemoration of the departed."
 msgstr ""
 
 #: includes/i18n.php:439
-#: assets/editor.js:32
-msgid "Список ближайших главных, великих или поминальных дней."
+#: assets/editor.js:40
+msgid "Upcoming Orthodox feasts."
 msgstr ""
 
 #: includes/i18n.php:440
-#: assets/editor.js:31
-msgid "Карточка текущего дня: пост, праздники, памяти и чтения."
+#: assets/editor.js:39
+msgid "Saints commemorations for the selected day."
 msgstr ""
 
 #: includes/i18n.php:441
-#: assets/admin.js:297
-msgid "В BibleDesktop пока нет активных переводов."
+#: assets/editor.js:38
+msgid "Fasting and meal rule for the selected day."
 msgstr ""
 
 #: includes/i18n.php:442
-#: assets/admin.js:296
-msgid " переводов."
+#: assets/editor.js:37
+msgid "Calendar with date selection and navigation to a detailed day card."
 msgstr ""
 
 #: includes/i18n.php:443
-#: assets/admin.js:296
-msgid "Каталог загружен: "
+#: assets/editor.js:36
+msgid "Bible readings for the selected day."
 msgstr ""
 
 #: includes/i18n.php:444
-#: assets/admin.js:285
-msgid "Выберите перевод"
+#: assets/editor.js:35
+msgid "Full card for the specified date."
 msgstr ""
 
 #: includes/i18n.php:445
-#: assets/admin.js:283
-msgid "BibleDesktop вернул неожиданный формат каталога."
+#: assets/editor.js:34
+msgid "Yearly calendar with Orthodox dates."
 msgstr ""
 
 #: includes/i18n.php:446
-#: assets/admin.js:281
-msgid "BibleDesktop вернул ошибку."
+#: assets/editor.js:33
+msgid "Monthly grid with events, fasting rules and old style dates."
 msgstr ""
 
 #: includes/i18n.php:447
-#: assets/admin.js:273
-msgid "Загрузка каталога…"
+#: assets/editor.js:32
+msgid "List of upcoming main, great or memorial days."
 msgstr ""
 
 #: includes/i18n.php:448
-#: assets/admin.js:227
-msgid "Предпросмотр обновлён."
+#: assets/editor.js:31
+msgid "Current day card: fasting, feasts, commemorations and readings."
 msgstr ""
 
 #: includes/i18n.php:449
-#: assets/admin.js:224
-msgid "Блок не получен."
+#: assets/admin.js:297
+msgid "BibleDesktop has no active translations yet."
 msgstr ""
 
 #: includes/i18n.php:450
-#: assets/admin.js:221
-msgid "Не удалось получить блок."
+#: assets/admin.js:296
+msgid " translations."
 msgstr ""
 
 #: includes/i18n.php:451
-#: assets/admin.js:210
-msgid "Обновляю предпросмотр…"
+#: assets/admin.js:296
+msgid "Catalogue loaded: "
 msgstr ""
 
 #: includes/i18n.php:452
-#: assets/admin.js:40
-msgid "Выделите строку и скопируйте вручную."
+#: assets/admin.js:285
+msgid "Choose a translation"
 msgstr ""
 
 #: includes/i18n.php:453
-#: assets/admin.js:38
-msgid "Шорткод скопирован."
+#: assets/admin.js:283
+msgid "BibleDesktop returned an unexpected catalogue format."
 msgstr ""
 
 #: includes/i18n.php:454
-msgid "Глава"
+#: assets/admin.js:281
+msgid "BibleDesktop returned an error."
 msgstr ""
 
 #: includes/i18n.php:455
-msgid "Выберите язык и перевод."
+#: assets/admin.js:273
+msgid "Loading catalogue…"
 msgstr ""
 
 #: includes/i18n.php:456
-msgid "Загрузка текста…"
+#: assets/admin.js:227
+msgid "Preview refreshed."
 msgstr ""
 
 #: includes/i18n.php:457
-msgid "Выберите язык и перевод"
+#: assets/admin.js:224
+msgid "No block was received."
 msgstr ""
 
 #: includes/i18n.php:458
-msgid "Каталог переводов требует обновления."
+#: assets/admin.js:221
+msgid "Failed to retrieve the block."
 msgstr ""
 
 #: includes/i18n.php:459
-msgid "Источник не ответил вовремя. Повторите запрос."
+#: assets/admin.js:210
+msgid "Refreshing preview…"
 msgstr ""
 
 #: includes/i18n.php:460
-#: assets/calendar.js:683
-msgid "Закрыть ×"
+#: assets/admin.js:40
+msgid "Select the line and copy it manually."
 msgstr ""
 
 #: includes/i18n.php:461
-msgid "Не удалось отобразить календарь."
+#: assets/admin.js:38
+msgid "Shortcode copied."
 msgstr ""
 
 #: includes/i18n.php:462
-msgid "Загрузка…"
+msgid "Chapter"
 msgstr ""
 
 #: includes/i18n.php:463
-#: assets/calendar.js:600
-msgid "В переводе отсутствуют запрошенные стихи. Неполный текст не показан."
+msgid "Choose a language and translation."
 msgstr ""
 
 #: includes/i18n.php:464
-#: assets/calendar.js:579
-msgid "Неверный порядок стихов."
+msgid "Loading text…"
 msgstr ""
 
 #: includes/i18n.php:465
-#: assets/calendar.js:570
-msgid "Не получена полная глава."
+msgid "Choose a language and translation"
 msgstr ""
 
 #: includes/i18n.php:466
-#: assets/calendar.js:557
-msgid "Глава отсутствует в переводе."
+msgid "The translation catalogue needs updating."
 msgstr ""
 
 #: includes/i18n.php:467
-#: assets/calendar.js:549
-msgid "Не найдено однозначное соответствие книги "
+msgid "The source did not respond in time. Please retry the request."
 msgstr ""
 
 #: includes/i18n.php:468
-#: assets/calendar.js:543
-msgid "Неверные границы стихов."
+#: assets/calendar.js:687
+msgid "Close ×"
 msgstr ""
 
 #: includes/i18n.php:469
-#: assets/calendar.js:537
-msgid "Неверные границы чтения."
+msgid "Failed to display the calendar."
 msgstr ""
 
 #: includes/i18n.php:470
-#: assets/calendar.js:523
-msgid "Каталог книг недоступен."
+msgid "Loading…"
 msgstr ""
 
 #: includes/i18n.php:471
-#: assets/calendar.js:516
-msgid "Ссылка разобрана не полностью. Исходное обозначение чтения сохранено."
+#: assets/calendar.js:600
+msgid "The translation is missing requested verses. The incomplete text is not displayed."
 msgstr ""
 
 #: includes/i18n.php:472
-#: assets/calendar.js:507
-msgid "Источник вернул другой перевод или язык."
+#: assets/calendar.js:579
+msgid "Invalid verse order."
 msgstr ""
 
 #: includes/i18n.php:473
-msgid "Не удалось загрузить изображение."
+#: assets/calendar.js:570
+msgid "The full chapter was not received."
 msgstr ""
 
 #: includes/i18n.php:474
-#: assets/calendar.js:380
-msgid "Не удалось получить данные."
+#: assets/calendar.js:557
+msgid "The chapter is missing from the translation."
 msgstr ""
 
 #: includes/i18n.php:475
-msgid "Копирование недоступно. Выделите текст и скопируйте вручную."
+#: assets/calendar.js:549
+msgid "No unambiguous match was found for the book "
 msgstr ""
 
 #: includes/i18n.php:476
-msgid "Скопировано."
+#: assets/calendar.js:543
+msgid "Invalid verse boundaries."
 msgstr ""
 
 #: includes/i18n.php:477
-msgid "из"
+#: assets/calendar.js:537
+msgid "Invalid reading boundaries."
 msgstr ""
 
 #: includes/i18n.php:478
-msgid "Описание иконы отсутствует."
+#: assets/calendar.js:523
+msgid "The book catalogue is unavailable."
 msgstr ""
 
 #: includes/i18n.php:479
-msgid "Все образы дня"
+#: assets/calendar.js:516
+msgid "The reference could not be fully parsed. The original reading notation is preserved."
 msgstr ""
 
 #: includes/i18n.php:480
-msgid "Изображения образа"
+#: assets/calendar.js:507
+msgid "The source returned a different translation or language."
 msgstr ""
 
 #: includes/i18n.php:481
-msgid "Справочная библиотека · церковнославянский текст. Выбор по гласу или дню недели не является указанием порядка конкретной службы."
+msgid "Failed to load the image."
 msgstr ""
 
 #: includes/i18n.php:482
-msgid "Общие молитвы"
+#: assets/calendar.js:380
+msgid "Failed to retrieve data."
 msgstr ""
 
 #: includes/i18n.php:483
-msgid "Молитвы и тексты дня на "
+msgid "Copying is unavailable. Select the text and copy it manually."
 msgstr ""
 
 #: includes/i18n.php:484
-msgid "Тексты дня"
+msgid "Copied."
 msgstr ""
 
 #: includes/i18n.php:485
-msgid "Текст службы"
+msgid "of"
 msgstr ""
 
 #: includes/i18n.php:486
-msgid "Молитва"
+msgid "The icon has no description."
 msgstr ""
 
 #: includes/i18n.php:487
-msgid "Для выбранного раздела пока нет текстов."
+msgid "All icons for the day"
 msgstr ""
 
 #: includes/i18n.php:488
-msgid "Празднование:"
+msgid "Icon images"
 msgstr ""
 
 #: includes/i18n.php:489
-msgid "Даты празднования не указаны источником."
+msgid "Reference library · Church Slavonic text. Choosing a tone or weekday does not specify the order of a particular service."
 msgstr ""
 
 #: includes/i18n.php:490
-msgid "Назначения текстов для этого дня ещё требуют уточнения. Справочные тексты приведены отдельно."
+msgid "General prayers"
+msgstr ""
+
+#: includes/i18n.php:491
+msgid "Prayers and daily texts for "
+msgstr ""
+
+#: includes/i18n.php:492
+msgid "Daily texts"
+msgstr ""
+
+#: includes/i18n.php:493
+msgid "Service text"
+msgstr ""
+
+#: includes/i18n.php:494
+msgid "Prayer"
+msgstr ""
+
+#: includes/i18n.php:495
+msgid "There are no texts for the selected section yet."
+msgstr ""
+
+#: includes/i18n.php:496
+msgid "Celebration:"
+msgstr ""
+
+#: includes/i18n.php:497
+msgid "The source has not specified celebration dates."
+msgstr ""
+
+#: includes/i18n.php:498
+msgid "Text assignments for this day still need clarification. Reference texts are listed separately."
 msgstr ""
 
 #: blocks/akathists/block.json
 msgctxt "block title"
-msgid "Православный календарь: Акафисты"
+msgid "Orthodox calendar: Akathists"
 msgstr ""
 
 #: blocks/calendar/block.json
 msgctxt "block title"
-msgid "Православный календарь: Православный календарь"
+msgid "Orthodox calendar: Orthodox calendar"
 msgstr ""
 
 #: blocks/canons/block.json
 msgctxt "block title"
-msgid "Православный календарь: Каноны"
+msgid "Orthodox calendar: Canons"
 msgstr ""
 
 #: blocks/date/block.json
 msgctxt "block title"
-msgid "Православный календарь: Дата по двум стилям"
+msgid "Orthodox calendar: New and old style date"
 msgstr ""
 
 #: blocks/day/block.json
 msgctxt "block title"
-msgid "Православный календарь: День календаря"
+msgid "Orthodox calendar: Calendar day"
 msgstr ""
 
 #: blocks/fasting/block.json
 msgctxt "block title"
-msgid "Православный календарь: Пост и трапеза"
+msgid "Orthodox calendar: Fasting and meals"
 msgstr ""
 
 #: blocks/fasts/block.json
 msgctxt "block title"
-msgid "Православный календарь: Посты на год"
+msgid "Orthodox calendar: Yearly fasts"
 msgstr ""
 
 #: blocks/feasts/block.json
 msgctxt "block title"
-msgid "Православный календарь: Праздники"
+msgid "Orthodox calendar: Feasts"
 msgstr ""
 
 #: blocks/horologion/block.json
 msgctxt "block title"
-msgid "Православный календарь: Часослов"
+msgid "Orthodox calendar: Horologion"
 msgstr ""
 
 #: blocks/kontakia/block.json
 msgctxt "block title"
-msgid "Православный календарь: Кондаки"
+msgid "Orthodox calendar: Kontakia"
 msgstr ""
 
 #: blocks/magnifications/block.json
 msgctxt "block title"
-msgid "Православный календарь: Величания"
+msgid "Orthodox calendar: Magnifications"
 msgstr ""
 
 #: blocks/memorial/block.json
 msgctxt "block title"
-msgid "Православный календарь: Поминальные дни"
+msgid "Orthodox calendar: Memorial days"
 msgstr ""
 
 #: blocks/month/block.json
 msgctxt "block title"
-msgid "Православный календарь: Календарь на месяц"
+msgid "Orthodox calendar: Monthly calendar"
 msgstr ""
 
 #: blocks/pascha/block.json
 msgctxt "block title"
-msgid "Православный календарь: Пасха"
+msgid "Orthodox calendar: Pascha"
 msgstr ""
 
 #: blocks/prayers/block.json
 msgctxt "block title"
-msgid "Православный календарь: Молитвы"
+msgid "Orthodox calendar: Prayers"
 msgstr ""
 
 #: blocks/readings/block.json
 msgctxt "block title"
-msgid "Православный календарь: Чтения дня"
+msgid "Orthodox calendar: Daily readings"
 msgstr ""
 
 #: blocks/saints/block.json
 msgctxt "block title"
-msgid "Православный календарь: Памяти святых"
+msgid "Orthodox calendar: Saints commemorations"
 msgstr ""
 
 #: blocks/texts/block.json
 msgctxt "block title"
-msgid "Православный календарь: Богослужебные тексты"
+msgid "Orthodox calendar: Liturgical texts"
 msgstr ""
 
 #: blocks/today/block.json
 msgctxt "block title"
-msgid "Православный календарь: Сегодня"
+msgid "Orthodox calendar: Today"
 msgstr ""
 
 #: blocks/troparia/block.json
 msgctxt "block title"
-msgid "Православный календарь: Тропари"
+msgid "Orthodox calendar: Troparia"
 msgstr ""
 
 #: blocks/upcoming/block.json
 msgctxt "block title"
-msgid "Православный календарь: Ближайшие праздники"
+msgid "Orthodox calendar: Upcoming feasts"
 msgstr ""
 
 #: blocks/year/block.json
 msgctxt "block title"
-msgid "Православный календарь: Календарь на год"
+msgid "Orthodox calendar: Yearly calendar"
 msgstr ""

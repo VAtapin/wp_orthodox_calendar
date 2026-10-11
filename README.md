@@ -1,6 +1,6 @@
 # Georg-Kloster Calendar Workshop
 
-Public source for the WordPress plugin. Version 1.3.77, GPL-2.0-or-later.
+Public source for the WordPress plugin. Version 1.3.78, GPL-2.0-or-later.
 
 ## Original sources
 
@@ -44,7 +44,7 @@ are documented in readme.txt. Version 1.3.73 was approved and published on WordP
 
 ## WordPress translations and directory images
 
-Settings, Gutenberg and reader labels use the plugin gettext domain and wp-i18n.
+Settings, Gutenberg and reader labels use US English source strings, the plugin gettext domain and wp-i18n. English works without a language pack. Month names have separate date/label contexts.
 Russian, German, Ukrainian and Polish PO catalogues each cover all 441 extracted
 strings. node scripts/build-language-files.mjs compiles the MO files and three
 script catalogues while preserving contexts. Approved WordPress.org language

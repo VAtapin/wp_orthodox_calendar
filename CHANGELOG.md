@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.3.78
+
+- Use US English originals in PHP, JavaScript and Gutenberg block metadata.
+- Preserve all four translations under English keys and contextual month names.
+- Verify en_US without a language pack and ru_RU/de_DE/uk/pl_PL in WordPress.
+
 ## 1.3.77
 
 - Connect PHP and JavaScript interface strings to standard WordPress translations.

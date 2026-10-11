@@ -3,8 +3,8 @@ if (!defined('ABSPATH')) exit;
 
 /** Full Bible Desktop works, kept separate from calendar assignments. */
 final class Orthocal_Library {
-    const PRAYER_GROUPS = ['short'=>'Короткие молитвы','rules'=>'Молитвенные правила','occasions'=>'На разные случаи','initial'=>'Начальные молитвы'];
-    const LANGUAGES = ['ru'=>'Русский','cu'=>'Церковнославянский','cu-civil'=>'Церковнославянский — гражданский шрифт','de'=>'Deutsch','pl'=>'Polski','uk'=>'Українська'];
+    const PRAYER_GROUPS = ['short'=>'Short prayers','rules'=>'Prayer rules','occasions'=>'For various occasions','initial'=>'Opening prayers'];
+    const LANGUAGES = ['ru'=>'Russian','cu'=>'Church Slavonic','cu-civil'=>'Church Slavonic — civil font','de'=>'German','pl'=>'Polish','uk'=>'native language name|Ukrainian'];
 
     static function language($a) {
         return ($a['text_language'] ?? '') ?: $a['lang'];
@@ -32,7 +32,7 @@ final class Orthocal_Library {
         if($languages===null && in_array($a['mode']??'', ['troparia','kontakia'], true))$languages=['ru','cu','cu-civil'];
         $languages=$languages===null?array_keys(self::LANGUAGES):array_values(array_intersect(array_keys(self::LANGUAGES),$languages));
         if(!in_array(self::language($a),$languages,true))$languages[]=self::language($a);
-        $html='<label>'.esc_html(Orthocal_Plugin::ui('Язык текста',$a['lang'])).' <select data-oc-library-language>';
+        $html='<label>'.esc_html(Orthocal_Plugin::ui('Text language',$a['lang'])).' <select data-oc-library-language>';
         foreach($languages as $code)$html.='<option value="'.esc_attr($code).'" '.selected(self::language($a),$code,false).'>'.esc_html(Orthocal_Plugin::ui(self::LANGUAGES[$code],$a['lang'])).'</option>';
         return $html.'</select></label>';
     }
@@ -81,7 +81,7 @@ final class Orthocal_Library {
             $response=Orthocal_Plugin::request('bible','liturgical/works/'.rawurlencode($selected['slug']).'/versions/'.rawurlencode($language),$revision?['content_revision'=>$revision]:[]);
             if(is_wp_error($response))return $response;
             $version=$response['data']??null;
-            if(($version['language']??null)!==$language)return new WP_Error('language',(Orthocal_I18n::text('Источник вернул другую языковую версию.')));
+            if(($version['language']??null)!==$language)return new WP_Error('language',(Orthocal_I18n::text('The source returned a different language version.')));
         }
         return ['library'=>true,'works'=>$works,'version'=>$version,'language'=>$language,'languages'=>$languages];
     }
@@ -109,20 +109,20 @@ final class Orthocal_Library {
         $languages=$data['languages']??null;
         $html='<div class="oc-service-controls">'.self::language_control($a,$languages);
         if($a['mode']==='prayers') {
-            $html.='<label>'.esc_html(Orthocal_Plugin::ui('Раздел',$a['lang'])).' <select data-oc-prayer-group><option value="">'.esc_html(Orthocal_Plugin::ui('Все',$a['lang'])).'</option>';
+            $html.='<label>'.esc_html(Orthocal_Plugin::ui('Section',$a['lang'])).' <select data-oc-prayer-group><option value="">'.esc_html(Orthocal_Plugin::ui('All',$a['lang'])).'</option>';
             foreach(self::PRAYER_GROUPS as $group=>$title)$html.='<option value="'.$group.'" '.selected($a['prayer_group']??'',$group,false).'>'.esc_html(Orthocal_Plugin::ui($title,$a['lang'])).'</option>';
             $html.='</select></label>';
         }
         if($data['works']) {
-            $html.='<label>'.esc_html(Orthocal_Plugin::ui('Раздел',$a['lang'])).' <select data-oc-library-work>';
+            $html.='<label>'.esc_html(Orthocal_Plugin::ui('Section',$a['lang'])).' <select data-oc-library-work>';
             foreach($data['works'] as $work)$html.='<option value="'.esc_attr($work['slug']).'" '.selected($data['version']['slug']??'',$work['slug'],false).'>'.esc_html($work['title']).'</option>';
             $html.='</select></label>';
         }
-        if($a['show_font_size']==='1')$html.='<label class="oc-library-font">'.esc_html(Orthocal_Plugin::ui('Размер текста',$a['lang'])).' <input data-oc-library-font type="range" min="16" max="40" value="24"></label>';
+        if($a['show_font_size']==='1')$html.='<label class="oc-library-font">'.esc_html(Orthocal_Plugin::ui('Text size',$a['lang'])).' <input data-oc-library-font type="range" min="16" max="40" value="24"></label>';
         $html.='</div>';
         $version=$data['version'];
-        if(!$version)return $html.'<p class="oc-message">'.esc_html(Orthocal_Plugin::ui('На выбранном языке текст пока не добавлен.',$a['lang'])).'</p>'.self::sources($a);
-        $html.='<article class="oc-reading-body oc-library-reader"><h3>'.esc_html($version['title']).'</h3><button type="button" data-oc-copy-reading>'.esc_html(Orthocal_Plugin::ui('Скопировать текст',$a['lang'])).'</button><div class="oc-verses oc-library-content" '.self::text_attributes($a,$version).'>';
+        if(!$version)return $html.'<p class="oc-message">'.esc_html(Orthocal_Plugin::ui('The text has not yet been added in the selected language.',$a['lang'])).'</p>'.self::sources($a);
+        $html.='<article class="oc-reading-body oc-library-reader"><h3>'.esc_html($version['title']).'</h3><button type="button" data-oc-copy-reading>'.esc_html(Orthocal_Plugin::ui('Copy text',$a['lang'])).'</button><div class="oc-verses oc-library-content" '.self::text_attributes($a,$version).'>';
         $blocks=self::hymn_blocks($version['blocks']??[],$a['mode']);
         foreach($blocks as $index=>$block) {
             if($index===0 && ($block['kind']??'')==='heading' && trim($block['text']??'')===trim($version['title']))continue;
@@ -133,8 +133,8 @@ final class Orthocal_Library {
             $html.='</'.$tag.'>';
         }
         $edition='';
-        if(is_string($version['orthography']??null) && preg_match('/^historic-([0-9]{4})$/D',$version['orthography'],$matches))$edition=esc_html(Orthocal_Plugin::ui('Историческая редакция',$a['lang']).' ('.$matches[1].')').' · ';
-        return $html.'</div><p class="oc-text-source">'.$edition.'<a href="'.esc_url($version['source_url']??'').'" target="_blank" rel="noopener noreferrer">'.esc_html($version['credit']??(Orthocal_I18n::text('Источник'))).'</a></p></article>';
+        if(is_string($version['orthography']??null) && preg_match('/^historic-([0-9]{4})$/D',$version['orthography'],$matches))$edition=esc_html(Orthocal_Plugin::ui('Historical edition',$a['lang']).' ('.$matches[1].')').' · ';
+        return $html.'</div><p class="oc-text-source">'.$edition.'<a href="'.esc_url($version['source_url']??'').'" target="_blank" rel="noopener noreferrer">'.esc_html($version['credit']??(Orthocal_I18n::text('Source'))).'</a></p></article>';
     }
 
     static function sources($a) {

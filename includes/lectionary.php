@@ -22,14 +22,14 @@ final class Orthocal_Lectionary {
         }
         if(!$candidates)return $empty;
         $exact=$match['status']==='exact-reference-match' && count($identities)===1;
-        $label=$exact?' · '.Orthocal_Plugin::ui('Зачало',$language).' '.reset($identities):'';
-        $html='<details class="oc-lectionary"><summary>'.esc_html(Orthocal_Plugin::ui($exact?'Источник зачала':'Возможные соответствия зачал',$language)).'</summary><ul>';
+        $label=$exact?' · '.Orthocal_Plugin::ui('Lection number',$language).' '.reset($identities):'';
+        $html='<details class="oc-lectionary"><summary>'.esc_html(Orthocal_Plugin::ui($exact?'Lection source':'Possible lection matches',$language)).'</summary><ul>';
         foreach($candidates as $candidate) {
-            $title=$candidate['reference'].' · '.Orthocal_Plugin::ui('Зачало',$language).' '.$candidate['number'];
+            $title=$candidate['reference'].' · '.Orthocal_Plugin::ui('Lection number',$language).' '.$candidate['number'];
             if($candidate['source_variant']!=='')$title.=' ('.$candidate['source_variant'].')';
             $html.='<li><a href="'.esc_url($candidate['source_url']).'" target="_blank" rel="noopener noreferrer">'.esc_html($title).'</a></li>';
         }
-        $html.='</ul><p class="oc-muted">'.esc_html(Orthocal_Plugin::ui('Соответствие относится к координатам источника; нумерация стихов других переводов отдельно не проверена.',$language)).'</p></details>';
+        $html.='</ul><p class="oc-muted">'.esc_html(Orthocal_Plugin::ui('The match applies to source coordinates; verse numbering in other translations has not been checked separately.',$language)).'</p></details>';
         return ['label'=>$label,'details'=>$html];
     }
 }

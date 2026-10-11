@@ -100,7 +100,7 @@ final class Orthocal_Media_Cache {
         if (str_starts_with($bundled, '/assets/') && is_file(dirname(__DIR__).$bundled)) {
             return plugin_dir_url(dirname(__DIR__).'/orthocal.php').ltrim($bundled, '/');
         }
-        $dir=self::directory(); if (!$dir) { update_option('orthocal_media_error',(Orthocal_I18n::text('Каталог uploads недоступен для записи.')),false); return ''; }
+        $dir=self::directory(); if (!$dir) { update_option('orthocal_media_error',(Orthocal_I18n::text('The uploads directory is not writable.')),false); return ''; }
         $meta=self::metadata($path); $url=self::local($meta,$dir);
         $hours=(int)Orthocal_Plugin::options()['media_hours'];
         if ($url) {
@@ -207,7 +207,7 @@ final class Orthocal_Media_Cache {
             }
             $body=$code===200?self::validate_body(wp_remote_retrieve_body($response),$ext):false;
             if ($body===false) {
-                $meta=array_merge($meta,['source'=>$path,'retry'=>time()+900,'error'=>(Orthocal_I18n::text('Не удалось обновить файл (HTTP ')).$code.').']);
+                $meta=array_merge($meta,['source'=>$path,'retry'=>time()+900,'error'=>(Orthocal_I18n::text('Failed to update the file (HTTP ')).$code.').']);
                 update_option($key,$meta,false);return false;
             }
             if(str_starts_with($path,'https://'))[$body,$ext]=self::compress_photo($body,$ext);
@@ -215,7 +215,7 @@ final class Orthocal_Media_Cache {
             if (!is_file($dir['path'].'/'.$name)) {
                 $stats=self::stats();
                 if ($stats['bytes']+strlen($body)>self::MAX_BYTES) {
-                    update_option('orthocal_media_error',(Orthocal_I18n::text('Кэш медиа достиг 200 МБ. Очистите его в разделе «Кэш и файлы».')),false);return false;
+                    update_option('orthocal_media_error',(Orthocal_I18n::text('The media cache has reached 200 MB. Clear it under Cache and files.')),false);return false;
                 }
                 $tmp=$dir['path'].'/'.hash('sha256',$path).'.tmp';
                 // phpcs:ignore WordPress.WP.AlternativeFunctions.rename_rename -- Atomic publication of a generated file within the same uploads directory; copy-based filesystem adapters cannot provide this guarantee.
