@@ -88,7 +88,7 @@
     const shortDate = (date) =>
       date
         .replace(/\s+[-—]\s+.*/u, "")
-        .replace(/\s*\(переходящая\)/iu, " (пер.)");
+        .replace(/\s*\(переходящая\)/iu, wp.i18n.__( " (пер.)", 'georg-kloster-calendar-workshop' ));
     icons = icons
       .map((item) => ({
         title:
@@ -377,7 +377,7 @@
       });
       const value = await response.json();
       if (!response.ok)
-        throw new Error(value.message || "Не удалось получить данные.");
+        throw new Error(value.message || wp.i18n.__( "Не удалось получить данные.", 'georg-kloster-calendar-workshop' ));
       return value;
     } finally {
       clearTimeout(timeout);
@@ -504,7 +504,7 @@
       value?.translation?.code !== translation.code ||
       value.translation.language?.code !== translation.language.code
     )
-      throw new Error("Источник вернул другой перевод или язык.");
+      throw new Error(wp.i18n.__( "Источник вернул другой перевод или язык.", 'georg-kloster-calendar-workshop' ));
   }
   async function readingText(reading, translation, endpoint) {
     if (
@@ -513,14 +513,14 @@
       !reading.passages?.length
     )
       throw new Error(
-        "Ссылка разобрана не полностью. Исходное обозначение чтения сохранено.",
+        wp.i18n.__( "Ссылка разобрана не полностью. Исходное обозначение чтения сохранено.", 'georg-kloster-calendar-workshop' ),
       );
     const prefix =
       "translations/" + encodeURIComponent(translation.code) + "/books";
     const library = await bible(endpoint, prefix);
     verifyTranslation(library, translation);
     if (!Array.isArray(library.books))
-      throw new Error("Каталог книг недоступен.");
+      throw new Error(wp.i18n.__( "Каталог книг недоступен.", 'georg-kloster-calendar-workshop' ));
     const result = [];
     for (const passage of reading.passages) {
       const a = passage.start,
@@ -534,19 +534,19 @@
         b.chapter < a.chapter ||
         b.chapter - a.chapter > 150
       )
-        throw new Error("Неверные границы чтения.");
+        throw new Error(wp.i18n.__( "Неверные границы чтения.", 'georg-kloster-calendar-workshop' ));
       if (
         !(a.verse === null && b.verse === null) &&
         (![a.verse, b.verse].every((n) => Number.isSafeInteger(n) && n > 0) ||
           (a.chapter === b.chapter && a.verse > b.verse))
       )
-        throw new Error("Неверные границы стихов.");
+        throw new Error(wp.i18n.__( "Неверные границы стихов.", 'georg-kloster-calendar-workshop' ));
       const matches = library.books.filter(
         (book) => book.canonical_book?.osis_code === passage.book,
       );
       if (matches.length !== 1)
         throw new Error(
-          "Не найдено однозначное соответствие книги " + passage.book + ".",
+          wp.i18n.__( "Не найдено однозначное соответствие книги ", 'georg-kloster-calendar-workshop' ) + passage.book + ".",
         );
       const book = matches[0];
       if (
@@ -554,7 +554,7 @@
         b.chapter > book.chapters_count ||
         typeof book.slug !== "string"
       )
-        throw new Error("Глава отсутствует в переводе.");
+        throw new Error(wp.i18n.__( "Глава отсутствует в переводе.", 'georg-kloster-calendar-workshop' ));
       for (let chapter = a.chapter; chapter <= b.chapter; chapter++) {
         const data = await bible(
           endpoint,
@@ -567,7 +567,7 @@
           !Array.isArray(data.verses) ||
           !data.verses.length
         )
-          throw new Error("Не получена полная глава.");
+          throw new Error(wp.i18n.__( "Не получена полная глава.", 'georg-kloster-calendar-workshop' ));
         if (
           data.verses.some(
             (v, i) =>
@@ -576,7 +576,7 @@
               (i && v.number <= data.verses[i - 1].number),
           )
         )
-          throw new Error("Неверный порядок стихов.");
+          throw new Error(wp.i18n.__( "Неверный порядок стихов.", 'georg-kloster-calendar-workshop' ));
         const first = chapter === a.chapter && a.verse !== null ? a.verse : 1;
         const last =
           chapter === b.chapter && b.verse !== null
@@ -597,7 +597,7 @@
           )
         )
           throw new Error(
-            "В переводе отсутствуют запрошенные стихи. Неполный текст не показан.",
+            wp.i18n.__( "В переводе отсутствуют запрошенные стихи. Неполный текст не показан.", 'georg-kloster-calendar-workshop' ),
           );
         result.push(
           ...verses.map((v) => ({
@@ -614,7 +614,7 @@
     if (root.dataset.ocReady) return;
     root.dataset.ocReady = "1";
     const cfg = JSON.parse(root.dataset.orthocal);
-    const t = (text) => cfg.ui?.[text] || text;
+    const t = (text) => cfg.ui?.[text] || wp.i18n.__(text, 'georg-kloster-calendar-workshop');
     loadIconCovers(root, cfg.endpoint, t);
     if (cfg.fontUrl) void font(cfg.fontUrl).catch(() => {});
     // AJAX HTML is rendered at a REST URL; public date links must retain the page URL.
@@ -657,7 +657,7 @@
         if (detail === "modal") {
           popup(
             next,
-            t(readingIndex >= 0 ? "Библейские чтения" : "День календаря"),
+            t(readingIndex >= 0 ? wp.i18n.__( "Библейские чтения", 'georg-kloster-calendar-workshop' ) : wp.i18n.__( "День календаря", 'georg-kloster-calendar-workshop' )),
             t,
           );
           init(next);
@@ -680,7 +680,7 @@
           if (dialog) {
             const nextConfig = JSON.parse(next.dataset.orthocal);
             dialog.querySelector(".oc-dialog-close").textContent =
-              nextConfig.ui?.["Закрыть ×"] || "Закрыть ×";
+              nextConfig.ui?.[wp.i18n.__( "Закрыть ×", 'georg-kloster-calendar-workshop' )] || wp.i18n.__( "Закрыть ×", 'georg-kloster-calendar-workshop' );
           }
         }
         status.textContent = "";
@@ -752,6 +752,7 @@
         void render(
           {
             mode: library.dataset.ocLibrary,
+            prayer_group: "",
             scope: "",
             tone: "",
             weekday: "",
@@ -830,6 +831,11 @@
             tone: "",
             text_page: "1",
           }),
+      );
+    root
+      .querySelector("[data-oc-prayer-group]")
+      ?.addEventListener("change", (event) =>
+        void render({ prayer_group: event.target.value, work: "" }),
       );
     root
       .querySelector("[data-oc-library-work]")

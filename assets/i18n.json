@@ -97,7 +97,17 @@
     "Каноны": "Kanones",
     "Язык текста": "Textsprache",
     "На выбранном языке текст пока не добавлен.": "In dieser Sprache ist noch kein Text verfügbar.",
-    "Праздники и святые": "Feste und Heilige"
+    "Праздники и святые": "Feste und Heilige",
+    "Короткие молитвы": "Kurze Gebete",
+    "Молитвенные правила": "Gebetsregeln",
+    "На разные случаи": "Zu verschiedenen Anlässen",
+    "Начальные молитвы": "Anfangsgebete",
+    "Все": "Alle",
+    "Зачало": "Perikope",
+    "Источник зачала": "Quelle der Perikope",
+    "Возможные соответствия зачал": "Mögliche Perikopenzuordnungen",
+    "Соответствие относится к координатам источника; нумерация стихов других переводов отдельно не проверена.": "Die Zuordnung gilt für die Versangaben der Quelle; die Verszählung anderer Übersetzungen wurde nicht gesondert geprüft.",
+    "Историческая редакция": "Historische Ausgabe"
   },
   "pl": {
     "Акафисты": "Akatysty",
@@ -109,6 +119,16 @@
     "Скопировать текст": "Kopiuj tekst",
     "На выбранном языке текст пока не добавлен.": "Tekst w tym języku nie został jeszcze dodany.",
     "Празднование:": "Wspomnienia:",
-    "Даты празднования не указаны источником.": "Źródło nie podaje dat wspomnienia."
+    "Даты празднования не указаны источником.": "Źródło nie podaje dat wspomnienia.",
+    "Короткие молитвы": "Krótkie modlitwy",
+    "Молитвенные правила": "Reguły modlitewne",
+    "На разные случаи": "Na różne okazje",
+    "Начальные молитвы": "Modlitwy początkowe",
+    "Все": "Wszystkie",
+    "Зачало": "Perykopa",
+    "Источник зачала": "Źródło perykopy",
+    "Возможные соответствия зачал": "Możliwe przyporządkowania perykop",
+    "Соответствие относится к координатам источника; нумерация стихов других переводов отдельно не проверена.": "Przyporządkowanie dotyczy numeracji wersetów źródła; numeracja innych przekładów nie została osobno sprawdzona.",
+    "Историческая редакция": "Wydanie historyczne"
   }
 }

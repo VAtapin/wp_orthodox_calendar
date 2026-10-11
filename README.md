@@ -1,6 +1,6 @@
 # Georg-Kloster Calendar Workshop
 
-Public source for the WordPress plugin. Version 1.3.73, GPL-2.0-or-later.
+Public source for the WordPress plugin. Version 1.3.77, GPL-2.0-or-later.
 
 ## Original sources
 
@@ -31,7 +31,7 @@ To create the installation ZIP manually on Linux with zip installed, run from
 this repository root:
 
 ```sh
-package=$(mktemp -d) && mkdir "$package/georg-kloster-calendar-workshop" && cp -R assets blocks includes languages orthocal.php readme.txt "$package/georg-kloster-calendar-workshop/" && output="$(pwd)/orthocal-1.3.72.zip" && (cd "$package" && zip -qr "$output" georg-kloster-calendar-workshop)
+package=$(mktemp -d) && mkdir "$package/georg-kloster-calendar-workshop" && cp -R assets blocks includes languages orthocal.php readme.txt "$package/georg-kloster-calendar-workshop/" && output="$(pwd)/orthocal-1.3.77.zip" && (cd "$package" && zip -qr "$output" georg-kloster-calendar-workshop)
 ```
 
 ## Compatibility and review
@@ -40,4 +40,17 @@ Existing orthocal blocks, shortcodes, options and REST routes are preserved.
 All response/cooldown/rate transients use the established orthocal prefix.
 Malformed fasting-period dates are skipped without PHP warnings; valid periods
 continue to render. Human-readable asset sources and external service policies
-are documented in readme.txt. WordPress.org review is still pending.
+are documented in readme.txt. Version 1.3.73 was approved and published on WordPress.org.
+
+## WordPress translations and directory images
+
+Settings, Gutenberg and reader labels use the plugin gettext domain and wp-i18n.
+Russian, German, Ukrainian and Polish PO catalogues each cover all 441 extracted
+strings. node scripts/build-language-files.mjs compiles the MO files and three
+script catalogues while preserving contexts. Approved WordPress.org language
+packs take priority over bundled translations. Block and liturgical text
+languages stay independent of the administrator locale.
+
+Directory icons and seven actual WordPress screenshots are in .wordpress-org.
+The version-tag workflow publishes them to SVN assets; .distignore excludes them
+from installation archives. No JavaScript/CSS compilation is required.

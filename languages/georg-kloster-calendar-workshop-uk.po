@@ -1,0 +1,1788 @@
+msgid ""
+msgstr "Project-Id-Version: Georg-Kloster Calendar Workshop 1.3.77\nReport-Msgid-Bugs-To: https://wordpress.org/support/plugin/georg-kloster-calendar-workshop/\nPO-Revision-Date: 2026-10-11 18:00+0200\nLanguage: uk\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\nX-Domain: georg-kloster-calendar-workshop\n"
+
+#: includes/admin.php
+msgid "Недостаточно прав."
+msgstr "Недостатньо прав."
+
+#: includes/admin.php
+msgid "Кэш календарных данных сброшен."
+msgstr "Кеш календарних даних очищено."
+
+#: includes/admin.php
+msgid "Проверка локальных файлов поставлена в очередь."
+msgstr "Перевірку локальних файлів додано до черги."
+
+#: includes/admin.php
+msgid "Локальные копии очищены."
+msgstr "Локальні копії очищено."
+
+#: includes/admin.php
+msgid "Идёт обновление файлов. Повторите позже."
+msgstr "Файли оновлюються. Спробуйте пізніше."
+
+#: includes/admin.php
+msgid "Орнаментальные с надписью"
+msgstr "Орнаментальні з написом"
+
+#: includes/admin.php
+msgid "Фотографические тёмные"
+msgstr "Темні фотографічні"
+
+#: includes/admin.php
+msgid "Бронзовые медальоны"
+msgstr "Бронзові медальйони"
+
+#: includes/admin.php
+msgid "Самоцветные медальоны"
+msgstr "Медальйони з коштовним камінням"
+
+#: includes/admin.php
+msgid "Фотографические виньетки"
+msgstr "Фотографічні віньєтки"
+
+#: includes/admin.php
+msgid "Золотые овальные медальоны"
+msgstr "Золоті овальні медальйони"
+
+#: includes/admin.php
+msgid "Минималистичные пиктограммы"
+msgstr "Мінімалістичні піктограми"
+
+#: includes/admin.php
+msgid "Винтажная акварель"
+msgstr "Вінтажна акварель"
+
+#: includes/admin.php
+msgid "Светлая акварель"
+msgstr "Світла акварель"
+
+#: includes/admin.php
+msgid "Контурные наклейки"
+msgstr "Контурні наліпки"
+
+#: includes/admin.php
+msgid "Мягкая иллюстрация"
+msgstr "М’яка ілюстрація"
+
+#: includes/admin.php
+msgid "Чистая иллюстрация"
+msgstr "Чітка ілюстрація"
+
+#: includes/admin.php
+msgid "Фотореалистика — синяя"
+msgstr "Фотореалістичні — сині"
+
+#: includes/admin.php
+msgid "Фотореалистика — деревенская"
+msgstr "Фотореалістичні — сільські"
+
+#: includes/admin.php
+msgid "Фотореалистика — медная"
+msgstr "Фотореалістичні — мідні"
+
+#: includes/admin.php
+msgid "Фотореалистика — золотая"
+msgstr "Фотореалістичні — золоті"
+
+#: includes/admin.php
+msgid "Подключение"
+msgstr "Підключення"
+
+#: includes/admin.php
+msgid "Конструктор"
+msgstr "Конструктор"
+
+#: includes/admin.php
+msgid "Помощь"
+msgstr "Довідка"
+
+#: includes/admin.php
+msgid "КАЛЕНДАРНАЯ МАСТЕРСКАЯ · "
+msgstr "КАЛЕНДАРНА МАЙСТЕРНЯ · "
+
+#: includes/admin.php
+msgid "Календарь работает сразу после активации через API Bible Desktop."
+msgstr "Календар працює одразу після активації через API Bible Desktop."
+
+#: includes/admin.php
+msgid "Открыть Bible Desktop"
+msgstr "Відкрити Bible Desktop"
+
+#: includes/admin.php
+msgid "Расширенная документация плагина"
+msgstr "Докладна документація плагіна"
+
+#: includes/admin.php
+msgid "Публичный API Bible Desktop"
+msgstr "Публічний API Bible Desktop"
+
+#: includes/admin.php
+msgid " локальных файлов · "
+msgstr " локальних файлів · "
+
+#: includes/admin.php includes/plugin.php assets/editor.js assets/calendar.js
+msgid "Православный календарь"
+msgstr "Православний календар"
+
+#: includes/admin.php
+msgid "Подключение к данным"
+msgstr "Підключення до даних"
+
+#: includes/admin.php
+msgid "Календарные события и праздники приходят из "
+msgstr "Календарні події та свята надходять із "
+
+#: includes/admin.php
+msgid " через API. Полные библейские тексты — из BibleDesktop."
+msgstr " через API. Повні біблійні тексти — із BibleDesktop."
+
+#: includes/admin.php
+msgid "Адрес API"
+msgstr "Адреса API"
+
+#: includes/admin.php
+msgid "Полный HTTPS-адрес без /api. Стандартное значение: https://bible-desktop.com"
+msgstr "Повна HTTPS-адреса без /api. Стандартне значення: https://bible-desktop.com"
+
+#: includes/admin.php
+msgid "Язык календаря по умолчанию"
+msgstr "Мова календаря за замовчуванням"
+
+#: includes/admin.php includes/library.php assets/editor.js
+msgid "Русский"
+msgstr "Російська"
+
+#: includes/admin.php includes/library.php assets/editor.js
+msgid "Церковнославянский"
+msgstr "Церковнослов’янська"
+
+#: includes/admin.php assets/editor.js
+msgid "Немецкий"
+msgstr "Німецька"
+
+#: includes/admin.php assets/editor.js
+msgid "Украинский"
+msgstr "Українська"
+
+#: includes/admin.php assets/editor.js
+msgid "Польский"
+msgstr "Польська"
+
+#: includes/admin.php
+msgid "Перевод Библии по умолчанию"
+msgstr "Переклад Біблії за замовчуванням"
+
+#: includes/admin.php
+msgid "Код можно выбрать ниже. В конструкторе его можно переопределить для отдельного блока."
+msgstr "Код можна вибрати нижче. У конструкторі його можна змінити для окремого блока."
+
+#: includes/admin.php
+msgid "Каталог BibleDesktop"
+msgstr "Каталог BibleDesktop"
+
+#: includes/admin.php
+msgid "Загрузить переводы"
+msgstr "Завантажити переклади"
+
+#: includes/admin.php
+msgid "Доступные переводы"
+msgstr "Доступні переклади"
+
+#: includes/admin.php
+msgid "Часовой пояс сайта: "
+msgstr "Часовий пояс сайту: "
+
+#: includes/admin.php
+msgid ". Он меняется в общих настройках WordPress."
+msgstr ". Її можна змінити в загальних налаштуваннях WordPress."
+
+#: includes/admin.php
+msgid "Открыть общие настройки"
+msgstr "Відкрити загальні налаштування"
+
+#: includes/admin.php
+msgid "Локальные файлы и кэш"
+msgstr "Локальні файли та кеш"
+
+#: includes/admin.php
+msgid " файлов · "
+msgstr " файлів · "
+
+#: includes/admin.php
+msgid " из 200 МБ. Фотографии сохраняются локально размером до 100 КБ."
+msgstr " із 200 МБ. Фотографії зберігаються локально розміром до 100 КБ."
+
+#: includes/admin.php
+msgid "Проверять картинки и шрифт"
+msgstr "Перевіряти зображення та шрифт"
+
+#: includes/admin.php
+msgid "Раз в 6 часов"
+msgstr "Раз на 6 годин"
+
+#: includes/admin.php
+msgid "Раз в 12 часов"
+msgstr "Раз на 12 годин"
+
+#: includes/admin.php
+msgid "Раз в сутки"
+msgstr "Раз на добу"
+
+#: includes/admin.php
+msgid "Раз в неделю"
+msgstr "Раз на тиждень"
+
+#: includes/admin.php
+msgid "Хранить библейские ответы"
+msgstr "Зберігати біблійні відповіді"
+
+#: includes/admin.php
+msgid "Не хранить"
+msgstr "Не зберігати"
+
+#: includes/admin.php
+msgid "1 час"
+msgstr "1 година"
+
+#: includes/admin.php
+msgid "6 часов"
+msgstr "6 годин"
+
+#: includes/admin.php
+msgid "1 сутки"
+msgstr "1 доба"
+
+#: includes/admin.php
+msgid "Сохранить подключение"
+msgstr "Зберегти підключення"
+
+#: includes/admin.php
+msgid "Обслуживание"
+msgstr "Обслуговування"
+
+#: includes/admin.php
+msgid "Проверить обновления картинок"
+msgstr "Перевірити оновлення зображень"
+
+#: includes/admin.php
+msgid "Сбросить кэш данных"
+msgstr "Очистити кеш даних"
+
+#: includes/admin.php
+msgid "Очистить локальные картинки"
+msgstr "Очистити локальні зображення"
+
+#: includes/admin.php
+msgid "Текущая страница"
+msgstr "Поточна сторінка"
+
+#: includes/admin.php
+msgid "Конструктор шорткодов"
+msgstr "Конструктор шорткодів"
+
+#: includes/admin.php
+msgid "Все параметры относятся только к создаваемому блоку. Меняйте их слева — справа сразу увидите результат. Для боковой колонки выберите «Компактный»."
+msgstr "Усі параметри стосуються лише створюваного блока. Змінюйте їх ліворуч — праворуч одразу побачите результат. Для бічної колонки виберіть «Компактний»."
+
+#: includes/admin.php
+msgid "Что разместить"
+msgstr "Що розмістити"
+
+#: includes/admin.php
+msgid "Час Часослова"
+msgstr "Час Часослова"
+
+#: includes/admin.php
+msgid "Весь Часослов"
+msgstr "Увесь Часослов"
+
+#: includes/admin.php assets/calendar.js
+msgid "Первый час"
+msgstr "Перший час"
+
+#: includes/admin.php assets/calendar.js
+msgid "Третий час"
+msgstr "Третій час"
+
+#: includes/admin.php assets/calendar.js
+msgid "Шестой час"
+msgstr "Шостий час"
+
+#: includes/admin.php assets/calendar.js
+msgid "Девятый час"
+msgstr "Дев’ятий час"
+
+#: includes/admin.php assets/calendar.js
+msgid "Утреня"
+msgstr "Утреня"
+
+#: includes/admin.php assets/calendar.js
+msgid "Вечерня"
+msgstr "Вечірня"
+
+#: includes/admin.php
+msgid "Дата"
+msgstr "Дата"
+
+#: includes/admin.php includes/plugin.php assets/editor.js assets/calendar.js
+msgid "Год"
+msgstr "Рік"
+
+#: includes/admin.php
+msgid "Месяц"
+msgstr "Місяць"
+
+#: includes/admin.php assets/editor.js
+msgid "Количество"
+msgstr "Кількість"
+
+#: includes/admin.php
+msgid "Тема"
+msgstr "Тема"
+
+#: includes/admin.php
+msgid "Книжная — тёплая"
+msgstr "Книжкова — тепла"
+
+#: includes/admin.php
+msgid "Современная — светлая"
+msgstr "Сучасна — світла"
+
+#: includes/admin.php
+msgid "Шрифты сайта"
+msgstr "Шрифти сайту"
+
+#: includes/admin.php assets/editor.js
+msgid "CSS карточки"
+msgstr "CSS картки"
+
+#: includes/admin.php assets/editor.js
+msgid "Оформление плагина"
+msgstr "Оформлення плагіна"
+
+#: includes/admin.php assets/editor.js
+msgid "Полностью CSS сайта WordPress"
+msgstr "Повністю CSS сайту WordPress"
+
+#: includes/admin.php
+msgid "Акцентный цвет"
+msgstr "Акцентний колір"
+
+#: includes/admin.php
+msgid "Подпись над блоком"
+msgstr "Підпис над блоком"
+
+#: includes/admin.php
+msgid "Размер блока"
+msgstr "Розмір блока"
+
+#: includes/admin.php assets/editor.js
+msgid "Подробный"
+msgstr "Докладний"
+
+#: includes/admin.php
+msgid "Компактный — для боковой колонки"
+msgstr "Компактний — для бічної колонки"
+
+#: includes/admin.php assets/editor.js
+msgid "Открытие дня"
+msgstr "Відкриття дня"
+
+#: includes/admin.php assets/editor.js
+msgid "Под блоком"
+msgstr "Під блоком"
+
+#: includes/admin.php
+msgid "Во всплывающем окне"
+msgstr "У спливному вікні"
+
+#: includes/admin.php
+msgid "В новом окне"
+msgstr "У новому вікні"
+
+#: includes/admin.php
+msgid "На отдельной странице"
+msgstr "На окремій сторінці"
+
+#: includes/admin.php
+msgid "Библейский текст"
+msgstr "Біблійний текст"
+
+#: includes/admin.php
+msgid "Раскрывать под ссылкой"
+msgstr "Розгортати під посиланням"
+
+#: includes/admin.php
+msgid "Открывать во всплывающем окне"
+msgstr "Відкривати у спливному вікні"
+
+#: includes/admin.php assets/editor.js
+msgid "Высота картинки поста, px"
+msgstr "Висота зображення посту, px"
+
+#: includes/admin.php assets/editor.js
+msgid "Ширина определяется автоматически по пропорциям изображения."
+msgstr "Ширина визначається автоматично за пропорціями зображення."
+
+#: includes/admin.php
+msgid "Страница подробностей дня"
+msgstr "Сторінка подробиць дня"
+
+#: includes/admin.php assets/editor.js assets/calendar.js
+msgid "Язык календаря"
+msgstr "Мова календаря"
+
+#: includes/admin.php assets/editor.js
+msgid "Профиль поста"
+msgstr "Профіль посту"
+
+#: includes/admin.php assets/editor.js
+msgid "Типикон"
+msgstr "Типікон"
+
+#: includes/admin.php includes/plugin.php assets/editor.js assets/calendar.js
+msgid "Приходской"
+msgstr "Парафіяльний"
+
+#: includes/admin.php
+msgid "Какие события"
+msgstr "Які події"
+
+#: includes/admin.php assets/editor.js
+msgid "Главные"
+msgstr "Головні"
+
+#: includes/admin.php assets/editor.js
+msgid "Пасха и двунадесятые"
+msgstr "Пасха та дванадесяті"
+
+#: includes/admin.php assets/editor.js
+msgid "Великие"
+msgstr "Великі"
+
+#: includes/admin.php assets/editor.js
+msgid "Поминальные"
+msgstr "Поминальні"
+
+#: includes/admin.php includes/library.php assets/editor.js assets/calendar.js
+msgid "Все"
+msgstr "Усі"
+
+#: includes/admin.php
+msgid "Набор картинок поста"
+msgstr "Набір зображень посту"
+
+#: includes/admin.php
+msgid "Содержание карточки дня"
+msgstr "Вміст картки дня"
+
+#: includes/admin.php includes/plugin.php assets/editor.js assets/calendar.js
+msgid "Пост и трапеза"
+msgstr "Піст і трапеза"
+
+#: includes/admin.php includes/plugin.php assets/calendar.js
+msgid "Праздники и памяти"
+msgstr "Свята та пам’яті"
+
+#: includes/admin.php includes/plugin.php assets/calendar.js assets/calendar.js
+msgid "Библейские чтения"
+msgstr "Біблійні читання"
+
+#: includes/admin.php includes/plugin.php assets/editor.js assets/calendar.js
+msgid "Богослужебные тексты"
+msgstr "Богослужбові тексти"
+
+#: includes/admin.php
+msgid "Иконы"
+msgstr "Ікони"
+
+#: includes/admin.php
+msgid "Уровни памятей"
+msgstr "Рівні пам’ятей"
+
+#: includes/admin.php
+msgid "Двунадесятые"
+msgstr "Дванадесяті"
+
+#: includes/admin.php
+msgid "Средние"
+msgstr "Середні"
+
+#: includes/admin.php
+msgid "Малые"
+msgstr "Малі"
+
+#: includes/admin.php
+msgid "Остальные"
+msgstr "Решта"
+
+#: includes/admin.php
+msgid " Показывать картинки поста и знаки Типикона"
+msgstr " Показувати зображення посту та знаки Типікону"
+
+#: includes/admin.php
+msgid " Показывать размер текста чтений"
+msgstr " Показувати розмір тексту читань"
+
+#: includes/admin.php
+msgid "Количество иконок"
+msgstr "Кількість ікон"
+
+#: includes/admin.php
+msgid "Все иконы"
+msgstr "Усі ікони"
+
+#: includes/admin.php
+msgid " Показывать общий заголовок блока"
+msgstr " Показувати загальний заголовок блока"
+
+#: includes/admin.php
+msgid " Показывать заголовки секций"
+msgstr " Показувати заголовки розділів"
+
+#: includes/admin.php
+msgid " Показывать старый стиль"
+msgstr " Показувати старий стиль"
+
+#: includes/admin.php
+msgid " Показывать «вчера/завтра»"
+msgstr " Показувати «вчора/завтра»"
+
+#: includes/admin.php
+msgid " Показывать календарь выбора даты"
+msgstr " Показувати календар вибору дати"
+
+#: includes/admin.php
+msgid " Показывать копирование ссылки"
+msgstr " Показувати копіювання посилання"
+
+#: includes/admin.php
+msgid " Показывать поиск по памятям"
+msgstr " Показувати пошук за пам’ятями"
+
+#: includes/admin.php includes/library.php assets/editor.js assets/calendar.js
+msgid "Язык текста"
+msgstr "Мова тексту"
+
+#: includes/admin.php
+msgid "По языку календаря"
+msgstr "За мовою календаря"
+
+#: includes/admin.php
+msgid "Перевод Библии"
+msgstr "Переклад Біблії"
+
+#: includes/admin.php
+msgid "Код, например synodal"
+msgstr "Код, наприклад synodal"
+
+#: includes/admin.php assets/editor.js
+msgid "Раздел справочника"
+msgstr "Розділ довідника"
+
+#: includes/admin.php includes/plugin.php assets/editor.js assets/calendar.js
+msgid "Воскресные"
+msgstr "Воскресні"
+
+#: includes/admin.php includes/plugin.php assets/editor.js assets/calendar.js
+msgid "Дни седмицы"
+msgstr "Дні седмиці"
+
+#: includes/admin.php assets/editor.js
+msgid "Общие"
+msgstr "Загальні"
+
+#: includes/admin.php includes/plugin.php assets/calendar.js
+msgid "Праздники и святые"
+msgstr "Свята та святі"
+
+#: includes/admin.php includes/plugin.php assets/calendar.js
+msgid "Глас"
+msgstr "Глас"
+
+#: includes/admin.php
+msgid "День седмицы"
+msgstr "День седмиці"
+
+#: includes/admin.php
+msgid "ID текста"
+msgstr "ID тексту"
+
+#: includes/admin.php
+msgid "Предпросмотр"
+msgstr "Попередній перегляд"
+
+#: includes/admin.php
+msgid "Настройте блок — результат появится здесь."
+msgstr "Налаштуйте блок — результат з’явиться тут."
+
+#: includes/admin.php
+msgid "Готовый шорткод"
+msgstr "Готовий шорткод"
+
+#: includes/admin.php
+msgid "Скопировать шорткод"
+msgstr "Скопіювати шорткод"
+
+#: includes/admin.php
+msgid "Обновить сейчас"
+msgstr "Оновити зараз"
+
+#: includes/admin.php
+msgid "Подключение хранит доступ к источникам и локальный кэш. Обычные блоки календаря работают без регистрации и API-ключа; ключ нужен только для расширенного доступа. Внешний вид, размер, картинки, содержание дня и поведение относятся к конкретному блоку и задаются в конструкторе."
+msgstr "Підключення зберігає доступ до джерел і локальний кеш. Звичайні блоки календаря працюють без реєстрації та API-ключа; ключ потрібен лише для розширеного доступу. Вигляд, розмір, зображення, вміст дня та поведінка стосуються конкретного блока й задаються в конструкторі."
+
+#: includes/admin.php
+msgid "Как работать"
+msgstr "Як працювати"
+
+#: includes/admin.php
+msgid "При необходимости введите дополнительный ключ календаря во вкладке «Подключение»."
+msgstr "За потреби введіть додатковий ключ календаря на вкладці «Підключення»."
+
+#: includes/admin.php
+msgid "Откройте «Конструктор», выберите вид блока и настройте его слева."
+msgstr "Відкрийте «Конструктор», виберіть тип блока й налаштуйте його ліворуч."
+
+#: includes/admin.php
+msgid "Проверьте живой результат справа и скопируйте строку в блок WordPress «Шорткод»."
+msgstr "Перевірте результат праворуч і скопіюйте рядок у блок WordPress «Шорткод»."
+
+#: includes/admin.php
+msgid "Стандартные шорткоды"
+msgstr "Стандартні шорткоди"
+
+#: includes/admin.php
+msgid "Их можно вставить напрямую в блок «Шорткод», без конструктора:"
+msgstr "Їх можна вставити безпосередньо в блок «Шорткод», без конструктора:"
+
+#: includes/admin.php
+msgid "[orthocal_today] — карточка сегодняшнего дня\n[orthocal_upcoming limit=\"5\" filter=\"main\"] — ближайшие праздники\n[orthocal_month year=\"2027\" month=\"5\"] — календарь на месяц\n[orthocal_year year=\"2027\"] — календарь на год\n[orthocal_day date=\"2027-05-02\"] — карточка выбранной даты\n[orthocal_readings date=\"2027-05-02\"] — библейские чтения дня\n[orthocal_calendar] — общий календарь\n[orthocal_fasting] — пост и трапеза\n[orthocal_saints] — памяти святых\n[orthocal_feasts limit=\"5\"] — список праздников\n[orthocal_memorial] — поминальные дни\n[orthocal_pascha year=\"2027\"] — дата Пасхи и сведения о ней\n[orthocal_fasts year=\"2027\"] — посты года\n[orthocal_date] — дата по новому и старому стилю\n[orthocal_texts] — библиотека богослужебных текстов\n[orthocal_troparia] — тропари\n[orthocal_kontakia] — кондаки\n[orthocal_prayers] — молитвы\n[orthocal_magnifications] — величания\n[orthocal_horologion] — полный справочник Часослова"
+msgstr "[orthocal_today] — картка сьогоднішнього дня\n[orthocal_upcoming limit=\"5\" filter=\"main\"] — найближчі свята\n[orthocal_month year=\"2027\" month=\"5\"] — календар на місяць\n[orthocal_year year=\"2027\"] — календар на рік\n[orthocal_day date=\"2027-05-02\"] — картка вибраної дати\n[orthocal_readings date=\"2027-05-02\"] — біблійні читання дня\n[orthocal_calendar] — загальний календар\n[orthocal_fasting] — піст і трапеза\n[orthocal_saints] — пам’яті святих\n[orthocal_feasts limit=\"5\"] — список свят\n[orthocal_memorial] — поминальні дні\n[orthocal_pascha year=\"2027\"] — дата Пасхи та відомості про неї\n[orthocal_fasts year=\"2027\"] — пости року\n[orthocal_date] — дата за новим і старим стилями\n[orthocal_texts] — бібліотека богослужбових текстів\n[orthocal_troparia] — тропарі\n[orthocal_kontakia] — кондаки\n[orthocal_prayers] — молитви\n[orthocal_magnifications] — величання\n[orthocal_horologion] — повний довідник Часослова"
+
+#: includes/admin.php
+msgid "Почему компактный блок выглядит иначе?"
+msgstr "Чому компактний блок має інший вигляд?"
+
+#: includes/admin.php
+msgid "Он предназначен для боковой колонки: уменьшает ячейки и скрывает длинные подписи сетки."
+msgstr "Він призначений для бічної колонки: зменшує клітинки й приховує довгі підписи сітки."
+
+#: includes/admin.php
+msgid "Почему не загружается перевод Библии?"
+msgstr "Чому не завантажується переклад Біблії?"
+
+#: includes/admin.php
+msgid "Каталог приходит из BibleDesktop. Плагин покажет точную ошибку подключения; календарные данные от этого не останавливаются."
+msgstr "Каталог надходить із BibleDesktop. Плагін покаже точну помилку підключення; календарні дані через це не припиняють працювати."
+
+#: includes/admin.php
+msgid "Что означают иконы?"
+msgstr "Що означають ікони?"
+
+#: includes/admin.php
+msgid "Показываются все иконы, которые календарный API передаёт для выбранной даты."
+msgstr "Показуються всі ікони, які календарний API передає для вибраної дати."
+
+#: includes/lectionary.php assets/calendar.js
+msgid "Зачало"
+msgstr "Зачало"
+
+#: includes/lectionary.php assets/calendar.js
+msgid "Источник зачала"
+msgstr "Джерело зачала"
+
+#: includes/lectionary.php assets/calendar.js
+msgid "Возможные соответствия зачал"
+msgstr "Можливі відповідності зачал"
+
+#: includes/lectionary.php assets/calendar.js
+msgid "Соответствие относится к координатам источника; нумерация стихов других переводов отдельно не проверена."
+msgstr "Відповідність стосується координат джерела; нумерацію віршів інших перекладів окремо не перевірено."
+
+#: includes/library.php assets/calendar.js
+msgid "Короткие молитвы"
+msgstr "Короткі молитви"
+
+#: includes/library.php assets/calendar.js
+msgid "Молитвенные правила"
+msgstr "Молитовні правила"
+
+#: includes/library.php assets/calendar.js
+msgid "На разные случаи"
+msgstr "На різні випадки"
+
+#: includes/library.php assets/calendar.js
+msgid "Начальные молитвы"
+msgstr "Початкові молитви"
+
+#: includes/library.php assets/editor.js
+msgid "Церковнославянский — гражданский шрифт"
+msgstr "Церковнослов’янська — цивільний шрифт"
+
+#: includes/library.php assets/editor.js
+msgid "Українська"
+msgstr "Українська"
+
+#: includes/library.php
+msgid "Источник вернул другую языковую версию."
+msgstr "Джерело повернуло іншу мовну версію."
+
+#: includes/library.php includes/plugin.php assets/calendar.js
+msgid "Раздел"
+msgstr "Розділ"
+
+#: includes/library.php includes/plugin.php assets/calendar.js
+msgid "Размер текста"
+msgstr "Розмір тексту"
+
+#: includes/library.php assets/calendar.js
+msgid "На выбранном языке текст пока не добавлен."
+msgstr "Вибраною мовою текст ще не додано."
+
+#: includes/library.php includes/plugin.php assets/calendar.js
+msgid "Скопировать текст"
+msgstr "Скопіювати текст"
+
+#: includes/library.php assets/calendar.js
+msgid "Историческая редакция"
+msgstr "Історична редакція"
+
+#: includes/library.php
+msgid "Источник"
+msgstr "Джерело"
+
+#: includes/media-cache.php
+msgid "Каталог uploads недоступен для записи."
+msgstr "Каталог uploads недоступний для запису."
+
+#: includes/media-cache.php
+msgid "Не удалось обновить файл (HTTP "
+msgstr "Не вдалося оновити файл (HTTP "
+
+#: includes/media-cache.php
+msgid "Кэш медиа достиг 200 МБ. Очистите его в разделе «Кэш и файлы»."
+msgstr "Кеш медіа досяг 200 МБ. Очистіть його в розділі «Кеш і файли»."
+
+#: includes/plugin.php assets/editor.js assets/calendar.js
+msgid "Сегодня"
+msgstr "Сьогодні"
+
+#: includes/plugin.php assets/editor.js assets/calendar.js
+msgid "Ближайшие праздники"
+msgstr "Найближчі свята"
+
+#: includes/plugin.php assets/editor.js assets/calendar.js
+msgid "Календарь на месяц"
+msgstr "Календар на місяць"
+
+#: includes/plugin.php assets/editor.js assets/calendar.js
+msgid "Календарь на год"
+msgstr "Календар на рік"
+
+#: includes/plugin.php assets/editor.js assets/calendar.js assets/calendar.js
+msgid "День календаря"
+msgstr "День календаря"
+
+#: includes/plugin.php assets/editor.js assets/calendar.js
+msgid "Чтения дня"
+msgstr "Читання дня"
+
+#: includes/plugin.php assets/editor.js assets/calendar.js
+msgid "Памяти святых"
+msgstr "Пам’яті святих"
+
+#: includes/plugin.php assets/editor.js assets/calendar.js
+msgid "Праздники"
+msgstr "Свята"
+
+#: includes/plugin.php assets/editor.js assets/calendar.js
+msgid "Поминальные дни"
+msgstr "Поминальні дні"
+
+#: includes/plugin.php assets/editor.js assets/calendar.js
+msgid "Пасха"
+msgstr "Пасха"
+
+#: includes/plugin.php assets/editor.js assets/calendar.js
+msgid "Посты на год"
+msgstr "Пости року"
+
+#: includes/plugin.php assets/editor.js assets/calendar.js
+msgid "Дата по двум стилям"
+msgstr "Дата за двома стилями"
+
+#: includes/plugin.php assets/editor.js assets/calendar.js
+msgid "Тропари"
+msgstr "Тропарі"
+
+#: includes/plugin.php assets/editor.js assets/calendar.js
+msgid "Кондаки"
+msgstr "Кондаки"
+
+#: includes/plugin.php assets/editor.js assets/calendar.js
+msgid "Молитвы"
+msgstr "Молитви"
+
+#: includes/plugin.php assets/editor.js assets/calendar.js
+msgid "Величания"
+msgstr "Величання"
+
+#: includes/plugin.php assets/editor.js assets/calendar.js
+msgid "Часослов"
+msgstr "Часослов"
+
+#: includes/plugin.php assets/editor.js assets/calendar.js
+msgid "Акафисты"
+msgstr "Акафісти"
+
+#: includes/plugin.php assets/editor.js assets/calendar.js
+msgid "Каноны"
+msgstr "Канони"
+
+#: includes/plugin.php assets/calendar.js
+msgid "Календарная мастерская"
+msgstr "Календарна майстерня"
+
+#: includes/plugin.php
+msgid "Адрес API должен быть полным HTTPS-адресом без /api."
+msgstr "Адреса API має бути повною HTTPS-адресою без /api."
+
+#: includes/plugin.php
+msgid "Неизвестный блок."
+msgstr "Невідомий блок."
+
+#: includes/plugin.php
+msgid "Неверные параметры библиотеки текстов."
+msgstr "Неправильні параметри бібліотеки текстів."
+
+#: includes/plugin.php
+msgid "Дата должна быть в диапазоне 1900–2200, в формате ГГГГ-ММ-ДД."
+msgstr "Дата має бути в діапазоні 1900–2200 у форматі РРРР-ММ-ДД."
+
+#: includes/plugin.php
+msgid "Неверный год, месяц или количество праздников."
+msgstr "Неправильний рік, місяць або кількість свят."
+
+#: includes/plugin.php
+msgid "Неверный параметр календаря."
+msgstr "Неправильний параметр календаря."
+
+#: includes/plugin.php
+msgid "Неверный параметр библиотеки."
+msgstr "Неправильний параметр бібліотеки."
+
+#: includes/plugin.php
+msgid "Неизвестный раздел дня."
+msgstr "Невідомий розділ дня."
+
+#: includes/plugin.php
+msgid "Сервис временно недоступен. Повторите позже."
+msgstr "Сервіс тимчасово недоступний. Спробуйте пізніше."
+
+#: includes/plugin.php
+msgid "Не удалось подключиться к "
+msgstr "Не вдалося підключитися до "
+
+#: includes/plugin.php
+msgid "календарю."
+msgstr "календаря."
+
+#: includes/plugin.php
+msgid "API-ключ отсутствует или недействителен."
+msgstr "API-ключ відсутній або недійсний."
+
+#: includes/plugin.php
+msgid "Доступ к API отключён или истёк."
+msgstr "Доступ до API вимкнено або він закінчився."
+
+#: includes/plugin.php
+msgid "Достигнут лимит запросов. Повторите позже."
+msgstr "Досягнуто ліміт запитів. Спробуйте пізніше."
+
+#: includes/plugin.php
+msgid "API занят или обновляется. Повторите позже."
+msgstr "API зайнятий або оновлюється. Спробуйте пізніше."
+
+#: includes/plugin.php
+msgid "Источник данных недоступен (HTTP "
+msgstr "Джерело даних недоступне (HTTP "
+
+#: includes/plugin.php
+msgid "Источник вернул неверный формат данных."
+msgstr "Джерело повернуло неправильний формат даних."
+
+#: includes/plugin.php assets/calendar.js
+msgid "Перевод"
+msgstr "Переклад"
+
+#: includes/plugin.php assets/calendar.js
+msgid "Загрузить переводы…"
+msgstr "Завантажити переклади…"
+
+#: includes/plugin.php assets/calendar.js
+msgid "Текст Апостола и Евангелия открывается по выбранному переводу. Псалтирь приведена по богослужебному распределению дня."
+msgstr "Текст Апостола та Євангелія відкривається у вибраному перекладі. Псалтир наведено за богослужбовим розподілом дня."
+
+#: includes/plugin.php assets/calendar.js assets/calendar.js
+msgid "Повторить"
+msgstr "Повторити"
+
+#: includes/plugin.php
+msgid "через "
+msgstr "через "
+
+#: includes/plugin.php
+msgid " дн."
+msgstr " дн."
+
+#: includes/plugin.php
+msgid "сегодня"
+msgstr "сьогодні"
+
+#: includes/plugin.php
+msgid "В указанном диапазоне событий нет."
+msgstr "У зазначеному діапазоні подій немає."
+
+#: includes/plugin.php
+msgid "Постные периоды"
+msgstr "Періоди посту"
+
+#: includes/plugin.php
+msgid "Как читать календарь"
+msgstr "Як читати календар"
+
+#: includes/plugin.php
+msgid "✦ — великий праздник. Красным выделены воскресенья и великие праздники. Маленькое число — дата "
+msgstr "✦ — велике свято. Червоним позначено неділі та великі свята. Маленьке число — дата "
+
+#: includes/plugin.php assets/calendar.js
+msgid "по старому стилю"
+msgstr "за старим стилем"
+
+#: includes/plugin.php
+msgid ". Выберите день, чтобы увидеть все памяти, знаки Типикона и правило поста."
+msgstr ". Виберіть день, щоб побачити всі пам’яті, знаки Типікону та правило посту."
+
+#: includes/plugin.php
+msgid "API требует обновления: ожидаемые поля отсутствуют."
+msgstr "API потребує оновлення: очікувані поля відсутні."
+
+#: includes/plugin.php
+msgid "января"
+msgstr "січня"
+
+#: includes/plugin.php
+msgid "февраля"
+msgstr "лютого"
+
+#: includes/plugin.php
+msgid "марта"
+msgstr "березня"
+
+#: includes/plugin.php
+msgid "апреля"
+msgstr "квітня"
+
+#: includes/plugin.php
+msgid "мая"
+msgstr "травня"
+
+#: includes/plugin.php
+msgid "июня"
+msgstr "червня"
+
+#: includes/plugin.php
+msgid "июля"
+msgstr "липня"
+
+#: includes/plugin.php
+msgid "августа"
+msgstr "серпня"
+
+#: includes/plugin.php
+msgid "сентября"
+msgstr "вересня"
+
+#: includes/plugin.php
+msgid "октября"
+msgstr "жовтня"
+
+#: includes/plugin.php
+msgid "ноября"
+msgstr "листопада"
+
+#: includes/plugin.php
+msgid "декабря"
+msgstr "грудня"
+
+#: includes/plugin.php assets/calendar.js
+msgid "Выбор периода"
+msgstr "Вибір періоду"
+
+#: includes/plugin.php assets/calendar.js
+msgid "← Назад"
+msgstr "← Назад"
+
+#: includes/plugin.php assets/calendar.js
+msgid "Вперёд →"
+msgstr "Уперед →"
+
+#: includes/plugin.php
+msgid "Январь"
+msgstr "Січень"
+
+#: includes/plugin.php
+msgid "Февраль"
+msgstr "Лютий"
+
+#: includes/plugin.php
+msgid "Март"
+msgstr "Березень"
+
+#: includes/plugin.php
+msgid "Апрель"
+msgstr "Квітень"
+
+#: includes/plugin.php
+msgid "Май"
+msgstr "Травень"
+
+#: includes/plugin.php
+msgid "Июнь"
+msgstr "Червень"
+
+#: includes/plugin.php
+msgid "Июль"
+msgstr "Липень"
+
+#: includes/plugin.php
+msgid "Август"
+msgstr "Серпень"
+
+#: includes/plugin.php
+msgid "Сентябрь"
+msgstr "Вересень"
+
+#: includes/plugin.php
+msgid "Октябрь"
+msgstr "Жовтень"
+
+#: includes/plugin.php
+msgid "Ноябрь"
+msgstr "Листопад"
+
+#: includes/plugin.php
+msgid "Декабрь"
+msgstr "Грудень"
+
+#: includes/plugin.php
+msgid "Пн"
+msgstr "Пн"
+
+#: includes/plugin.php
+msgid "Вт"
+msgstr "Вт"
+
+#: includes/plugin.php
+msgid "Ср"
+msgstr "Ср"
+
+#: includes/plugin.php
+msgid "Чт"
+msgstr "Чт"
+
+#: includes/plugin.php
+msgid "Пт"
+msgstr "Пт"
+
+#: includes/plugin.php
+msgid "Сб"
+msgstr "Сб"
+
+#: includes/plugin.php
+msgid "Вс"
+msgstr "Нд"
+
+#: includes/plugin.php assets/calendar.js
+msgid " (пер.)"
+msgstr " (пер.)"
+
+#: includes/plugin.php assets/calendar.js assets/calendar.js
+msgid "Икона"
+msgstr "Ікона"
+
+#: includes/plugin.php assets/calendar.js
+msgid "Выбрать дату"
+msgstr "Вибрати дату"
+
+#: includes/plugin.php assets/calendar.js
+msgid "-я седмица по Пятидесятнице"
+msgstr "-й тиждень після П’ятидесятниці"
+
+#: includes/plugin.php assets/calendar.js
+msgid "глас "
+msgstr "глас "
+
+#: includes/plugin.php assets/calendar.js
+msgid "Выбор дня"
+msgstr "Вибір дня"
+
+#: includes/plugin.php assets/calendar.js
+msgid "← Вчера"
+msgstr "← Учора"
+
+#: includes/plugin.php assets/calendar.js
+msgid "Завтра →"
+msgstr "Завтра →"
+
+#: includes/plugin.php assets/calendar.js
+msgid "← Предыдущий день"
+msgstr "← Попередній день"
+
+#: includes/plugin.php assets/calendar.js
+msgid "Следующий день →"
+msgstr "Наступний день →"
+
+#: includes/plugin.php assets/calendar.js
+msgid "Найти в памятях дня"
+msgstr "Знайти в пам’ятях дня"
+
+#: includes/plugin.php assets/calendar.js
+msgid "Имя или название"
+msgstr "Ім’я або назва"
+
+#: includes/plugin.php
+msgid "Знак Типикона"
+msgstr "Знак Типікону"
+
+#: includes/plugin.php assets/calendar.js
+msgid "Совпадений нет."
+msgstr "Збігів немає."
+
+#: includes/plugin.php assets/calendar.js
+msgid "Монастырский"
+msgstr "Монастирський"
+
+#: includes/plugin.php assets/calendar.js
+msgid "Псалтирь"
+msgstr "Псалтир"
+
+#: includes/plugin.php assets/calendar.js
+msgid "На утрене:"
+msgstr "На утрені:"
+
+#: includes/plugin.php assets/calendar.js
+msgid "На вечерне:"
+msgstr "На вечірні:"
+
+#: includes/plugin.php assets/calendar.js
+msgid "В источнике нет чтений для этой даты."
+msgstr "У джерелі немає читань для цієї дати."
+
+#: includes/plugin.php assets/calendar.js
+msgid "Откройте справочник и выберите нужный текст."
+msgstr "Відкрийте довідник і виберіть потрібний текст."
+
+#: includes/plugin.php assets/calendar.js
+msgid "Ссылка на этот день"
+msgstr "Посилання на цей день"
+
+#: includes/plugin.php assets/calendar.js
+msgid "Скопировать ссылку"
+msgstr "Скопіювати посилання"
+
+#: includes/plugin.php assets/calendar.js
+msgid " профиль"
+msgstr " профіль"
+
+#: includes/plugin.php
+msgid "Открыть икону: "
+msgstr "Відкрити ікону: "
+
+#: includes/plugin.php assets/calendar.js
+msgid "Все разделы"
+msgstr "Усі розділи"
+
+#: includes/plugin.php assets/calendar.js
+msgid "Общие и справочные"
+msgstr "Загальні та довідкові"
+
+#: includes/plugin.php assets/calendar.js
+msgid "Все гласы"
+msgstr "Усі гласи"
+
+#: includes/plugin.php assets/calendar.js
+msgid "В этой части библиотеки пока нет текстов с выбранными параметрами."
+msgstr "У цій частині бібліотеки ще немає текстів із вибраними параметрами."
+
+#: includes/plugin.php
+msgid "Слишком много запросов. Повторите через минуту."
+msgstr "Забагато запитів. Спробуйте за хвилину."
+
+#: includes/plugin.php
+msgid "Неверные параметры."
+msgstr "Неправильні параметри."
+
+#: includes/plugin.php
+msgid "Неверный путь."
+msgstr "Неправильний шлях."
+
+#: includes/plugin.php
+msgid "Неверный адрес изображения."
+msgstr "Неправильна адреса зображення."
+
+#: includes/plugin.php
+msgid "Изображение пока недоступно. Повторите позже."
+msgstr "Зображення поки недоступне. Спробуйте пізніше."
+
+#: assets/editor.js
+msgid "Скрыть"
+msgstr "Приховати"
+
+#: assets/editor.js
+msgid "Показывать"
+msgstr "Показувати"
+
+#: assets/editor.js
+msgid "Старый стиль"
+msgstr "Старий стиль"
+
+#: assets/editor.js
+msgid "Компактный"
+msgstr "Компактний"
+
+#: assets/editor.js
+msgid "Размер"
+msgstr "Розмір"
+
+#: assets/editor.js
+msgid "ID конкретного текста, необязательно"
+msgstr "ID конкретного тексту, необов’язково"
+
+#: assets/editor.js
+msgid "День седмицы (0–6), необязательно"
+msgstr "День седмиці (0–6), необов’язково"
+
+#: assets/editor.js
+msgid "Глас (1–8), необязательно"
+msgstr "Глас (1–8), необов’язково"
+
+#: assets/editor.js
+msgid "Разделы: fasting,saints,readings,texts,icons"
+msgstr "Розділи: fasting,saints,readings,texts,icons"
+
+#: assets/editor.js
+msgid "Заголовок"
+msgstr "Заголовок"
+
+#: assets/editor.js
+msgid "Уровни памятей (0,1,2,3,4)"
+msgstr "Рівні пам’ятей (0,1,2,3,4)"
+
+#: assets/editor.js
+msgid "Заголовки секций"
+msgstr "Заголовки розділів"
+
+#: assets/editor.js
+msgid "Поиск по памятям"
+msgstr "Пошук за пам’ятями"
+
+#: assets/editor.js
+msgid "Ссылка на день"
+msgstr "Посилання на день"
+
+#: assets/editor.js
+msgid "Переход к дате"
+msgstr "Перехід до дати"
+
+#: assets/editor.js
+msgid "Навигация по дням"
+msgstr "Навігація за днями"
+
+#: assets/editor.js
+msgid "Картинки"
+msgstr "Зображення"
+
+#: assets/editor.js
+msgid "В окне"
+msgstr "У вікні"
+
+#: assets/editor.js
+msgid "Под ссылкой"
+msgstr "Під посиланням"
+
+#: assets/editor.js
+msgid "Открытие чтений"
+msgstr "Відкриття читань"
+
+#: assets/editor.js
+msgid "На странице"
+msgstr "На сторінці"
+
+#: assets/editor.js
+msgid "В стиле сайта"
+msgstr "У стилі сайту"
+
+#: assets/editor.js
+msgid "Современное"
+msgstr "Сучасне"
+
+#: assets/editor.js
+msgid "Книжное"
+msgstr "Книжкове"
+
+#: assets/editor.js
+msgid "Оформление"
+msgstr "Оформлення"
+
+#: assets/editor.js
+msgid "События"
+msgstr "Події"
+
+#: assets/editor.js
+msgid "Месяц (1–12)"
+msgstr "Місяць (1–12)"
+
+#: assets/editor.js
+msgid "Дата (ГГГГ-ММ-ДД), пусто — сегодня"
+msgstr "Дата (РРРР-ММ-ДД), порожньо — сьогодні"
+
+#: assets/editor.js
+msgid "Календарь"
+msgstr "Календар"
+
+#: assets/editor.js
+msgid "Настройка сайта"
+msgstr "Налаштування сайту"
+
+#: assets/editor.js
+msgid "православный"
+msgstr "православний"
+
+#: assets/editor.js
+msgid "календарь"
+msgstr "календар"
+
+#: assets/editor.js
+msgid "Православный календарь: "
+msgstr "Православний календар: "
+
+#: assets/editor.js
+msgid "Каноны с выбором языка текста."
+msgstr "Канони з вибором мови тексту."
+
+#: assets/editor.js
+msgid "Полные акафисты из библиотеки Bible Desktop."
+msgstr "Повні акафісти з бібліотеки Bible Desktop."
+
+#: assets/editor.js
+msgid "Полные разделы Часослова с выбором языка текста."
+msgstr "Повні розділи Часослова з вибором мови тексту."
+
+#: assets/editor.js
+msgid "Справочник величаний."
+msgstr "Довідник величань."
+
+#: assets/editor.js
+msgid "Справочник молитв."
+msgstr "Довідник молитов."
+
+#: assets/editor.js
+msgid "Справочник кондаков с фильтрами по гласу и дню седмицы."
+msgstr "Довідник кондаків із фільтрами за гласом і днем седмиці."
+
+#: assets/editor.js
+msgid "Справочник тропарей с фильтрами по гласу и дню седмицы."
+msgstr "Довідник тропарів із фільтрами за гласом і днем седмиці."
+
+#: assets/editor.js
+msgid "Справочник тропарей, кондаков, молитв и величаний."
+msgstr "Довідник тропарів, кондаків, молитов і величань."
+
+#: assets/editor.js
+msgid "Гражданская дата и соответствующая дата старого стиля."
+msgstr "Цивільна дата та відповідна дата за старим стилем."
+
+#: assets/editor.js
+msgid "Многодневные посты выбранного года."
+msgstr "Багатоденні пости вибраного року."
+
+#: assets/editor.js
+msgid "Дата Пасхи и связанные сведения для выбранного года."
+msgstr "Дата Пасхи та пов’язані відомості для вибраного року."
+
+#: assets/editor.js
+msgid "Ближайшие дни особого поминовения усопших."
+msgstr "Найближчі дні особливого поминання спочилих."
+
+#: assets/editor.js
+msgid "Ближайшие православные праздники."
+msgstr "Найближчі православні свята."
+
+#: assets/editor.js
+msgid "Памяти святых выбранного дня."
+msgstr "Пам’яті святих вибраного дня."
+
+#: assets/editor.js
+msgid "Правило поста и трапезы выбранного дня."
+msgstr "Правило посту та трапези вибраного дня."
+
+#: assets/editor.js
+msgid "Календарь с выбором даты и переходом к подробному дню."
+msgstr "Календар із вибором дати та переходом до подробиць дня."
+
+#: assets/editor.js
+msgid "Библейские чтения выбранного дня."
+msgstr "Біблійні читання вибраного дня."
+
+#: assets/editor.js
+msgid "Полная карточка указанной даты."
+msgstr "Повна картка зазначеної дати."
+
+#: assets/editor.js
+msgid "Годовой календарь с православными датами."
+msgstr "Річний календар із православними датами."
+
+#: assets/editor.js
+msgid "Сетка выбранного месяца с событиями, постом и старым стилем."
+msgstr "Сітка вибраного місяця з подіями, постом і старим стилем."
+
+#: assets/editor.js
+msgid "Список ближайших главных, великих или поминальных дней."
+msgstr "Список найближчих головних, великих або поминальних днів."
+
+#: assets/editor.js
+msgid "Карточка текущего дня: пост, праздники, памяти и чтения."
+msgstr "Картка поточного дня: піст, свята, пам’яті та читання."
+
+#: assets/admin.js
+msgid "В BibleDesktop пока нет активных переводов."
+msgstr "У BibleDesktop ще немає активних перекладів."
+
+#: assets/admin.js
+msgid " переводов."
+msgstr " перекладів."
+
+#: assets/admin.js
+msgid "Каталог загружен: "
+msgstr "Каталог завантажено: "
+
+#: assets/admin.js
+msgid "Выберите перевод"
+msgstr "Виберіть переклад"
+
+#: assets/admin.js
+msgid "BibleDesktop вернул неожиданный формат каталога."
+msgstr "BibleDesktop повернув неочікуваний формат каталогу."
+
+#: assets/admin.js
+msgid "BibleDesktop вернул ошибку."
+msgstr "BibleDesktop повернув помилку."
+
+#: assets/admin.js
+msgid "Загрузка каталога…"
+msgstr "Завантаження каталогу…"
+
+#: assets/admin.js
+msgid "Предпросмотр обновлён."
+msgstr "Попередній перегляд оновлено."
+
+#: assets/admin.js
+msgid "Блок не получен."
+msgstr "Блок не отримано."
+
+#: assets/admin.js
+msgid "Не удалось получить блок."
+msgstr "Не вдалося отримати блок."
+
+#: assets/admin.js
+msgid "Обновляю предпросмотр…"
+msgstr "Оновлення попереднього перегляду…"
+
+#: assets/admin.js
+msgid "Выделите строку и скопируйте вручную."
+msgstr "Виділіть рядок і скопіюйте вручну."
+
+#: assets/admin.js
+msgid "Шорткод скопирован."
+msgstr "Шорткод скопійовано."
+
+#: assets/calendar.js
+msgid "Глава"
+msgstr "Розділ"
+
+#: assets/calendar.js assets/calendar.js
+msgid "Выберите язык и перевод."
+msgstr "Виберіть мову та переклад."
+
+#: assets/calendar.js assets/calendar.js
+msgid "Загрузка текста…"
+msgstr "Завантаження тексту…"
+
+#: assets/calendar.js assets/calendar.js
+msgid "Выберите язык и перевод"
+msgstr "Виберіть мову та переклад"
+
+#: assets/calendar.js assets/calendar.js
+msgid "Каталог переводов требует обновления."
+msgstr "Каталог перекладів потребує оновлення."
+
+#: assets/calendar.js assets/calendar.js
+msgid "Источник не ответил вовремя. Повторите запрос."
+msgstr "Джерело не відповіло вчасно. Повторіть запит."
+
+#: assets/calendar.js assets/calendar.js
+msgid "Закрыть ×"
+msgstr "Закрити ×"
+
+#: assets/calendar.js assets/calendar.js
+msgid "Не удалось отобразить календарь."
+msgstr "Не вдалося відобразити календар."
+
+#: assets/calendar.js assets/calendar.js
+msgid "Загрузка…"
+msgstr "Завантаження…"
+
+#: assets/calendar.js
+msgid "В переводе отсутствуют запрошенные стихи. Неполный текст не показан."
+msgstr "У перекладі немає запитаних віршів. Неповний текст не показано."
+
+#: assets/calendar.js
+msgid "Неверный порядок стихов."
+msgstr "Неправильний порядок віршів."
+
+#: assets/calendar.js
+msgid "Не получена полная глава."
+msgstr "Не отримано повного розділу."
+
+#: assets/calendar.js
+msgid "Глава отсутствует в переводе."
+msgstr "У перекладі немає розділу."
+
+#: assets/calendar.js
+msgid "Не найдено однозначное соответствие книги "
+msgstr "Не знайдено однозначної відповідності книги "
+
+#: assets/calendar.js
+msgid "Неверные границы стихов."
+msgstr "Неправильні межі віршів."
+
+#: assets/calendar.js
+msgid "Неверные границы чтения."
+msgstr "Неправильні межі читання."
+
+#: assets/calendar.js
+msgid "Каталог книг недоступен."
+msgstr "Каталог книг недоступний."
+
+#: assets/calendar.js
+msgid "Ссылка разобрана не полностью. Исходное обозначение чтения сохранено."
+msgstr "Посилання розібрано не повністю. Початкове позначення читання збережено."
+
+#: assets/calendar.js
+msgid "Источник вернул другой перевод или язык."
+msgstr "Джерело повернуло інший переклад або мову."
+
+#: assets/calendar.js
+msgid "Не удалось загрузить изображение."
+msgstr "Не вдалося завантажити зображення."
+
+#: assets/calendar.js assets/calendar.js
+msgid "Не удалось получить данные."
+msgstr "Не вдалося отримати дані."
+
+#: assets/calendar.js assets/calendar.js
+msgid "Копирование недоступно. Выделите текст и скопируйте вручную."
+msgstr "Копіювання недоступне. Виділіть текст і скопіюйте вручну."
+
+#: assets/calendar.js assets/calendar.js
+msgid "Скопировано."
+msgstr "Скопійовано."
+
+#: assets/calendar.js
+msgid "из"
+msgstr "із"
+
+#: assets/calendar.js
+msgid "Описание иконы отсутствует."
+msgstr "Опис ікони відсутній."
+
+#: assets/calendar.js
+msgid "Все образы дня"
+msgstr "Усі образи дня"
+
+#: assets/calendar.js assets/calendar.js
+msgid "Изображения образа"
+msgstr "Зображення образу"
+
+#: assets/calendar.js
+msgid "Справочная библиотека · церковнославянский текст. Выбор по гласу или дню недели не является указанием порядка конкретной службы."
+msgstr "Довідкова бібліотека · церковнослов’янський текст. Вибір за гласом або днем тижня не визначає порядку конкретної служби."
+
+#: assets/calendar.js
+msgid "Общие молитвы"
+msgstr "Загальні молитви"
+
+#: assets/calendar.js
+msgid "Молитвы и тексты дня на "
+msgstr "Молитви та тексти дня мовою "
+
+#: assets/calendar.js
+msgid "Тексты дня"
+msgstr "Тексти дня"
+
+#: assets/calendar.js
+msgid "Текст службы"
+msgstr "Текст служби"
+
+#: assets/calendar.js
+msgid "Молитва"
+msgstr "Молитва"
+
+#: assets/calendar.js
+msgid "Для выбранного раздела пока нет текстов."
+msgstr "Для вибраного розділу ще немає текстів."
+
+#: assets/calendar.js
+msgid "Празднование:"
+msgstr "Святкування:"
+
+#: assets/calendar.js
+msgid "Даты празднования не указаны источником."
+msgstr "Джерело не вказало дат святкування."
+
+#: assets/calendar.js
+msgid "Назначения текстов для этого дня ещё требуют уточнения. Справочные тексты приведены отдельно."
+msgstr "Призначення текстів для цього дня ще потребує уточнення. Довідкові тексти наведено окремо."
+
+#: blocks/year/block.json
+msgctxt "block title"
+msgid "Православный календарь: Календарь на год"
+msgstr "Православний календар: Календар на рік"
+
+#: blocks/upcoming/block.json
+msgctxt "block title"
+msgid "Православный календарь: Ближайшие праздники"
+msgstr "Православний календар: Найближчі свята"
+
+#: blocks/troparia/block.json
+msgctxt "block title"
+msgid "Православный календарь: Тропари"
+msgstr "Православний календар: Тропарі"
+
+#: blocks/today/block.json
+msgctxt "block title"
+msgid "Православный календарь: Сегодня"
+msgstr "Православний календар: Сьогодні"
+
+#: blocks/texts/block.json
+msgctxt "block title"
+msgid "Православный календарь: Богослужебные тексты"
+msgstr "Православний календар: Богослужбові тексти"
+
+#: blocks/saints/block.json
+msgctxt "block title"
+msgid "Православный календарь: Памяти святых"
+msgstr "Православний календар: Пам’яті святих"
+
+#: blocks/readings/block.json
+msgctxt "block title"
+msgid "Православный календарь: Чтения дня"
+msgstr "Православний календар: Читання дня"
+
+#: blocks/prayers/block.json
+msgctxt "block title"
+msgid "Православный календарь: Молитвы"
+msgstr "Православний календар: Молитви"
+
+#: blocks/pascha/block.json
+msgctxt "block title"
+msgid "Православный календарь: Пасха"
+msgstr "Православний календар: Пасха"
+
+#: blocks/month/block.json
+msgctxt "block title"
+msgid "Православный календарь: Календарь на месяц"
+msgstr "Православний календар: Календар на місяць"
+
+#: blocks/memorial/block.json
+msgctxt "block title"
+msgid "Православный календарь: Поминальные дни"
+msgstr "Православний календар: Поминальні дні"
+
+#: blocks/magnifications/block.json
+msgctxt "block title"
+msgid "Православный календарь: Величания"
+msgstr "Православний календар: Величання"
+
+#: blocks/kontakia/block.json
+msgctxt "block title"
+msgid "Православный календарь: Кондаки"
+msgstr "Православний календар: Кондаки"
+
+#: blocks/horologion/block.json
+msgctxt "block title"
+msgid "Православный календарь: Часослов"
+msgstr "Православний календар: Часослов"
+
+#: blocks/feasts/block.json
+msgctxt "block title"
+msgid "Православный календарь: Праздники"
+msgstr "Православний календар: Свята"
+
+#: blocks/fasts/block.json
+msgctxt "block title"
+msgid "Православный календарь: Посты на год"
+msgstr "Православний календар: Пости року"
+
+#: blocks/fasting/block.json
+msgctxt "block title"
+msgid "Православный календарь: Пост и трапеза"
+msgstr "Православний календар: Піст і трапеза"
+
+#: blocks/day/block.json
+msgctxt "block title"
+msgid "Православный календарь: День календаря"
+msgstr "Православний календар: День календаря"
+
+#: blocks/date/block.json
+msgctxt "block title"
+msgid "Православный календарь: Дата по двум стилям"
+msgstr "Православний календар: Дата за двома стилями"
+
+#: blocks/canons/block.json
+msgctxt "block title"
+msgid "Православный календарь: Каноны"
+msgstr "Православний календар: Канони"
+
+#: blocks/calendar/block.json
+msgctxt "block title"
+msgid "Православный календарь: Православный календарь"
+msgstr "Православний календар: Православний календар"
+
+#: blocks/akathists/block.json
+msgctxt "block title"
+msgid "Православный календарь: Акафисты"
+msgstr "Православний календар: Акафісти"
+
+#: orthocal.php
+msgid "https://atapin.de/"
+msgstr "https://atapin.de/"
+
+#: orthocal.php
+msgid "Vladimir Atapin"
+msgstr "Vladimir Atapin"
+
+#: orthocal.php
+msgid "Gutenberg blocks and shortcodes for an Orthodox calendar: calendar dates, fasting rules, commemorations, readings and liturgical texts."
+msgstr "Блоки Gutenberg і шорткоди для православного календаря: календарні дати, правила посту, пам’яті святих, читання та богослужбові тексти."
+
+#: orthocal.php
+msgid "https://github.com/VAtapin/wp_orthodox_calendar"
+msgstr "https://github.com/VAtapin/wp_orthodox_calendar"
+
+#: orthocal.php
+msgid "Georg-Kloster Calendar Workshop"
+msgstr "Georg-Kloster Calendar Workshop"

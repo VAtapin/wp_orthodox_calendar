@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.3.77
+
+- Connect PHP and JavaScript interface strings to standard WordPress translations.
+- Preserve prior translations and provide complete Russian, German, Ukrainian and Polish catalogues.
+- Include reviewed canonical prayers, historical German editions and source-matched lection numbers from 1.3.74–1.3.76.
+- Add the Georg-Kloster icon and seven real WordPress screenshots to the directory.
+
 ## 1.3.71
 
 - Use Bible Desktop for every calendar request, including month/year and admin previews.

@@ -35,9 +35,9 @@
   async function copy(text, status) {
     try {
       await navigator.clipboard.writeText(text);
-      status.textContent = "Шорткод скопирован.";
+      status.textContent = wp.i18n.__( "Шорткод скопирован.", 'georg-kloster-calendar-workshop' );
     } catch {
-      status.textContent = "Выделите строку и скопируйте вручную.";
+      status.textContent = wp.i18n.__( "Выделите строку и скопируйте вручную.", 'georg-kloster-calendar-workshop' );
     }
   }
   const fields = [...root.querySelectorAll("[data-oc-build]")],
@@ -207,7 +207,7 @@
     const version = ++previewVersion,
       attrs = values();
     attrs.mode = mode();
-    status.textContent = "Обновляю предпросмотр…";
+    status.textContent = wp.i18n.__( "Обновляю предпросмотр…", 'georg-kloster-calendar-workshop' );
     try {
       const url = endpoint("render");
       for (const [name, value] of Object.entries(attrs))
@@ -218,13 +218,13 @@
       const data = await response.json();
       if (version !== previewVersion) return;
       if (!response.ok)
-        throw new Error(data.message || "Не удалось получить блок.");
+        throw new Error(data.message || wp.i18n.__( "Не удалось получить блок.", 'georg-kloster-calendar-workshop' ));
       const doc = new DOMParser().parseFromString(data.html, "text/html"),
         block = doc.querySelector(".orthocal");
-      if (!block) throw new Error("Блок не получен.");
+      if (!block) throw new Error(wp.i18n.__( "Блок не получен.", 'georg-kloster-calendar-workshop' ));
       preview.replaceChildren(block);
       window.OrthocalInit?.(preview);
-      status.textContent = "Предпросмотр обновлён.";
+      status.textContent = wp.i18n.__( "Предпросмотр обновлён.", 'georg-kloster-calendar-workshop' );
     } catch (error) {
       if (version !== previewVersion) return;
       preview.replaceChildren();
@@ -270,7 +270,7 @@
     ?.addEventListener("click", async () => {
       const info = root.querySelector("[data-oc-admin-status]"),
         button = root.querySelector("[data-oc-load-translations]");
-      info.textContent = "Загрузка каталога…";
+      info.textContent = wp.i18n.__( "Загрузка каталога…", 'georg-kloster-calendar-workshop' );
       button.disabled = true;
       try {
         const response = await fetch(endpoint("bible") + "?path=translations", {
@@ -278,11 +278,11 @@
           }),
           data = await response.json();
         if (!response.ok)
-          throw new Error(data.message || "BibleDesktop вернул ошибку.");
+          throw new Error(data.message || wp.i18n.__( "BibleDesktop вернул ошибку.", 'georg-kloster-calendar-workshop' ));
         if (!Array.isArray(data))
-          throw new Error("BibleDesktop вернул неожиданный формат каталога.");
+          throw new Error(wp.i18n.__( "BibleDesktop вернул неожиданный формат каталога.", 'georg-kloster-calendar-workshop' ));
         const select = root.querySelector("[data-oc-admin-translations]");
-        select.replaceChildren(new Option("Выберите перевод", ""));
+        select.replaceChildren(new Option(wp.i18n.__( "Выберите перевод", 'georg-kloster-calendar-workshop' ), ""));
         for (const item of data)
           if (typeof item.code === "string" && item.language?.code)
             select.add(
@@ -293,8 +293,8 @@
             );
         select.hidden = false;
         info.textContent = data.length
-          ? "Каталог загружен: " + data.length + " переводов."
-          : "В BibleDesktop пока нет активных переводов.";
+          ? wp.i18n.__( "Каталог загружен: ", 'georg-kloster-calendar-workshop' ) + data.length + wp.i18n.__( " переводов.", 'georg-kloster-calendar-workshop' )
+          : wp.i18n.__( "В BibleDesktop пока нет активных переводов.", 'georg-kloster-calendar-workshop' );
       } catch (error) {
         info.textContent = error.message;
       } finally {

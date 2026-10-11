@@ -4,7 +4,7 @@ Tags: calendar, orthodox, bible
 Requires at least: 6.3
 Tested up to: 7.1
 Requires PHP: 8.0
-Stable tag: 1.3.73
+Stable tag: 1.3.77
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -23,7 +23,7 @@ The files assets/admin.js, assets/calendar.js, assets/editor.js, assets/admin.cs
 Edit these source files directly. No npm build is required for plugin installation or development. To check JavaScript syntax, run node --check assets/admin.js, node --check assets/calendar.js and node --check assets/editor.js. PHP files can be checked with php -l. Optional formatting: npx prettier@3.6.2 --write assets/*.js assets/*.css. The repository includes scripts/build-language-files.mjs for rebuilding MO catalogues with Node.js. The release packaging procedure is documented in the public repository README.md.
 
 == Installation ==
-1. WordPress â†’ Plugins â†’ Add New â†’ Upload Plugin: orthocal-1.3.73.zip.
+1. WordPress â†’ Plugins â†’ Add New â†’ Upload Plugin: orthocal-1.3.77.zip.
 2. Activate the plugin.
 3. The calendar works immediately. Open Georg-Kloster Calendar Workshop â†’ Connection to change the Bible Desktop API address.
 4. Add blocks from the Widgets category or shortcodes to a page.
@@ -85,15 +85,43 @@ Saving settings invalidates the plugin cache. Deactivation preserves settings.
 
 == Features ==
 22 dynamic Gutenberg blocks and shortcodes, a dedicated plugin menu, a live-preview generator with shortcode copying, built-in help, server-rendered HTML, date switching without reloads, modal dialogs, daily-commemoration search, ?orthocal_date=YYYY-MM-DD permalinks, independent blocks, three themes, responsive layouts, print styles, and keyboard navigation.
-Day cards and the reader support Russian and German labels; the calendar-data language and Bible language are chosen separately. Calendar translations can be incomplete. Built-in liturgical texts are Church Slavonic, with German editions available through links. Icon images and hagiographies are never substituted for missing data.
+Settings, Gutenberg blocks, day cards and the reader support Russian, German, Ukrainian and Polish labels; the calendar-data language and Bible language are chosen separately. Calendar translations can be incomplete. Built-in liturgical texts are Church Slavonic, with German editions available through links. Icon images and hagiographies are never substituted for missing data.
+
+== Screenshots ==
+
+1. Day card with actual icons, commemorations, fasting rules and Bible readings.
+2. Monthly calendar with feast days, fasting rules and dates in the old style.
+3. Yearly calendar with Pascha and the twelve monthly grids.
+4. Shortcode generator with block settings and a live preview.
+5. Full liturgical text reader with language selection and source attribution.
+6. Church Slavonic text displayed using the Monomakh font.
+7. Mobile day card with responsive navigation and actual icons.
 
 == Changelog ==
+
+= 1.3.77 =
+* Connect settings, Gutenberg and reader labels to WordPress gettext and script translations.
+* Preserve existing translations and add complete Russian, German, Ukrainian and Polish catalogues.
+* Keep each block language and liturgical text language independent of the site locale.
+
+= 1.3.76 =
+* Show the actual historical edition year and credit of stored German prayers.
+* Support the reviewed German morning, evening and Communion rules through existing APIs.
+
+= 1.3.75 =
+* Display lection numbers only for unambiguous exact source-coordinate matches.
+* Preserve source variants and ambiguous candidates without guessing a number.
+
+= 1.3.74 =
+* Resolve saved legacy prayer links to complete canonical works.
+* Add prayer groups and keep actual text languages explicit.
+* Invalidate old prayer copies and cache full editions by content revision.
 
 = 1.3.73 =
 * Unslash, sanitize and validate public date and client IP inputs.
 * Explain read-only navigation and necessary page-cache/database integrations to Plugin Check.
 
-= 1.3.73 =
+= 1.3.72 =
 * Include readable JavaScript/CSS sources and document their public repository and development workflow.
 * Validate complete fasting-period dates before rendering malformed external API data.
 * Use the established orthocal prefix for all response, cooldown and rate-limit transients.
