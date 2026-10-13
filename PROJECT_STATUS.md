@@ -1,5 +1,7 @@
 # Project status
 
+- Calendar directory artwork prepared for assets-only publication: green/gold Saint George icon with a prominent calendar, Russian calendar banners in 772×250 and 1544×500, icons 128/256. PNG dimensions/file limits/alpha and visual review PASS. The dedicated artwork workflow updates only those four files in SVN assets using existing credentials; runtime, readme, screenshots and version/tag remain unchanged. Publication is pending workflow verification. Last related commit: Publish calendar directory artwork through assets-only workflow (commit containing this status).
+
 - Version 1.3.78, georg-kloster-calendar-workshop slug/domain. PHP/JS/Gutenberg originals are US English; en_US works without a language pack. All four RU/DE/UK/PL catalogues retain 441 translations; month date/label contexts preserve grammatical forms. User text and API content remain unchanged; block/text languages remain independent. Approved WordPress.org packs retain priority.
 - Existing calendar/text/media APIs, canonical prayers, historical German editions and source-matched lection numbers preserved. Directory icons and seven screenshots remain in .wordpress-org. Obsolete legacy JSON and en_US translation files removed.
 - Checks: WP-CLI 441 English originals, four PO 441/441, translation preservation, en_US plus four locales in real PHP/JS/Gutenberg with month/language/context checks, full WordPress/SQLite+Edge reader/media/22-block suite, official Plugin Check 0 errors/0 warnings, PHP/JS syntax and Kalendar production build PASS.

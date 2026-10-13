@@ -1,0 +1,46 @@
+name: Update WordPress.org calendar artwork
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.wordpress-org/icon-128x128.png'
+      - '.wordpress-org/icon-256x256.png'
+      - '.wordpress-org/banner-772x250.png'
+      - '.wordpress-org/banner-1544x500.png'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: wordpress-calendar-artwork
+  cancel-in-progress: false
+
+jobs:
+  artwork:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Publish only calendar artwork
+        env:
+          SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
+          SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
+          SLUG: ${{ vars.WORDPRESS_ORG_SLUG }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$SLUG" = georg-kloster-calendar-workshop
+          test -n "$SVN_USERNAME"
+          test -n "$SVN_PASSWORD"
+          checkout="$RUNNER_TEMP/calendar-artwork-svn"
+          svn checkout --non-interactive "https://plugins.svn.wordpress.org/$SLUG/assets/" "$checkout"
+          for name in icon-128x128.png icon-256x256.png banner-772x250.png banner-1544x500.png; do
+            cp ".wordpress-org/$name" "$checkout/$name"
+            svn add --force "$checkout/$name"
+            svn propset svn:mime-type image/png "$checkout/$name"
+          done
+          svn status "$checkout"
+          svn commit "$checkout" --non-interactive --no-auth-cache \
+            --username "$SVN_USERNAME" --password "$SVN_PASSWORD" \
+            -m "Update calendar icon and add green and gold calendar banners"
