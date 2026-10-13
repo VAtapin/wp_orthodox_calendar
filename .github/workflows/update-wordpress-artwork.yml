@@ -8,6 +8,7 @@ on:
       - '.wordpress-org/icon-256x256.png'
       - '.wordpress-org/banner-772x250.png'
       - '.wordpress-org/banner-1544x500.png'
+      - '.github/workflows/update-wordpress-artwork.yml'
   workflow_dispatch:
 
 permissions:
@@ -22,6 +23,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Install Subversion
+        run: sudo apt-get update && sudo apt-get install -y subversion
       - name: Publish only calendar artwork
         env:
           SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
