@@ -27,6 +27,16 @@ using `.distignore` and puts them inside `georg-kloster-calendar-workshop/`.
 It does not compile or modify JavaScript/CSS. A version tag must match the PHP
 header. No tag or WordPress.org deployment is created merely by pushing main.
 
+### Readme checklist before the next tag
+
+- Keep `readme.txt` as UTF-8 and check it for mojibake such as `â†’` and `â€“`.
+- Put shortcode examples in Markdown code blocks and parameter fragments in
+  `<code>` so WordPress.org does not replace ASCII quotes (`"`) with typographic
+  quotes.
+- Update and approve the Russian, German, Ukrainian and Polish WordPress.org
+  readme translations, including the changelog for the new version. A translated
+  page otherwise falls back to the English original for new strings.
+
 To create the installation ZIP manually on Linux with zip installed, run from
 this repository root:
 
