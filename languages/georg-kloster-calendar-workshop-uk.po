@@ -483,6 +483,10 @@ msgstr "Вміст картки дня"
 msgid "Fasting and meals"
 msgstr "Піст і трапеза"
 
+#: includes/i18n.php
+msgid "Vestment color"
+msgstr "Колір облачення"
+
 #: includes/admin.php includes/plugin.php assets/calendar.js
 msgid "Feasts and commemorations"
 msgstr "Свята та пам’яті"

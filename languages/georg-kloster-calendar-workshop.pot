@@ -549,6 +549,10 @@ msgstr ""
 msgid "Fasting and meals"
 msgstr ""
 
+#: includes/i18n.php
+msgid "Vestment color"
+msgstr ""
+
 #: includes/i18n.php:167
 msgid "Feasts and commemorations"
 msgstr ""

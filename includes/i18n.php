@@ -164,6 +164,7 @@ final class Orthocal_I18n {
             'Fasting image set'=>__('Fasting image set', 'georg-kloster-calendar-workshop'),
             'Day card content'=>__('Day card content', 'georg-kloster-calendar-workshop'),
             'Fasting and meals'=>__('Fasting and meals', 'georg-kloster-calendar-workshop'),
+            'Vestment color'=>__('Vestment color', 'georg-kloster-calendar-workshop'),
             'Feasts and commemorations'=>__('Feasts and commemorations', 'georg-kloster-calendar-workshop'),
             'Bible readings'=>__('Bible readings', 'georg-kloster-calendar-workshop'),
             'Liturgical texts'=>__('Liturgical texts', 'georg-kloster-calendar-workshop'),

@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.3.79
+
+- Show the Bible Desktop vestment recommendation as a patterned colour ornament in daily, monthly and yearly calendar views.
+- Put the source commemoration above the horizontal ornament on the day card without repeating the colour label.
+
 ## 1.3.78
 
 - Use US English originals in PHP, JavaScript and Gutenberg block metadata.

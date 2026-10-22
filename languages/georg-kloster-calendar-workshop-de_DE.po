@@ -483,6 +483,10 @@ msgstr "Inhalt der Tageskarte"
 msgid "Fasting and meals"
 msgstr "Fasten und Speisen"
 
+#: includes/i18n.php
+msgid "Vestment color"
+msgstr "Liturgische Gewandfarbe"
+
 #: includes/admin.php includes/plugin.php assets/calendar.js
 msgid "Feasts and commemorations"
 msgstr "Feste und Gedenktage"

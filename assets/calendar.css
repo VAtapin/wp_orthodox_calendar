@@ -126,6 +126,22 @@
   background: #ffffff60;
   overflow-wrap: anywhere;
 }
+.orthocal [data-oc-vestment] {
+  --oc-vestment-color: #a47c00;
+  --oc-vestment-edge: #a47c00;
+  --oc-vestment-fill: #f6e39e;
+}
+.orthocal [data-oc-vestment="white"] { --oc-vestment-color: #aeb8c3; --oc-vestment-edge: #aeb8c3; --oc-vestment-fill: #f3f5f7; }
+.orthocal [data-oc-vestment="red"] { --oc-vestment-color: #a91e27; --oc-vestment-edge: #a91e27; --oc-vestment-fill: #f3c9cd; }
+.orthocal [data-oc-vestment="gold"] { --oc-vestment-color: #a47c00; --oc-vestment-edge: #a47c00; --oc-vestment-fill: #f6e39e; }
+.orthocal [data-oc-vestment="green"] { --oc-vestment-color: #087c35; --oc-vestment-edge: #087c35; --oc-vestment-fill: #bfe6ca; }
+.orthocal [data-oc-vestment="blue"] { --oc-vestment-color: #087baa; --oc-vestment-edge: #087baa; --oc-vestment-fill: #bfe3f4; }
+.orthocal [data-oc-vestment="violet"] { --oc-vestment-color: #7835a0; --oc-vestment-edge: #7835a0; --oc-vestment-fill: #dfc8ed; }
+.orthocal [data-oc-vestment="black"] { --oc-vestment-color: #252a30; --oc-vestment-edge: #252a30; --oc-vestment-fill: #d7dade; }
+.orthocal .oc-cell.oc-vestment { position: relative; border-left: 0; }
+.orthocal .oc-cell.oc-vestment { padding-left: 24px; }
+.orthocal .oc-year .oc-cell.oc-vestment { padding-left: 8px; }
+.orthocal .oc-cell.oc-vestment::before { content: ""; position: absolute; z-index: 1; top: 0; bottom: 0; left: 0; width: 12px; box-sizing: border-box; border-inline: 2px solid var(--oc-vestment-edge); background-color: var(--oc-vestment-fill); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='%236f7d8b' stroke-width='.8' stroke-linecap='round' stroke-linejoin='round' opacity='.8'%3E%3Cpath d='M12 22V2m0 6-3-3m3 6 4-4m-4 9-4-4m4 6 4-4M2 12h20m-8 0 3-3m-6 3-3-3m8 3 3 3m-8-3-3 3'/%3E%3C/g%3E%3C/svg%3E"); background-size: 12px 12px; pointer-events: none; }
 .orthocal .oc-cell b {
   font-size: 24px;
   font-weight: 500;
@@ -620,6 +636,18 @@
 }
 .orthocal .oc-day-meta {
   margin-bottom: 10px;
+}
+.orthocal .oc-vestment-basis {
+  margin: 0 0 4px;
+}
+.orthocal .oc-vestment {
+  height: 12px;
+  box-sizing: border-box;
+  margin: 0 0 12px;
+  border-block: 2px solid var(--oc-vestment-edge);
+  background-color: var(--oc-vestment-fill);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='%236f7d8b' stroke-width='.8' stroke-linecap='round' stroke-linejoin='round' opacity='.8'%3E%3Cpath d='M12 22V2m0 6-3-3m3 6 4-4m-4 9-4-4m4 6 4-4M2 12h20m-8 0 3-3m-6 3-3-3m8 3 3 3m-8-3-3 3'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 12px 12px;
 }
 .orthocal .oc-search {
   display: block;

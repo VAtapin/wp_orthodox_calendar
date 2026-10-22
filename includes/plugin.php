@@ -4,7 +4,7 @@ require_once __DIR__.'/library.php';
 require_once __DIR__.'/lectionary.php';
 
 final class Orthocal_Plugin {
-    const VERSION = '1.3.78';
+    const VERSION = '1.3.79';
     const LEGACY_IMAGE_HEIGHTS = ['small'=>28,'medium'=>44,'large'=>72];
     const TITLES = ['today'=>'Today', 'upcoming'=>'Upcoming feasts', 'month'=>'Monthly calendar', 'year'=>'Yearly calendar', 'day'=>'Calendar day', 'readings'=>'Daily readings', 'calendar'=>'Orthodox calendar','fasting'=>'Fasting and meals','saints'=>'Saints commemorations','feasts'=>'Feasts','memorial'=>'Memorial days','pascha'=>'Pascha','fasts'=>'Yearly fasts','date'=>'New and old style date','texts'=>'Liturgical texts','troparia'=>'Troparia','kontakia'=>'Kontakia','prayers'=>'Prayers','magnifications'=>'Magnifications','horologion'=>'Horologion','akathists'=>'Akathists','canons'=>'Canons'];
     const TEXT_MODES=['texts','troparia','kontakia','prayers','magnifications','akathists','canons'];
@@ -299,6 +299,20 @@ final class Orthocal_Plugin {
         $html .= ('<label>'.self::ui('Year',$a['lang']).' <input data-oc-year type="number" min="1900" max="2200" value="').$a['year'].('"></label><button type="button" data-oc-now>'.self::ui('Today',$a['lang']).'</button></nav>');
         return $html;
     }
+    static function vestment_info($day) {
+        $vestment=is_array($day)?($day['vestment']??null):null;
+        if(!is_array($vestment)||!in_array($vestment['color']??'', ['gold','white','blue','red','green','violet','black'],true))return null;
+        return [
+            'color'=>$vestment['color'],
+            'label'=>is_string($vestment['label']??null)&&trim($vestment['label'])!==''?trim($vestment['label']):$vestment['color'],
+            'status'=>is_string($vestment['status']??null)?$vestment['status']:'',
+            'basisTitle'=>is_string($vestment['basisTitle']??null)?trim($vestment['basisTitle']):'',
+        ];
+    }
+    static function vestment_attributes($vestment) {
+        if(!$vestment)return '';
+        return ' data-oc-vestment="'.esc_attr($vestment['color']).'"'.($vestment['status']!==''?' data-oc-vestment-status="'.esc_attr($vestment['status']).'"':'');
+    }
     static function month($days,$a,$month) {
         $months=[(Orthocal_I18n::text('month name|January')),(Orthocal_I18n::text('month name|February')),(Orthocal_I18n::text('month name|March')),(Orthocal_I18n::text('month name|April')),(Orthocal_I18n::text('month name|May')),(Orthocal_I18n::text('month name|June')),(Orthocal_I18n::text('month name|July')),(Orthocal_I18n::text('month name|August')),(Orthocal_I18n::text('month name|September')),(Orthocal_I18n::text('month name|October')),(Orthocal_I18n::text('month name|November')),(Orthocal_I18n::text('month name|December'))];
         $months=$a['lang']==='de'?['Januar','Februar','März','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember']:$months;
@@ -308,8 +322,9 @@ final class Orthocal_Plugin {
         foreach ($days as $day) {
             $events = $day['events'] ?? []; $feasts = array_values(array_filter($events,static fn($e)=>$e['category']==='commemoration' && $e['typeCode']>=0 && $e['typeCode']<=2));
             $red = $day['weekday']===0 || count($feasts)>0; $today = $day['date']===wp_date('Y-m-d');
-            $label = self::date_label($day['date'],$a['lang']).'. '.($day['foodLabel'] ?? '').'. '.implode('. ',array_column($feasts,'title'));
-            $html .= '<a class="oc-cell'.($red?' oc-red':'').($today?' oc-today':'').'" href="'.esc_url(self::date_url($day['date'])).'" data-oc-date="'.esc_attr($day['date']).'" aria-label="'.esc_attr($label).'" title="'.esc_attr($label).'"'.($today?' aria-current="date"':'').'>';
+            $vestment=self::vestment_info($day);
+            $label = self::date_label($day['date'],$a['lang']).'. '.($day['foodLabel'] ?? '').($vestment?'. '.self::ui('Vestment color',$a['lang']).': '.$vestment['label']:'').'. '.implode('. ',array_column($feasts,'title'));
+            $html .= '<a class="oc-cell'.($red?' oc-red':'').($today?' oc-today':'').($vestment?' oc-vestment':'').'" href="'.esc_url(self::date_url($day['date'])).'" data-oc-date="'.esc_attr($day['date']).'"'.self::vestment_attributes($vestment).' aria-label="'.esc_attr($label).'" title="'.esc_attr($label).'"'.($today?' aria-current="date"':'').'>';
             $html .= '<b>'.(int)substr($day['date'],8,2).'</b>'.($a['oldstyle']==='1'?'<small>'.(int)substr($day['oldStyleDate'],8,2).'</small>':'');
             if ($feasts) $html .= '<span class="oc-star" aria-hidden="true">✦</span>';
             if ($a['mode']!=='year') $html .= '<span class="oc-cell-title">'.esc_html($feasts[0]['title'] ?? $events[0]['title'] ?? '').'</span><span class="oc-food">'.esc_html($day['foodLabel'] ?? '').'</span>';
@@ -424,6 +439,8 @@ final class Orthocal_Plugin {
         $html .= '</div>';
         if ($a['oldstyle']==='1') $html .= '<p class="oc-muted">'.esc_html($day['oldStyleDate']).(' '.self::ui('old style date',$a['lang']).'</p>');
         $meta=[];if(!empty($day['weekdayName']))$meta[]=mb_strtolower((string)$day['weekdayName']);if(!empty($day['weekAfterPentecost']))$meta[]=(int)$day['weekAfterPentecost'].(self::ui('week after Pentecost',$a['lang']));if(!empty($day['tone']))$meta[]=(self::ui('tone ',$a['lang'])).(int)$day['tone'];if($meta)$html.='<p class="oc-day-meta">'.esc_html(implode(' · ',$meta)).'</p>';
+        $vestment=self::vestment_info($day);
+        if($vestment) $html.=($vestment['basisTitle']!==''?'<p class="oc-vestment-basis">'.esc_html($vestment['basisTitle']).'</p>':'').'<div class="oc-vestment"'.self::vestment_attributes($vestment).' aria-hidden="true"></div>';
         if(in_array($a['mode'],['today','day'],true)) {
             $date=new DateTimeImmutable($day['date']);$html.=$a['show_nav']==='1'?('<nav class="oc-day-nav" aria-label="'.self::ui('Day selection',$a['lang']).'">'):'';
             if($a['show_nav']==='1') foreach([-1=>(self::ui('← Yesterday',$a['lang'])),1=>(self::ui('Tomorrow →',$a['lang']))] as $step=>$label){$target=$date->modify(($step<0?'-1':'+1').' day')->format('Y-m-d');if(self::date_valid($target))$html.='<button type="button" data-oc-day="'.$target.'">'.($a['date']===wp_date('Y-m-d')?$label:($step<0?(self::ui('← Previous day',$a['lang'])):(self::ui('Next day →',$a['lang'])))).'</button>';}
