@@ -1,6 +1,6 @@
 # Georg-Kloster Calendar Workshop
 
-Public source for the WordPress plugin. Version 1.3.79, GPL-2.0-or-later.
+Public source for the WordPress plugin. Version 1.3.80, GPL-2.0-or-later.
 
 ## Original sources
 
@@ -27,7 +27,7 @@ using `.distignore` and puts them inside `georg-kloster-calendar-workshop/`.
 It does not compile or modify JavaScript/CSS. A version tag must match the PHP
 header. No tag or WordPress.org deployment is created merely by pushing main.
 
-### Readme checklist before the next tag
+### Readme and translation release checklist
 
 - Keep `readme.txt` as UTF-8 and check it for mojibake such as `â†’` and `â€“`.
 - Put shortcode examples in Markdown code blocks and parameter fragments in
@@ -41,7 +41,7 @@ To create the installation ZIP manually on Linux with zip installed, run from
 this repository root:
 
 ```sh
-package=$(mktemp -d) && mkdir "$package/georg-kloster-calendar-workshop" && cp -R assets blocks includes languages orthocal.php readme.txt "$package/georg-kloster-calendar-workshop/" && output="$(pwd)/orthocal-1.3.77.zip" && (cd "$package" && zip -qr "$output" georg-kloster-calendar-workshop)
+package=$(mktemp -d) && mkdir "$package/georg-kloster-calendar-workshop" && cp -R assets blocks includes languages orthocal.php readme.txt "$package/georg-kloster-calendar-workshop/" && output="$(pwd)/orthocal-1.3.80.zip" && (cd "$package" && zip -qr "$output" georg-kloster-calendar-workshop)
 ```
 
 ## Compatibility and review
@@ -55,7 +55,7 @@ are documented in readme.txt. Version 1.3.73 was approved and published on WordP
 ## WordPress translations and directory images
 
 Settings, Gutenberg and reader labels use US English source strings, the plugin gettext domain and wp-i18n. English works without a language pack. Month names have separate date/label contexts.
-Russian, German, Ukrainian and Polish PO catalogues each cover all 441 extracted
+Russian, German, Ukrainian and Polish PO catalogues each cover all 442 extracted
 strings. node scripts/build-language-files.mjs compiles the MO files and three
 script catalogues while preserving contexts. Approved WordPress.org language
 packs take priority over bundled translations. Block and liturgical text

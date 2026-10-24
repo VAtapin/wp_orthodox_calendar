@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.3.80
+
+- Use the first daily icon from `day.icons` in API order.
+- Refine month and year cells with a compact patterned vestment header.
+- Fix UTF-8 installation arrows and format shortcode examples as code.
 ## 1.3.79
 
 - Show the Bible Desktop vestment recommendation as a patterned colour ornament in daily, monthly and yearly calendar views.

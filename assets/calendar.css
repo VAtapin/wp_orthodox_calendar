@@ -119,8 +119,8 @@
 }
 .orthocal .oc-cell {
   position: relative;
-  min-height: 126px;
-  padding: 10px;
+  min-height: 104px;
+  padding: 8px 4px 4px;
   border: 1px solid var(--oc-line);
   border-radius: 8px;
   background: #ffffff60;
@@ -138,10 +138,9 @@
 .orthocal [data-oc-vestment="blue"] { --oc-vestment-color: #087baa; --oc-vestment-edge: #087baa; --oc-vestment-fill: #bfe3f4; }
 .orthocal [data-oc-vestment="violet"] { --oc-vestment-color: #7835a0; --oc-vestment-edge: #7835a0; --oc-vestment-fill: #dfc8ed; }
 .orthocal [data-oc-vestment="black"] { --oc-vestment-color: #252a30; --oc-vestment-edge: #252a30; --oc-vestment-fill: #d7dade; }
-.orthocal .oc-cell.oc-vestment { position: relative; border-left: 0; }
-.orthocal .oc-cell.oc-vestment { padding-left: 24px; }
-.orthocal .oc-year .oc-cell.oc-vestment { padding-left: 8px; }
-.orthocal .oc-cell.oc-vestment::before { content: ""; position: absolute; z-index: 1; top: 0; bottom: 0; left: 0; width: 12px; box-sizing: border-box; border-inline: 2px solid var(--oc-vestment-edge); background-color: var(--oc-vestment-fill); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='%236f7d8b' stroke-width='.8' stroke-linecap='round' stroke-linejoin='round' opacity='.8'%3E%3Cpath d='M12 22V2m0 6-3-3m3 6 4-4m-4 9-4-4m4 6 4-4M2 12h20m-8 0 3-3m-6 3-3-3m8 3 3 3m-8-3-3 3'/%3E%3C/g%3E%3C/svg%3E"); background-size: 12px 12px; pointer-events: none; }
+.orthocal .oc-cell.oc-vestment { position: relative; border-top: 0; padding-top: 8px; }
+.orthocal .oc-year .oc-cell.oc-vestment { padding-top: 10px; }
+.orthocal .oc-cell.oc-vestment::before { content: ""; position: absolute; z-index: 1; top: 0; right: 0; left: 0; height: 12px; box-sizing: border-box; border-block: 2px solid var(--oc-vestment-edge); background-color: var(--oc-vestment-fill); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='%236f7d8b' stroke-width='.8' stroke-linecap='round' stroke-linejoin='round' opacity='.8'%3E%3Cpath d='M12 22V2m0 6-3-3m3 6 4-4m-4 9-4-4m4 6 4-4M2 12h20m-8 0 3-3m-6 3-3-3m8 3 3 3m-8-3-3 3'/%3E%3C/g%3E%3C/svg%3E"); background-size: 12px 12px; pointer-events: none; }
 .orthocal .oc-cell b {
   font-size: 24px;
   font-weight: 500;
@@ -158,13 +157,13 @@
   display: block;
   font-size: 11px;
   line-height: 1.4;
-  margin-top: 8px;
+  margin-top: 0;
 }
 .orthocal .oc-food {
   display: block;
   font-size: 10px;
   color: var(--oc-muted);
-  margin-top: 8px;
+  margin-top: 4px;
 }
 .orthocal .oc-star {
   font-size: 10px;
@@ -182,7 +181,7 @@
 }
 .orthocal .oc-year .oc-cell {
   min-height: 42px;
-  padding: 5px;
+  padding: 8px 4px 4px;
   text-align: center;
   border-color: transparent;
 }
@@ -356,7 +355,7 @@
 }
 .orthocal.oc-compact .oc-cell {
   min-height: 45px;
-  padding: 5px;
+  padding: 8px 4px 4px;
   text-align: center;
 }
 .orthocal.oc-compact .oc-cell-title,
@@ -372,7 +371,7 @@
 @container (max-width:580px) {
   .orthocal .oc-cell {
     min-height: 64px;
-    padding: 5px;
+    padding: 8px 4px 4px;
     text-align: center;
   }
   .orthocal .oc-cell b {
@@ -640,7 +639,7 @@
 .orthocal .oc-vestment-basis {
   margin: 0 0 4px;
 }
-.orthocal .oc-vestment {
+.orthocal .oc-vestment-ornament {
   height: 12px;
   box-sizing: border-box;
   margin: 0 0 12px;

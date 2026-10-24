@@ -4,7 +4,7 @@ Tags: calendar, orthodox, bible
 Requires at least: 6.3
 Tested up to: 7.1
 Requires PHP: 8.0
-Stable tag: 1.3.79
+Stable tag: 1.3.80
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -23,41 +23,41 @@ The files assets/admin.js, assets/calendar.js, assets/editor.js, assets/admin.cs
 Edit these source files directly. No npm build is required for plugin installation or development. To check JavaScript syntax, run node --check assets/admin.js, node --check assets/calendar.js and node --check assets/editor.js. PHP files can be checked with php -l. Optional formatting: npx prettier@3.6.2 --write assets/*.js assets/*.css. The repository includes scripts/build-language-files.mjs for rebuilding MO catalogues with Node.js. The release packaging procedure is documented in the public repository README.md.
 
 == Installation ==
-1. WordPress â†’ Plugins â†’ Add New â†’ Upload Plugin: orthocal-1.3.79.zip.
+1. WordPress → Plugins → Add New → Upload Plugin: orthocal-1.3.80.zip.
 2. Activate the plugin.
-3. The calendar works immediately. Open Georg-Kloster Calendar Workshop â†’ Connection to change the Bible Desktop API address.
+3. The calendar works immediately. Open Georg-Kloster Calendar Workshop → Connection to change the Bible Desktop API address.
 4. Add blocks from the Widgets category or shortcodes to a page.
 
 The retired Kalendar key is not sent to Bible Desktop. Saved legacy settings are retained but do not authorize public calendar requests.
-The calendar, texts, translations, and icons API is configured in Georg-Kloster Calendar Workshop â†’ Connection. Its current default address is https://bible-desktop.com and no file access is required.
+The calendar, texts, translations, and icons API is configured in Georg-Kloster Calendar Workshop → Connection. Its current default address is https://bible-desktop.com and no file access is required.
 
 == Shortcodes ==
-[orthocal_today]
-[orthocal_upcoming limit="5" filter="main"]
-[orthocal_month year="2027" month="5"]
-[orthocal_year year="2027"]
-[orthocal_day date="2027-05-02"]
-[orthocal_readings date="2027-05-02"]
-[orthocal_calendar open="modal"]
-[orthocal_fasting]
-[orthocal_saints]
-[orthocal_feasts limit="5"]
-[orthocal_memorial]
-[orthocal_pascha year="2027"]
-[orthocal_fasts year="2027"]
-[orthocal_date]
-[orthocal_texts]
-[orthocal_troparia scope="resurrection" tone="1"]
-[orthocal_kontakia scope="weekday" weekday="1"]
-[orthocal_prayers]
-[orthocal_magnifications]
-[orthocal_horologion]
+<code>[orthocal_today]</code>
+<code>[orthocal_upcoming limit="5" filter="main"]</code>
+<code>[orthocal_month year="2027" month="5"]</code>
+<code>[orthocal_year year="2027"]</code>
+<code>[orthocal_day date="2027-05-02"]</code>
+<code>[orthocal_readings date="2027-05-02"]</code>
+<code>[orthocal_calendar open="modal"]</code>
+<code>[orthocal_fasting]</code>
+<code>[orthocal_saints]</code>
+<code>[orthocal_feasts limit="5"]</code>
+<code>[orthocal_memorial]</code>
+<code>[orthocal_pascha year="2027"]</code>
+<code>[orthocal_fasts year="2027"]</code>
+<code>[orthocal_date]</code>
+<code>[orthocal_texts]</code>
+<code>[orthocal_troparia scope="resurrection" tone="1"]</code>
+<code>[orthocal_kontakia scope="weekday" weekday="1"]</code>
+<code>[orthocal_prayers]</code>
+<code>[orthocal_magnifications]</code>
+<code>[orthocal_horologion]</code>
 
-open="inline|modal|page" controls how the day opens; reading_open="inline|modal" controls readings. For a separate page, place [orthocal_day] on it and select that page in the settings. sections="fasting,saints,readings,texts,icons", images="0|1", and heading="0|1" control the content. The admin generator previews parameters and output.
+<code>open="inline|modal|page"</code> controls how the day opens; <code>reading_open="inline|modal"</code> controls readings. For a separate page, place <code>[orthocal_day]</code> on it and select that page in the settings. <code>sections="fasting,saints,readings,texts,icons"</code>, <code>images="0|1"</code>, and <code>heading="0|1"</code> control the content. The admin generator previews parameters and output.
 image_size="120" sets a fasting-image height in pixels; its width retains the source image ratio. Existing small, medium, and large shortcodes continue to use heights of 28, 44, and 72 px.
 The reference library contains an initial corpus of 98 Church Slavonic texts with sources and awaits liturgical editorial review. It does not automatically assign a text to a daily service. Akathists are planned in BibleDesktop and are not yet connected.
 
-General parameters: lang="ru|cu|de|uk|pl", profile="typikon-strict|parish", theme="book|modern|inherit", compact="0|1", and oldstyle="0|1". The Horologion uses a protected service route and includes Sixth Hour inserts. An empty date means the current date in the WordPress timezone. Supported years are 1900â€“2200.
+General parameters: <code>lang="ru|cu|de|uk|pl"</code>, <code>profile="typikon-strict|parish"</code>, <code>theme="book|modern|inherit"</code>, <code>compact="0|1"</code>, and <code>oldstyle="0|1"</code>. The Horologion uses a protected service route and includes Sixth Hour inserts. An empty date means the current date in the WordPress timezone. Supported years are 1900–2200.
 Upcoming-event filters: main (major and memorial), twelve (Pascha and the Twelve Great Feasts), great, memorial, and all. The search covers the supplied date and the next 366 days, with a maximum of 10 events.
 
 == External Services ==
@@ -98,6 +98,11 @@ Settings, Gutenberg blocks, day cards and the reader support Russian, German, Uk
 7. Mobile day card with responsive navigation and actual icons.
 
 == Changelog ==
+
+= 1.3.80 =
+* Use the first daily icon from <code>day.icons</code> in API order.
+* Refine month and year cells with a compact patterned vestment header.
+* Fix UTF-8 installation arrows and display shortcode examples as code.
 
 = 1.3.79 =
 * Show the API-recommended vestment colour as a patterned ornament in day, month and year views.
